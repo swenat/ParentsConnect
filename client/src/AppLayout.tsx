@@ -1,13 +1,16 @@
+import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
 
-function AppLayout() {
+const AppLayout: React.FC = () => {
 	return (
-		<>
-			<div>
-				<h1>Frontend</h1>
-			</div>
-		</>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />} />
+			</Routes>
+		</Router>
 	);
-}
+};
 
 export default AppLayout;
