@@ -3,20 +3,40 @@ import React, { useState } from "react";
 
 const CreateActivityForm: React.FC = () => {
 	// State för att hantera formulärvärden
-	const [activityName, setActivityName] = useState("");
+	const [activityname, setActivityName] = useState("");
 	const [location, setLocation] = useState("");
 	const [time, setTime] = useState("");
 	const [otherInfo, setOtherInfo] = useState("");
 
-	const handleSubmit = (event: React.FormEvent) => {
+	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
-		// lägg till logik för att skicka formulärdata till din backend eller lagra den lokalt här senare reminder!!
-		console.log({
-			activityName,
+		const activityData = {
+			activityname,
 			location,
 			time,
 			otherInfo,
-		});
+		};
+		try {
+			const response = await fetch("http://localhost:5000/api/activities", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(activityData),
+			});
+
+			if (!response.ok) {
+				throw new Error("Failed to create activity");
+			}
+
+			const result = await response.json();
+			console.log("Activity created:", result);
+			// Rensa formuläret efter att det skickats
+			setActivityName("");
+			setLocation("");
+			setTime("");
+			setOtherInfo("");
+		} catch (error) {
+			console.error("Error creating activity:", error);
+		}
 	};
 
 	return (
@@ -38,7 +58,7 @@ const CreateActivityForm: React.FC = () => {
 							placeholder="Döp din aktivitet, t.ex. 'barnvagnspromenad'"
 							variant="outlined"
 							fullWidth
-							value={activityName}
+							value={activityname}
 							onChange={(e) => setActivityName(e.target.value)}
 						/>
 					</Box>

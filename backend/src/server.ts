@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import activityRoutes from "./resources/routes/activityRoutes";
 import userRoutes from "./resources/routes/userRoutes";
 
 // Ladda miljövariabler från .env
@@ -13,6 +14,7 @@ const port = 5000;
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/activities", activityRoutes);
 
 // Anslut till MongoDB med URI från .env
 mongoose
