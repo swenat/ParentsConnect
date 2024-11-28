@@ -1,5 +1,6 @@
 import React from "react";
 import CreateActivityForm from "../components/CreateActivityForm";
+
 const Activity: React.FC = () => {
 	return (
 		<div>
