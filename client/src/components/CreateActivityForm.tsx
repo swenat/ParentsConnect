@@ -1,4 +1,11 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+	Alert,
+	Box,
+	Button,
+	Snackbar,
+	TextField,
+	Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 
 const CreateActivityForm: React.FC = () => {
@@ -8,6 +15,12 @@ const CreateActivityForm: React.FC = () => {
 	const [location, setLocation] = useState("");
 	const [time, setTime] = useState("");
 	const [otherInfo, setOtherInfo] = useState("");
+
+	const [snackbarOpen, setSnackbarOpen] = useState(false);
+	const [snackbarMessage, setSnackbarMessage] = useState("");
+	const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">(
+		"success"
+	);
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
@@ -31,6 +44,11 @@ const CreateActivityForm: React.FC = () => {
 
 			const result = await response.json();
 			console.log("Activity created:", result);
+
+			setSnackbarMessage("Aktiviteten har sparats!");
+			setSnackbarSeverity("success");
+			setSnackbarOpen(true);
+
 			// Rensa formuläret efter att det skickats
 			setActivityName("");
 			setImageUrl("");
@@ -40,6 +58,10 @@ const CreateActivityForm: React.FC = () => {
 		} catch (error) {
 			console.error("Error creating activity:", error);
 		}
+	};
+
+	const handleCloseSnackbar = () => {
+		setSnackbarOpen(false);
 	};
 
 	return (
@@ -122,6 +144,22 @@ const CreateActivityForm: React.FC = () => {
 					</Box>
 				</Box>
 			</form>
+
+			{/* Snackbar-komponenten */}
+			<Snackbar
+				open={snackbarOpen}
+				autoHideDuration={4000}
+				onClose={handleCloseSnackbar}
+				anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+			>
+				<Alert
+					onClose={handleCloseSnackbar}
+					severity={snackbarSeverity}
+					sx={{ width: "100%" }}
+				>
+					{snackbarMessage}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 };
