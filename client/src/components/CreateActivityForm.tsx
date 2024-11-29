@@ -1,17 +1,32 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+	Alert,
+	Box,
+	Button,
+	Snackbar,
+	TextField,
+	Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 
 const CreateActivityForm: React.FC = () => {
 	// State för att hantera formulärvärden
 	const [activityname, setActivityName] = useState("");
+	const [imageUrl, setImageUrl] = useState("");
 	const [location, setLocation] = useState("");
 	const [time, setTime] = useState("");
 	const [otherInfo, setOtherInfo] = useState("");
+
+	const [snackbarOpen, setSnackbarOpen] = useState(false);
+	const [snackbarMessage, setSnackbarMessage] = useState("");
+	const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">(
+		"success"
+	);
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
 		const activityData = {
 			activityname,
+			imageUrl,
 			location,
 			time,
 			otherInfo,
@@ -29,14 +44,24 @@ const CreateActivityForm: React.FC = () => {
 
 			const result = await response.json();
 			console.log("Activity created:", result);
+
+			setSnackbarMessage("Aktiviteten har sparats!");
+			setSnackbarSeverity("success");
+			setSnackbarOpen(true);
+
 			// Rensa formuläret efter att det skickats
 			setActivityName("");
+			setImageUrl("");
 			setLocation("");
 			setTime("");
 			setOtherInfo("");
 		} catch (error) {
 			console.error("Error creating activity:", error);
 		}
+	};
+
+	const handleCloseSnackbar = () => {
+		setSnackbarOpen(false);
 	};
 
 	return (
@@ -62,7 +87,17 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setActivityName(e.target.value)}
 						/>
 					</Box>
-
+					{/* Plats för bild */}
+					<Box>
+						<TextField
+							label="Bild-URL"
+							placeholder="Kopiera in din bildlänk"
+							variant="outlined"
+							fullWidth
+							value={imageUrl}
+							onChange={(e) => setImageUrl(e.target.value)}
+						/>
+					</Box>
 					{/* Plats för eventet */}
 					<Box>
 						<TextField
@@ -74,7 +109,6 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setLocation(e.target.value)}
 						/>
 					</Box>
-
 					{/* Klockslag */}
 					<Box>
 						<TextField
@@ -89,7 +123,6 @@ const CreateActivityForm: React.FC = () => {
 							}}
 						/>
 					</Box>
-
 					{/* Övrig information */}
 					<Box>
 						<TextField
@@ -103,7 +136,6 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setOtherInfo(e.target.value)}
 						/>
 					</Box>
-
 					{/* Skicka-knapp */}
 					<Box>
 						<Button type="submit" variant="contained" color="primary" fullWidth>
@@ -112,6 +144,22 @@ const CreateActivityForm: React.FC = () => {
 					</Box>
 				</Box>
 			</form>
+
+			{/* Snackbar-komponenten */}
+			<Snackbar
+				open={snackbarOpen}
+				autoHideDuration={4000}
+				onClose={handleCloseSnackbar}
+				anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+			>
+				<Alert
+					onClose={handleCloseSnackbar}
+					severity={snackbarSeverity}
+					sx={{ width: "100%" }}
+				>
+					{snackbarMessage}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 };
