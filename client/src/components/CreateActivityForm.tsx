@@ -13,6 +13,7 @@ const CreateActivityForm: React.FC = () => {
 	const [activityname, setActivityName] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [location, setLocation] = useState("");
+	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
 	const [otherInfo, setOtherInfo] = useState("");
 
@@ -28,6 +29,7 @@ const CreateActivityForm: React.FC = () => {
 			activityname,
 			imageUrl,
 			location,
+			date,
 			time,
 			otherInfo,
 		};
@@ -53,6 +55,7 @@ const CreateActivityForm: React.FC = () => {
 			setActivityName("");
 			setImageUrl("");
 			setLocation("");
+			setDate("");
 			setTime("");
 			setOtherInfo("");
 		} catch (error) {
@@ -107,6 +110,19 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={location}
 							onChange={(e) => setLocation(e.target.value)}
+						/>
+					</Box>
+					<Box>
+						<TextField
+							label="Datum"
+							type="date"
+							variant="outlined"
+							fullWidth
+							value={date}
+							onChange={(e) => setDate(e.target.value)}
+							InputLabelProps={{
+								shrink: true,
+							}}
 						/>
 					</Box>
 					{/* Klockslag */}
