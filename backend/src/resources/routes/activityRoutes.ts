@@ -8,9 +8,10 @@ router.use(cors({ origin: "http://localhost:5173" }));
 
 router.post("/", async (req, res) => {
 	try {
-		const { activityname, location, time, otherInfo } = req.body;
+		const { activityname, imageUrl, location, time, otherInfo } = req.body;
 		const newActivity = new Activity({
 			activityname,
+			imageUrl,
 			location,
 			time,
 			otherInfo,

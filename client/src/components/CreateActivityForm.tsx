@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const CreateActivityForm: React.FC = () => {
 	// State för att hantera formulärvärden
 	const [activityname, setActivityName] = useState("");
+	const [imageUrl, setImageUrl] = useState("");
 	const [location, setLocation] = useState("");
 	const [time, setTime] = useState("");
 	const [otherInfo, setOtherInfo] = useState("");
@@ -12,6 +13,7 @@ const CreateActivityForm: React.FC = () => {
 		event.preventDefault();
 		const activityData = {
 			activityname,
+			imageUrl,
 			location,
 			time,
 			otherInfo,
@@ -31,6 +33,7 @@ const CreateActivityForm: React.FC = () => {
 			console.log("Activity created:", result);
 			// Rensa formuläret efter att det skickats
 			setActivityName("");
+			setImageUrl("");
 			setLocation("");
 			setTime("");
 			setOtherInfo("");
@@ -62,7 +65,17 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setActivityName(e.target.value)}
 						/>
 					</Box>
-
+					{/* Plats för bild */}
+					<Box>
+						<TextField
+							label="Bild-URL"
+							placeholder="Kopiera in din bildlänk"
+							variant="outlined"
+							fullWidth
+							value={imageUrl}
+							onChange={(e) => setImageUrl(e.target.value)}
+						/>
+					</Box>
 					{/* Plats för eventet */}
 					<Box>
 						<TextField
@@ -74,7 +87,6 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setLocation(e.target.value)}
 						/>
 					</Box>
-
 					{/* Klockslag */}
 					<Box>
 						<TextField
@@ -89,7 +101,6 @@ const CreateActivityForm: React.FC = () => {
 							}}
 						/>
 					</Box>
-
 					{/* Övrig information */}
 					<Box>
 						<TextField
@@ -103,7 +114,6 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setOtherInfo(e.target.value)}
 						/>
 					</Box>
-
 					{/* Skicka-knapp */}
 					<Box>
 						<Button type="submit" variant="contained" color="primary" fullWidth>
