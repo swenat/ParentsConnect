@@ -4,6 +4,7 @@ interface IActivity extends Document {
 	activityname: string;
 	imageURL: string;
 	location: string;
+	date: string;
 	time: string;
 	otherInfo?: string;
 }
@@ -23,6 +24,7 @@ const ActivitySchema: Schema = new Schema(
 			},
 		},
 		location: { type: String, required: true },
+		date: { type: String, required: true },
 		time: { type: String, required: true },
 		otherInfo: { type: String },
 	},
