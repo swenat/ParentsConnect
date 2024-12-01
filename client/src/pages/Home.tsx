@@ -1,38 +1,41 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
 
 const Home: React.FC = () => {
 	return (
-		<div>
+		<Box
+			sx={{
+				display: "flex",
+				flexDirection: "column",
+				minHeight: "100vh",
+			}}
+		>
 			<NavbarHome />
 			{/* Sektion för text och bild */}
 			<Box
 				sx={{
-					height: "864px",
+					flex: 1,
 					display: "flex",
-					flexDirection: "row",
+					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
 					padding: "32px",
+					gap: "32px",
 					boxSizing: "border-box",
-					flexWrap: "wrap", // Responsiv på små skärmar
-					alignItems: "flex-start",
 				}}
 			>
 				{/* Sektion för rubrik och text */}
 				<Box
 					sx={{
-						height: "640px",
-						width: "616px",
+						width: { xs: "100%", md: "616px" },
 						display: "flex",
 						flexDirection: "column",
-						justifyContent: "flex-start", // Centrerar innehållet vertikalt
-						alignItems: "flex-start", // Align till vänster
-						padding: "32px",
-						boxSizing: "border-box",
+						justifyContent: "center",
+						alignItems: "flex-start",
 					}}
 				>
-					<Typography variant="h4" sx={{ marginBottom: "16px" }}>
+					<Typography variant="h2" sx={{ marginBottom: "16px" }}>
 						Välkommen till ParentsConnect!
 					</Typography>
 					<Typography variant="body1">
@@ -46,28 +49,18 @@ const Home: React.FC = () => {
 				{/* Sektion för bild */}
 				<Box
 					sx={{
-						height: "640px",
-						width: "616px",
+						width: { xs: "100%", md: "616px" },
+						height: "600px",
 						backgroundImage:
-							"url('https://media-private.canva.com/PwzoM/MAGYCvPwzoM/1/p.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20241201%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241201T054957Z&X-Amz-Expires=33157&X-Amz-Signature=0d7ef7f0c18874c32f316b210666c6d24969efcaf397877e6093bf062f7be159&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Sun%2C%2001%20Dec%202024%2015%3A02%3A34%20GMT')",
-						backgroundSize: "cover", // Gör bilden responsiv
+							"url('https://am3pap004files.storage.live.com/y4mqY--x1-Rxu2UPMNYqqF44hTa1ODPb2U3o9HtTl52cy8sS0gKIIRejTbFVn5YfuSIg3Zsh3HedGIe4roau2jpwbgGeORzCv81JT4pR9a19X5vbcjLGjN4hPtv7vqTFAdx--PZqff2gTn993G2bcUmOcg1dEagC-rVEgD97mW-ZoBm-xbeII9tbz-TAQj0EHPmbJdoD_q7qsmOrXBNnp4HSm4X30b266pYL2kGoDcgW1g?encodeFailures=1&width=1024&height=1024')",
+						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "8px",
 					}}
 				/>
 			</Box>
-			{/* Media Query för små skärmar */}
-			<Box
-				sx={{
-					"@media (max-width: 768px)": {
-						flexDirection: "column", // På små skärmar ska sektionerna vara staplade vertikalt
-						alignItems: "center", // Centrerar innehållet
-						padding: "0",
-						margin: 0,
-					},
-				}}
-			></Box>
-		</div>
+			<Footer />
+		</Box>
 	);
 };
 
