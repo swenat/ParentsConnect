@@ -40,4 +40,16 @@ router.get("/", async (req, res) => {
 	}
 });
 
+router.get("/filter", async (req, res) => {
+	try {
+		const { date } = req.query;
+		const filteredActivities = await Activity.find({ date });
+		res.json(filteredActivities);
+	} catch (error) {
+		const errorMessage =
+			error instanceof Error ? error.message : "An unknown error occurred";
+		res.status(500).json({ error: errorMessage });
+	}
+});
+
 export default router;
