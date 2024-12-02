@@ -40,8 +40,23 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							padding: 2,
 							border: "1px solid gray",
 							borderRadius: 2,
+							display: "flex",
+							gap: 2,
+							alignItems: "center",
 						}}
 					>
+						{/* Bild för aktiviteten */}
+						<img
+							src={activity.imageUrl}
+							alt={activity.activityname}
+							style={{
+								width: "100px",
+								height: "100px",
+								objectFit: "cover",
+								borderRadius: "8px",
+							}}
+						/>
+						{/* Textinformation */}
 						<Typography variant="h6">{activity.activityname}</Typography>
 						<Typography>{activity.location}</Typography>
 						<Typography>{activity.time}</Typography>
