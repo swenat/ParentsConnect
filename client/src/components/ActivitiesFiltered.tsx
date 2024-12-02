@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -41,35 +41,36 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 				<Typography>Inga aktiviteter för detta datum.</Typography>
 			) : (
 				activities.map((activity: any) => (
-					<Box
+					<Card
 						key={activity._id}
 						sx={{
 							marginBottom: 2,
-							padding: 2,
-							border: "1px solid gray",
-							borderRadius: 2,
 							display: "flex",
+							flexDirection: "column",
 							gap: 2,
-							alignItems: "center",
+							width: 300, // Justera bredden på korten om nödvändigt
 						}}
 					>
 						{/* Bild för aktiviteten */}
-						<img
-							src={activity.imageUrl}
+						<CardMedia
+							component="img"
+							height="140"
+							image={activity.imageUrl}
 							alt={activity.activityname}
-							style={{
-								width: "100px",
-								height: "100px",
-								objectFit: "cover",
-								borderRadius: "8px",
-							}}
 						/>
-						{/* Textinformation */}
-						<Typography variant="h6">{activity.activityname}</Typography>
-						<Typography>{activity.location}</Typography>
-						<Typography>{activity.time}</Typography>
-						<Typography>{activity.otherInfo}</Typography>
-					</Box>
+						<CardContent>
+							{/* Aktivitetsnamn */}
+							<Typography variant="h6" sx={{ fontWeight: "bold" }}>
+								{activity.activityname}
+							</Typography>
+							{/* Plats */}
+							<Typography variant="body2">{activity.location}</Typography>
+							{/* Tid */}
+							<Typography variant="body2">{activity.time}</Typography>
+							{/* Övrig information */}
+							<Typography variant="body2">{activity.otherInfo}</Typography>
+						</CardContent>
+					</Card>
 				))
 			)}
 		</Box>
