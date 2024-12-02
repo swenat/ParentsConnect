@@ -3,25 +3,33 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
-	const [activities, setActivities] = useState([]);
+	const [activities, setActivities] = useState<any[]>([]);
 
 	useEffect(() => {
+		let intervalId: ReturnType<typeof setInterval>;
+
+		const fetchActivities = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:5000/api/activities/filter",
+					{
+						params: { date },
+					}
+				);
+				setActivities(response.data);
+			} catch (error) {
+				console.error("Failed to fetch activities", error);
+			}
+		};
+
 		if (date) {
-			const fetchActivities = async () => {
-				try {
-					const response = await axios.get(
-						"http://localhost:5000/api/activities/filter",
-						{
-							params: { date },
-						}
-					);
-					setActivities(response.data);
-				} catch (error) {
-					console.error("Failed to fetch activities", error);
-				}
-			};
-			fetchActivities();
+			fetchActivities(); // Initial fetch
+			intervalId = setInterval(fetchActivities, 5000); // Poll every 5 seconds to check for new activities
 		}
+
+		return () => {
+			clearInterval(intervalId); //Clear interval
+		};
 	}, [date]);
 
 	return (
