@@ -30,7 +30,7 @@ const CalendarActivities: React.FC<{
 
 	const renderDay = (props: PickersDayProps<dayjs.Dayjs>) => {
 		const { day } = props;
-		const dateStr = day.toISOString().split("T")[0];
+		const dateStr = day.format("YYYY-MM-DD");
 		const isMarked = markedDates[dateStr];
 
 		return (
@@ -47,7 +47,7 @@ const CalendarActivities: React.FC<{
 	return (
 		<DateCalendar
 			onChange={(value) => {
-				const selectedDate = value?.toISOString().split("T")[0] || "";
+				const selectedDate = value?.format("YYYY-MM-DD") || "";
 				onDateChange(selectedDate);
 			}}
 			slots={{ day: renderDay }}
