@@ -56,7 +56,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							component="img"
 							height="140"
 							image={activity.imageUrl}
-							alt={activity.activityname}
+							alt={`Bild av ${activity.activityname}`}
 						/>
 						<CardContent>
 							{/* Aktivitetsnamn */}
