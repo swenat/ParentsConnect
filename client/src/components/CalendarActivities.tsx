@@ -8,25 +8,33 @@ const CalendarActivities: React.FC<{
 	onDateChange: (date: string) => void;
 }> = ({ onDateChange }) => {
 	const [markedDates, setMarkedDates] = useState<Record<string, boolean>>({});
+	const [reloadKey, setReloadKey] = useState(0);
 
+	const fetchDatesWithActivities = async () => {
+		try {
+			const response = await axios.get("http://localhost:5000/api/activities");
+			const dates = response.data.map((activity: any) => activity.date);
+			const dateMarkers: Record<string, boolean> = {};
+			dates.forEach((date: string) => {
+				dateMarkers[date] = true;
+			});
+			setMarkedDates(dateMarkers);
+		} catch (error) {
+			console.error("Failed to fetch dates", error);
+		}
+	};
 	useEffect(() => {
-		const fetchDatesWithActivities = async () => {
-			try {
-				const response = await axios.get(
-					"http://localhost:5000/api/activities"
-				);
-				const dates = response.data.map((activity: any) => activity.date);
-				const dateMarkers: Record<string, boolean> = {};
-				dates.forEach((date: string) => {
-					dateMarkers[date] = true;
-				});
-				setMarkedDates(dateMarkers);
-			} catch (error) {
-				console.error("Failed to fetch dates", error);
-			}
-		};
 		fetchDatesWithActivities();
-	}, []);
+
+		// Hämtar data regelbundet
+		const intervalId = setInterval(() => {
+			// Uppdatera reloadKey för att tvinga omrendering
+			setReloadKey((prevKey) => prevKey + 1);
+		}, 10000); // 10 000 ms = var 10e sekund
+
+		// Rensa intervallet när komponenten demonteras
+		return () => clearInterval(intervalId);
+	}, [reloadKey]);
 
 	const renderDay = (props: PickersDayProps<dayjs.Dayjs>) => {
 		const { day } = props;
