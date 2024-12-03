@@ -70,12 +70,6 @@ const Activity: React.FC = () => {
 						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
 							Filtrerade aktiviteter
 						</Typography>
-						<Typography
-							variant="body1"
-							sx={{ fontSize: "18px", marginBottom: 3 }}
-						>
-							Aktiviteter det valda datumet
-						</Typography>
 						<Divider sx={{ marginBottom: 3, width: "80%" }} />
 						<ActivitiesFiltered date={selectedDate} />
 					</Box>
