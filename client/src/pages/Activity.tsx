@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import ActivitiesFiltered from "../components/ActivitiesFiltered";
 import CalenderActivities from "../components/CalendarActivities";
 import CreateActivityForm from "../components/CreateActivityForm";
+import NavbarActivities from "../components/NavbarActivities";
 
 const Activity: React.FC = () => {
 	const [selectedDate, setSelectedDate] = useState("");
@@ -14,9 +15,11 @@ const Activity: React.FC = () => {
 			<Box
 				component="main"
 				sx={{
-					padding: 4,
+					padding: 0,
+					margin: 0,
 				}}
 			>
+				<NavbarActivities />
 				{/* Sektion: Kalender och Aktiviteter */}
 				<Box
 					sx={{
