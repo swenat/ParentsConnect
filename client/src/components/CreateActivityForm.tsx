@@ -68,7 +68,7 @@ const CreateActivityForm: React.FC = () => {
 	};
 
 	return (
-		<Box sx={{ maxWidth: 600, margin: "auto", padding: 2 }}>
+		<Box sx={{ maxWidth: 600, margin: "0", padding: 0 }}>
 			<Typography variant="h4" gutterBottom>
 				Skapa en aktivitet
 			</Typography>
