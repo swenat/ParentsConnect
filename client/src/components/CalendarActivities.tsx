@@ -59,6 +59,11 @@ const CalendarActivities: React.FC<{
 				onDateChange(selectedDate);
 			}}
 			slots={{ day: renderDay }}
+			sx={{
+				transform: "scale(1.2)",
+				padding: 0,
+				margin: 0,
+			}}
 		/>
 	);
 };

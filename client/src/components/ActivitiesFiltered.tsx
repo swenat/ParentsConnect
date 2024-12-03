@@ -1,4 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import ShareIcon from "@mui/icons-material/Share";
+import {
+	Box,
+	Card,
+	CardContent,
+	CardMedia,
+	IconButton,
+	Typography,
+} from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -34,42 +43,70 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 
 	return (
 		<Box>
-			<Typography variant="h6">
-				Aktiviteter för {date || "valt datum"}
-			</Typography>
+			<Typography variant="h6">Valt datum: {date || "valt datum"}</Typography>
 			{activities.length === 0 ? (
 				<Typography>Inga aktiviteter för detta datum.</Typography>
 			) : (
 				activities.map((activity: any) => (
-					<Box
+					<Card
 						key={activity._id}
 						sx={{
 							marginBottom: 2,
-							padding: 2,
-							border: "1px solid gray",
-							borderRadius: 2,
 							display: "flex",
+							flexDirection: "column",
 							gap: 2,
-							alignItems: "center",
+							width: 300, // Justera bredden på korten om nödvändigt
 						}}
 					>
 						{/* Bild för aktiviteten */}
-						<img
-							src={activity.imageUrl}
-							alt={activity.activityname}
-							style={{
-								width: "100px",
-								height: "100px",
-								objectFit: "cover",
-								borderRadius: "8px",
-							}}
+						<CardMedia
+							component="img"
+							height="140"
+							image={activity.imageUrl}
+							alt={`Bild av ${activity.activityname}`}
 						/>
-						{/* Textinformation */}
-						<Typography variant="h6">{activity.activityname}</Typography>
-						<Typography>{activity.location}</Typography>
-						<Typography>{activity.time}</Typography>
-						<Typography>{activity.otherInfo}</Typography>
-					</Box>
+						<CardContent>
+							{/* Aktivitetsnamn */}
+							<Typography variant="h6" sx={{ fontWeight: "bold" }}>
+								{activity.activityname}
+							</Typography>
+							{/* Plats */}
+							<Typography variant="body2">
+								<b>Plats: </b>
+								{activity.location}
+							</Typography>
+							{/* Tid */}
+							<Typography variant="body2">
+								<b>Kl: </b>
+								{activity.time}
+							</Typography>
+							{/* Övrig information */}
+							<Typography variant="body2">{activity.otherInfo}</Typography>
+							{/* Ikoner för Share och Bookmark */}
+							<Box
+								sx={{
+									display: "flex",
+									justifyContent: "flex-end",
+									marginTop: 2,
+								}}
+							>
+								<IconButton
+									color="primary"
+									aria-label="Dela aktiviteten"
+									onClick={() => console.log("Dela aktiviteten")}
+								>
+									<ShareIcon />
+								</IconButton>
+								<IconButton
+									color="secondary"
+									aria-label="Bokmärk aktiviteten"
+									onClick={() => console.log("Bokmärk aktiviteten")}
+								>
+									<BookmarkIcon />
+								</IconButton>
+							</Box>
+						</CardContent>
+					</Card>
 				))
 			)}
 		</Box>
