@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
 				flexDirection: "column",
 				marginTop: "auto",
 				borderTop: "1px solid #ddd",
+				overflowX: "hidden",
 			}}
 		>
 			{/* Inre container */}
@@ -22,11 +23,13 @@ const Footer: React.FC = () => {
 				sx={{
 					display: "flex",
 					flexDirection: { xs: "column", md: "row" },
-					alignItems: "flex-start",
+					alignItems: { xs: "center", md: "flex-start" },
 					justifyContent: "space-between",
 					gap: 4,
 					width: "100%",
 					maxWidth: "1312px",
+					textAlign: { xs: "center", md: "left" },
+					paddingX: { xs: 2, md: 0 },
 				}}
 			>
 				{/* Vänster sektion */}
@@ -36,12 +39,15 @@ const Footer: React.FC = () => {
 						sx={{
 							marginBottom: "8px",
 							fontWeight: "bold",
-							fontSize: "1.5rem",
+							fontSize: { xs: "1.2rem", sm: "1.5rem" },
 						}}
 					>
 						Välkommen till vår föräldragemenskap
 					</Typography>
-					<Typography variant="body2">
+					<Typography
+						variant="body2"
+						sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
+					>
 						En plats där föräldrar kan planera, nätverka och skapa nya minnen
 						tillsammans.
 					</Typography>
@@ -53,25 +59,30 @@ const Footer: React.FC = () => {
 						display: "flex",
 						flexDirection: { xs: "column", md: "row" },
 						flex: 2,
-						gap: 4,
+						gap: { xs: 2, md: 4 },
 						justifyContent: "center",
+						width: "100%",
 					}}
 				>
 					{/* Länkar */}
 					<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-						{["Om oss", "Kontakta oss", "Blogg", "Evenemang", "Produkter"].map(
-							(text, idx) => (
-								<Link
-									key={idx}
-									href="#"
-									color="inherit"
-									underline="none"
-									sx={{ fontSize: "14px" }}
-								>
-									{text}
-								</Link>
-							)
-						)}
+						{[
+							"Läs om oss",
+							"Kontakta oss",
+							"Blogg",
+							"Evenemang",
+							"Produkter",
+						].map((text, idx) => (
+							<Link
+								key={idx}
+								href="#"
+								color="inherit"
+								underline="none"
+								sx={{ fontSize: "14px" }}
+							>
+								{text}
+							</Link>
+						))}
 					</Box>
 
 					<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -100,16 +111,32 @@ const Footer: React.FC = () => {
 						flexWrap: "wrap",
 					}}
 				>
-					<Link href="https://www.facebook.com" color="inherit">
+					<Link
+						href="https://www.facebook.com"
+						color="inherit"
+						aria-label="Facebook"
+					>
 						<FacebookIcon fontSize="medium" />
 					</Link>
-					<Link href="https://www.instagram.com" color="inherit">
+					<Link
+						href="https://www.instagram.com"
+						color="inherit"
+						aria-label="Instagram"
+					>
 						<InstagramIcon fontSize="medium" />
 					</Link>
-					<Link href="https://www.linkedin.com" color="inherit">
+					<Link
+						href="https://www.linkedin.com"
+						color="inherit"
+						aria-label="Linkedin"
+					>
 						<LinkedInIcon fontSize="medium" />
 					</Link>
-					<Link href="https://www.youtube.com" color="inherit">
+					<Link
+						href="https://www.youtube.com"
+						color="inherit"
+						aria-label="Youtube"
+					>
 						<YouTubeIcon fontSize="medium" />
 					</Link>
 				</Box>
@@ -126,11 +153,15 @@ const Footer: React.FC = () => {
 					alignItems: "center",
 					justifyContent: "center",
 					textAlign: { xs: "center", md: "left" },
-					gap: 3,
+					gap: { xs: 2, md: 3 },
+					paddingX: { xs: 2, md: 0 },
 				}}
 			>
 				{/* Upphovsrätt */}
-				<Typography variant="body2">
+				<Typography
+					variant="body2"
+					sx={{ fontSize: { xs: "0.8rem", sm: "1rem" } }}
+				>
 					© 2024 ParentsConnect. Alla rättigheter förbehållna.
 				</Typography>
 
@@ -138,9 +169,9 @@ const Footer: React.FC = () => {
 				<Box
 					sx={{
 						display: "flex",
-						flexDirection: "row",
+						flexDirection: { xs: "column", sm: "row" },
 						justifyContent: "center",
-						gap: 3,
+						gap: { xs: 1, sm: 3 },
 					}}
 				>
 					<Link href="#" color="inherit" underline="none">
@@ -149,9 +180,9 @@ const Footer: React.FC = () => {
 					<Link href="#" color="inherit" underline="none">
 						Användarvillkor och tjänster
 					</Link>
-					<Link href="#" color="inherit" underline="none">
+					{/* <Link href="#" color="inherit" underline="none">
 						Cookie-inställningar
-					</Link>
+					</Link> */}
 				</Box>
 			</Box>
 		</Box>

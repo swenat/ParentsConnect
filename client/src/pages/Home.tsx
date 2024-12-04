@@ -39,6 +39,9 @@ const Home: React.FC = () => {
 						variant="h2"
 						sx={{
 							outline: "none",
+							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
+							fontWeight: "bold",
+							marginBottom: "16px",
 							"&:focus": {
 								outline: "2px solid #493FFD",
 							},
@@ -70,6 +73,7 @@ const Home: React.FC = () => {
 					}}
 				/>
 			</Box>
+			{/* Footer-innehåll */}
 			<Footer />
 		</Box>
 	);
