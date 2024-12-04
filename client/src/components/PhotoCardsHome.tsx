@@ -12,7 +12,7 @@ const PhotoCardsHome: React.FC = () => {
 				display: "flex",
 				flexWrap: "wrap",
 				gap: 2,
-				justifyContent: "center",
+				justifyContent: "left",
 				paddingBottom: 2,
 				paddingX: 2,
 			}}

@@ -77,7 +77,7 @@ const Home: React.FC = () => {
 			</Box>
 			<Box>
 				<Box>
-					<Typography variant="h5" textAlign={"center"} paddingBottom={2}>
+					<Typography variant="h5" textAlign={"left"} paddingBottom={2}>
 						Gemenskap 2024
 					</Typography>
 					<PhotoCardsHome />
