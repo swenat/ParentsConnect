@@ -35,10 +35,22 @@ const Home: React.FC = () => {
 						alignItems: "flex-start",
 					}}
 				>
-					<Typography variant="h2" sx={{ marginBottom: "16px" }}>
+					<Typography
+						variant="h2"
+						sx={{
+							outline: "none",
+							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
+							fontWeight: "bold",
+							marginBottom: "16px",
+							"&:focus": {
+								outline: "2px solid #493FFD",
+							},
+						}}
+						tabIndex={0}
+					>
 						Välkommen till ParentsConnect!
 					</Typography>
-					<Typography variant="body1">
+					<Typography variant="body1" sx={{ color: "#333" }}>
 						Appen som hjälper föräldrar att skapa kontakter, få råd, kommunicera
 						och hålla sig aktiverade. Genom att skapa aktiviteter och dela
 						information kan du vara säker på att du alltid har koll på vad som
@@ -48,6 +60,8 @@ const Home: React.FC = () => {
 
 				{/* Sektion för bild */}
 				<Box
+					role="img"
+					aria-label="Bild-URL"
 					sx={{
 						width: { xs: "100%", md: "616px" },
 						height: "600px",
@@ -59,6 +73,7 @@ const Home: React.FC = () => {
 					}}
 				/>
 			</Box>
+			{/* Footer-innehåll */}
 			<Footer />
 		</Box>
 	);
