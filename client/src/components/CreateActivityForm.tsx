@@ -112,6 +112,7 @@ const CreateActivityForm: React.FC = () => {
 							value={imageUrl}
 							onChange={(e) => setImageUrl(e.target.value)}
 							required
+							error={!imageUrl}
 							aria-describedby="imageurl-error"
 						/>
 					</Box>
@@ -125,6 +126,7 @@ const CreateActivityForm: React.FC = () => {
 							value={location}
 							onChange={(e) => setLocation(e.target.value)}
 							required
+							error={!location}
 							aria-describedby="location-error"
 						/>
 					</Box>
@@ -140,6 +142,7 @@ const CreateActivityForm: React.FC = () => {
 								shrink: true,
 							}}
 							required
+							error={!date}
 							aria-describedby="date-error"
 						/>
 					</Box>
@@ -156,6 +159,7 @@ const CreateActivityForm: React.FC = () => {
 								shrink: true,
 							}}
 							required
+							error={!time}
 							aria-describedby="time-error"
 						/>
 					</Box>
