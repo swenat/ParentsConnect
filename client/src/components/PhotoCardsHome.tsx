@@ -36,7 +36,7 @@ const PhotoCardsHome: React.FC = () => {
 				</CardContent>
 			</Card>
 			{/* Andra kortet */}
-			<Card sx={{ max: { xs: "100%", sm: 345 } }}>
+			<Card sx={{ maxWidth: { xs: "100%", sm: 345 } }}>
 				<CardMedia
 					sx={{ height: 200 }}
 					image="https://am3pap004files.storage.live.com/y4mgRtUHznhleYNM93tOzW-Z6rwrAQi8F3-Pb3s0sZkRDPplW3c44hTBRP47YEPVJv_-w75hoBDEvsY75zQn95V3caogaIw5Rd2Xy0z3htsGSHGb_u2eZd6ebEd6_LY76J45bxEw8rtQq1BUDWnFZQmwad4tEyEZV6yyRFss7LQueeFNj6lY8yNxvgbTqujBlNBHEABEZxqRQk8Nv5k79dOMecmbi8lrHN6IYPuQy7XJH8?encodeFailures=1&width=1024&height=1024"
@@ -54,7 +54,7 @@ const PhotoCardsHome: React.FC = () => {
 				</CardContent>
 			</Card>
 			{/* Tredje kortet */}
-			<Card sx={{ maxHeight: { xs: "100%", sm: 345 } }}>
+			<Card sx={{ maxWidth: { xs: "100%", sm: 345 } }}>
 				<CardMedia
 					sx={{ height: 200 }}
 					image="https://am3pap004files.storage.live.com/y4mJ8_gbn_CsrJ9O5Y-XbwldMTsxNim6OLkHsEvor-sxjDX5c0FLqwDO0rLNDwmI7w60BqV1_RUFpVgnZ2PNlNpg_PDXPOMNLKAiJMvz6K4AmllJMkpgvp1_Pu1VFJsgtc__OUkIR4mnke5d-2gxaHDBjo7HObG22gC3AoEGm7VzXy15r4Vh-oGetW-E5QAmHEGphGXJGn48ZD5umjQOhnZJLa5AknKC4Y7EneEohWLerg?encodeFailures=1&width=1024&height=1024"

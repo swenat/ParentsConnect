@@ -11,6 +11,7 @@ const Home: React.FC = () => {
 				display: "flex",
 				flexDirection: "column",
 				minHeight: "100vh",
+				gap: 8,
 			}}
 		>
 			<NavbarHome />
@@ -75,9 +76,10 @@ const Home: React.FC = () => {
 				/>
 			</Box>
 			<Box>
-				<Typography variant="h5">Gemenskap 2024</Typography>
 				<Box>
-					<Typography variant="body2"></Typography>
+					<Typography variant="h5" textAlign={"center"} paddingBottom={2}>
+						Gemenskap 2024
+					</Typography>
 					<PhotoCardsHome />
 				</Box>
 			</Box>
