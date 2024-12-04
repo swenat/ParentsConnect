@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
+import PhotoCardsHome from "../components/PhotoCardsHome";
 
 const Home: React.FC = () => {
 	return (
@@ -66,12 +67,19 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "600px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mqY--x1-Rxu2UPMNYqqF44hTa1ODPb2U3o9HtTl52cy8sS0gKIIRejTbFVn5YfuSIg3Zsh3HedGIe4roau2jpwbgGeORzCv81JT4pR9a19X5vbcjLGjN4hPtv7vqTFAdx--PZqff2gTn993G2bcUmOcg1dEagC-rVEgD97mW-ZoBm-xbeII9tbz-TAQj0EHPmbJdoD_q7qsmOrXBNnp4HSm4X30b266pYL2kGoDcgW1g?encodeFailures=1&width=1024&height=1024')",
+							"url('https://am3pap004files.storage.live.com/y4mkQFNSJwi_tvVJTsWbeQD-nE_kaMdXHThfAq_fdgFrfioel2ROpdGRsxxcbl84MJh_c1PQW-ZcZ256vRPWamffglyFobkWGZ5NKf_fx6bKsmSX0yzG8nYR1Yyn4XWUC84Q3SIleQUgKhbhfIC4o1gox2_EETvEykp65pMmxcKgW3ZH8fmywONtNOMJqBnOEMWoz0vZyq0fETVSsgQwDNZddOf9hNMDa_Eat1hubl0c0Q?encodeFailures=1&width=1024&height=1024')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "8px",
 					}}
 				/>
+			</Box>
+			<Box>
+				<Typography variant="h5">Gemenskap 2024</Typography>
+				<Box>
+					<Typography variant="body2"></Typography>
+					<PhotoCardsHome />
+				</Box>
 			</Box>
 			{/* Footer-innehåll */}
 			<Footer />
