@@ -25,6 +25,14 @@ const CreateActivityForm: React.FC = () => {
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
+
+		if (!activityname || !imageUrl || !location || !date || !time) {
+			setSnackbarMessage("Alla obligatoriska fält måste fyllas i!");
+			setSnackbarSeverity("error");
+			setSnackbarOpen(true);
+			return;
+		}
+
 		const activityData = {
 			activityname,
 			imageUrl,
@@ -88,6 +96,10 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={activityname}
 							onChange={(e) => setActivityName(e.target.value)}
+							required
+							error={!activityname}
+							aria-invalid={!activityname}
+							aria-describedby="activityname-error"
 						/>
 					</Box>
 					{/* Plats för bild */}
@@ -99,6 +111,9 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={imageUrl}
 							onChange={(e) => setImageUrl(e.target.value)}
+							required
+							error={!imageUrl}
+							aria-describedby="imageurl-error"
 						/>
 					</Box>
 					{/* Plats för eventet */}
@@ -110,6 +125,9 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={location}
 							onChange={(e) => setLocation(e.target.value)}
+							required
+							error={!location}
+							aria-describedby="location-error"
 						/>
 					</Box>
 					<Box>
@@ -123,6 +141,9 @@ const CreateActivityForm: React.FC = () => {
 							InputLabelProps={{
 								shrink: true,
 							}}
+							required
+							error={!date}
+							aria-describedby="date-error"
 						/>
 					</Box>
 					{/* Klockslag */}
@@ -137,6 +158,9 @@ const CreateActivityForm: React.FC = () => {
 							InputLabelProps={{
 								shrink: true,
 							}}
+							required
+							error={!time}
+							aria-describedby="time-error"
 						/>
 					</Box>
 					{/* Övrig information */}
@@ -167,6 +191,7 @@ const CreateActivityForm: React.FC = () => {
 				autoHideDuration={4000}
 				onClose={handleCloseSnackbar}
 				anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+				aria-live="assertive"
 			>
 				<Alert
 					onClose={handleCloseSnackbar}
