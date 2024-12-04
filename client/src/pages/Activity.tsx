@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import ActivitiesFiltered from "../components/ActivitiesFiltered";
 import CalenderActivities from "../components/CalendarActivities";
 import CreateActivityForm from "../components/CreateActivityForm";
+import Footer from "../components/Footer";
 import NavbarActivities from "../components/NavbarActivities";
 
 const Activity: React.FC = () => {
@@ -109,6 +110,7 @@ const Activity: React.FC = () => {
 					<Divider sx={{ marginBottom: 3 }} />
 					<CreateActivityForm />
 				</Box>
+				<Footer />
 			</Box>
 		</LocalizationProvider>
 	);
