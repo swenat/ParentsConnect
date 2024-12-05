@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
+import PhotoCardsHome from "../components/PhotoCardsHome";
 
 const Home: React.FC = () => {
 	return (
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
 				display: "flex",
 				flexDirection: "column",
 				minHeight: "100vh",
+				gap: 8,
 			}}
 		>
 			<NavbarHome />
@@ -20,7 +22,7 @@ const Home: React.FC = () => {
 					display: "flex",
 					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
-					padding: "32px",
+					paddingLeft: { xs: "5px", lg: "32px" },
 					gap: "32px",
 					boxSizing: "border-box",
 				}}
@@ -36,7 +38,6 @@ const Home: React.FC = () => {
 					}}
 				>
 					<Typography
-						variant="h2"
 						sx={{
 							outline: "none",
 							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
@@ -64,14 +65,40 @@ const Home: React.FC = () => {
 					aria-label="Bild-URL"
 					sx={{
 						width: { xs: "100%", md: "616px" },
-						height: "600px",
+						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mqY--x1-Rxu2UPMNYqqF44hTa1ODPb2U3o9HtTl52cy8sS0gKIIRejTbFVn5YfuSIg3Zsh3HedGIe4roau2jpwbgGeORzCv81JT4pR9a19X5vbcjLGjN4hPtv7vqTFAdx--PZqff2gTn993G2bcUmOcg1dEagC-rVEgD97mW-ZoBm-xbeII9tbz-TAQj0EHPmbJdoD_q7qsmOrXBNnp4HSm4X30b266pYL2kGoDcgW1g?encodeFailures=1&width=1024&height=1024')",
+							"url('https://am3pap004files.storage.live.com/y4mkQFNSJwi_tvVJTsWbeQD-nE_kaMdXHThfAq_fdgFrfioel2ROpdGRsxxcbl84MJh_c1PQW-ZcZ256vRPWamffglyFobkWGZ5NKf_fx6bKsmSX0yzG8nYR1Yyn4XWUC84Q3SIleQUgKhbhfIC4o1gox2_EETvEykp65pMmxcKgW3ZH8fmywONtNOMJqBnOEMWoz0vZyq0fETVSsgQwDNZddOf9hNMDa_Eat1hubl0c0Q?encodeFailures=1&width=1024&height=1024')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "8px",
 					}}
 				/>
+			</Box>
+			<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Typography
+					variant="h2"
+					sx={{
+						fontWeight: "bold",
+						fontSize: {
+							xs: "1.75rem",
+							sm: "2.25rem",
+							md: "2.375rem",
+						},
+						textAlign: { xs: "center", lg: "left" },
+						paddingBottom: "5px",
+					}}
+				>
+					Gemenskap 2024
+				</Typography>
+				<Box
+					sx={{
+						display: "flex",
+						alignItems: { xs: "center", md: "left" },
+						flexDirection: { xs: "column", md: "row" },
+					}}
+				>
+					<PhotoCardsHome />
+				</Box>
 			</Box>
 			{/* Footer-innehåll */}
 			<Footer />
