@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 					display: "flex",
 					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
-					padding: "32px",
+					paddingLeft: { xs: "5px", lg: "32px" },
 					gap: "32px",
 					boxSizing: "border-box",
 				}}
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
 					aria-label="Bild-URL"
 					sx={{
 						width: { xs: "100%", md: "616px" },
-						height: "600px",
+						height: "500px",
 						backgroundImage:
 							"url('https://am3pap004files.storage.live.com/y4mkQFNSJwi_tvVJTsWbeQD-nE_kaMdXHThfAq_fdgFrfioel2ROpdGRsxxcbl84MJh_c1PQW-ZcZ256vRPWamffglyFobkWGZ5NKf_fx6bKsmSX0yzG8nYR1Yyn4XWUC84Q3SIleQUgKhbhfIC4o1gox2_EETvEykp65pMmxcKgW3ZH8fmywONtNOMJqBnOEMWoz0vZyq0fETVSsgQwDNZddOf9hNMDa_Eat1hubl0c0Q?encodeFailures=1&width=1024&height=1024')",
 						backgroundSize: "cover",
@@ -75,11 +75,20 @@ const Home: React.FC = () => {
 					}}
 				/>
 			</Box>
-			<Box>
-				<Box>
-					<Typography variant="h5" textAlign={"left"} paddingBottom={2}>
-						Gemenskap 2024
-					</Typography>
+			<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Typography
+					variant="h5"
+					sx={{ textAlign: { xs: "center", lg: "left" } }}
+				>
+					Gemenskap 2024
+				</Typography>
+				<Box
+					sx={{
+						display: "flex",
+						alignItems: { xs: "center", md: "left" },
+						flexDirection: { xs: "column", md: "row" },
+					}}
+				>
 					<PhotoCardsHome />
 				</Box>
 			</Box>
