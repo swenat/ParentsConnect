@@ -38,7 +38,6 @@ const Home: React.FC = () => {
 					}}
 				>
 					<Typography
-						variant="h2"
 						sx={{
 							outline: "none",
 							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
@@ -77,8 +76,17 @@ const Home: React.FC = () => {
 			</Box>
 			<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 				<Typography
-					variant="h5"
-					sx={{ textAlign: { xs: "center", lg: "left" } }}
+					variant="h2"
+					sx={{
+						fontWeight: "bold",
+						fontSize: {
+							xs: "1.75rem",
+							sm: "2.25rem",
+							md: "2.375rem",
+						},
+						textAlign: { xs: "center", lg: "left" },
+						paddingBottom: "5px",
+					}}
 				>
 					Gemenskap 2024
 				</Typography>
