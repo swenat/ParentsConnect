@@ -1,4 +1,11 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+	Alert,
+	Box,
+	Button,
+	Snackbar,
+	TextField,
+	Typography,
+} from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -8,6 +15,12 @@ const RegisterUser: React.FC = () => {
 		email: "",
 		password: "",
 	});
+
+	const [openSnackbar, setOpenSnackbar] = useState(false);
+	const [snackbarMessage, setSnackbarMessage] = useState("");
+	const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">(
+		"success"
+	);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,9 +34,21 @@ const RegisterUser: React.FC = () => {
 				formData
 			);
 			console.log("User registered:", response.data);
+
+			setSnackbarMessage("Registreringen lyckades!");
+			setSnackbarSeverity("success");
+			setOpenSnackbar(true);
 		} catch (error) {
 			console.error("Registration error:", error);
+
+			setSnackbarMessage("Något gick fel vid registreringen.");
+			setSnackbarSeverity("error");
+			setOpenSnackbar(true);
 		}
+	};
+
+	const handleCloseSnackbar = () => {
+		setOpenSnackbar(false);
 	};
 
 	return (
@@ -107,6 +132,11 @@ const RegisterUser: React.FC = () => {
 					onChange={handleChange}
 					id="email"
 					aria-labelledby="email-label"
+					inputMode="email"
+					error={!formData.email.includes("@")} // Kontroll för fel
+					helperText={
+						!formData.email.includes("@") && "Ange en giltig e-postadress."
+					}
 				/>
 				<TextField
 					label="Lösenord"
@@ -130,6 +160,19 @@ const RegisterUser: React.FC = () => {
 					Registrera dig
 				</Button>
 			</Box>
+			<Snackbar
+				open={openSnackbar}
+				autoHideDuration={6000}
+				onClose={handleCloseSnackbar}
+			>
+				<Alert
+					onClose={handleCloseSnackbar}
+					severity={snackbarSeverity}
+					sx={{ width: "100%" }}
+				>
+					{snackbarMessage}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 };
