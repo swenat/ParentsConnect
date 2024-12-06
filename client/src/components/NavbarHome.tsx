@@ -5,8 +5,11 @@ import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const NavbarHome: React.FC = () => {
+	const navigate = useNavigate();
+
 	return (
 		<AppBar
 			position="static"
@@ -25,16 +28,34 @@ const NavbarHome: React.FC = () => {
 				</Box>
 
 				<Button
+					aria-label="Logga in"
 					sx={{
-						backgroundColor: "#493FFD",
+						backgroundColor: "#3126FD",
 						color: "white",
+						marginRight: "10px",
 						textTransform: "none",
+						borderRadius: "8px",
 						"&:hover": {
-							backgroundColor: "#362FCC",
+							backgroundColor: "#09028D",
 						},
 					}}
 				>
 					Logga in
+				</Button>
+				<Button
+					aria-label="Registrera dig"
+					onClick={() => navigate("/register")}
+					sx={{
+						backgroundColor: "#18C1E7",
+						color: "white",
+						textTransform: "none",
+						borderRadius: "8px",
+						"&:hover": {
+							backgroundColor: "#2BA5C1",
+						},
+					}}
+				>
+					Registrera dig
 				</Button>
 			</Toolbar>
 		</AppBar>
