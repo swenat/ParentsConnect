@@ -22,12 +22,32 @@ const RegisterUser: React.FC = () => {
 		"success"
 	);
 
+	const [errors, setErrors] = useState({
+		name: false,
+		email: false,
+		password: false,
+	});
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
+
+		setErrors((prev) => ({ ...prev, [e.target.name]: false }));
 	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+
+		const newErrors = {
+			name: formData.name === "",
+			email: !formData.email.includes("@"),
+			password: formData.password.length < 6,
+		};
+		setErrors(newErrors);
+
+		// Om det finns några fel, avbryt submit
+		if (Object.values(newErrors).includes(true)) {
+			return;
+		}
 		try {
 			const response = await axios.post(
 				"http://localhost:5000/api/users",
@@ -38,12 +58,27 @@ const RegisterUser: React.FC = () => {
 			setSnackbarMessage("Registreringen lyckades!");
 			setSnackbarSeverity("success");
 			setOpenSnackbar(true);
-		} catch (error) {
+		} catch (error: any) {
 			console.error("Registration error:", error);
 
-			setSnackbarMessage("Något gick fel vid registreringen.");
-			setSnackbarSeverity("error");
-			setOpenSnackbar(true);
+			if (error.response && error.response.status === 400) {
+				const backendErrors = error.response.data.errors || {};
+				setErrors({
+					name: !!backendErrors.name,
+					email: !!backendErrors.email,
+					password: !!backendErrors.password,
+				});
+				// Visa felmeddelanden i Snackbar om det behövs
+				setSnackbarMessage(
+					"Korrigera felen: Se till att namn och lösenord inte är tomma och ange en giltig e-postadress."
+				);
+				setSnackbarSeverity("error");
+				setOpenSnackbar(true);
+			} else {
+				setSnackbarMessage("Något gick fel vid registreringen.");
+				setSnackbarSeverity("error");
+				setOpenSnackbar(true);
+			}
 		}
 	};
 
@@ -120,6 +155,8 @@ const RegisterUser: React.FC = () => {
 					onChange={handleChange}
 					id="name"
 					aria-labelledby="name-label"
+					error={errors.name}
+					helperText={errors.name ? "Namn är obligatoriskt." : " "}
 				/>
 				<TextField
 					label="E-post"
@@ -150,6 +187,12 @@ const RegisterUser: React.FC = () => {
 					id="password"
 					aria-labelledby="password-label"
 					aria-describedby="password-helper"
+					error={errors.password}
+					helperText={
+						errors.password
+							? "Lösenord är obligatoriskt och måste vara minst 6 tecken långt."
+							: " "
+					}
 				/>
 				<Button
 					type="submit"
