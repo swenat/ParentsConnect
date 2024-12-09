@@ -52,4 +52,36 @@ router.get("/filter", async (req, res) => {
 	}
 });
 
+router.post("/attend/:id", async (req, res) => {
+	try {
+		const activityId = req.params.id;
+		const userId = req.body.userId; // Skicka användarens ID via request body
+
+		const activity = await Activity.findById(activityId);
+		if (!activity) {
+			return res.status(404).json({ error: "Activity not found" });
+		}
+
+		// Lägg till användarens ID i listan av anmälda (om de inte redan är anmälda)
+		if (!activity.attendees.includes(userId)) {
+			activity.attendees.push(userId);
+			await activity.save();
+		}
+
+		res
+			.status(200)
+			.json({
+				message: "User registered for activity",
+				attendees: activity.attendees.length,
+			});
+	} catch (error) {
+		// Typkontroll för att hantera 'error' säkert
+		if (error instanceof Error) {
+			res.status(500).json({ error: error.message });
+		} else {
+			res.status(500).json({ error: "An unknown error occurred" });
+		}
+	}
+});
+
 export default router;

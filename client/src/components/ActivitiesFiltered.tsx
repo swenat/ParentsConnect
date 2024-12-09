@@ -1,11 +1,14 @@
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ShareIcon from "@mui/icons-material/Share";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import {
+	Alert,
 	Box,
 	Card,
 	CardContent,
 	CardMedia,
 	IconButton,
+	Snackbar,
 	Typography,
 } from "@mui/material";
 import axios from "axios";
@@ -13,6 +16,9 @@ import React, { useEffect, useState } from "react";
 
 const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	const [activities, setActivities] = useState<any[]>([]);
+	const [openSnackbar, setOpenSnackbar] = useState(false);
+	const [snackbarMessage, setSnackbarMessage] = useState("");
+	const userId = "someUserId";
 
 	useEffect(() => {
 		let intervalId: ReturnType<typeof setInterval>;
@@ -33,13 +39,32 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 
 		if (date) {
 			fetchActivities(); // Initial fetch
-			intervalId = setInterval(fetchActivities, 5000); // Poll every 5 seconds to check for new activities
+			intervalId = setInterval(fetchActivities, 5000); // Every 5 seconds check for new activities
 		}
 
 		return () => {
-			clearInterval(intervalId); //Clear interval
+			clearInterval(intervalId);
 		};
 	}, [date]);
+
+	const handleThumbsUp = async (activityId: string) => {
+		try {
+			const response = await axios.post(
+				`http://localhost:5000/api/activities/attend/${activityId}`,
+				{ userId }
+			);
+			setSnackbarMessage(
+				`Du har anmält dig! Antal anmälda: ${response.data.attendees}`
+			);
+			setOpenSnackbar(true);
+		} catch (error) {
+			console.error("Failed to register user for activity", error);
+		}
+	};
+
+	const handleCloseSnackbar = () => {
+		setOpenSnackbar(false);
+	};
 
 	return (
 		<Box>
@@ -55,7 +80,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							display: "flex",
 							flexDirection: "column",
 							gap: 2,
-							width: 300, // Justera bredden på korten om nödvändigt
+							width: 350,
 						}}
 					>
 						{/* Bild för aktiviteten */}
@@ -82,14 +107,30 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							</Typography>
 							{/* Övrig information */}
 							<Typography variant="body2">{activity.otherInfo}</Typography>
+							{/* Antal anmälda */}
+							<Typography variant="body2" color="text.secondary">
+								<b>Antal anmälda: </b>
+								{activity.attendees?.length || 0}
+							</Typography>
 							{/* Ikoner för Share och Bookmark */}
 							<Box
 								sx={{
 									display: "flex",
-									justifyContent: "flex-end",
-									marginTop: 2,
+									justifyContent: "center",
+									marginTop: 5,
 								}}
 							>
+								<IconButton
+									color="primary"
+									aria-label="Anmäl dig till aktivitet"
+									onClick={() => handleThumbsUp(activity._id)}
+								>
+									<ThumbUpIcon />
+								</IconButton>
+								{/* Texten "Anmäl dig" under ikonen */}
+								<Typography variant="body2" sx={{ marginTop: 1 }}>
+									Anmäl dig
+								</Typography>
 								<IconButton
 									color="primary"
 									aria-label="Dela aktiviteten"
@@ -97,18 +138,35 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								>
 									<ShareIcon />
 								</IconButton>
+								<Typography variant="body2" sx={{ marginTop: 1 }}>
+									Dela aktivitet
+								</Typography>
 								<IconButton
 									color="secondary"
-									aria-label="Bokmärk aktiviteten"
-									onClick={() => console.log("Bokmärk aktiviteten")}
+									aria-label="Spara denna aktivitet"
+									onClick={() => console.log("Spara denna aktivitet")}
 								>
 									<BookmarkIcon />
 								</IconButton>
+								<Typography variant="body2" sx={{ marginTop: 1 }}>
+									Spara aktivitet
+								</Typography>
 							</Box>
 						</CardContent>
 					</Card>
 				))
 			)}
+			{/* Snackbar for notification */}
+			<Snackbar
+				open={openSnackbar}
+				autoHideDuration={6000}
+				onClose={handleCloseSnackbar}
+				aria-live="assertive"
+			>
+				<Alert onClose={handleCloseSnackbar} severity="success">
+					{snackbarMessage}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 };

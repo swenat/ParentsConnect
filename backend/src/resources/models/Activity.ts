@@ -7,6 +7,7 @@ interface IActivity extends Document {
 	date: string;
 	time: string;
 	otherInfo?: string;
+	attendees: string[];
 }
 
 const ActivitySchema: Schema = new Schema(
@@ -27,6 +28,7 @@ const ActivitySchema: Schema = new Schema(
 		date: { type: String, required: true },
 		time: { type: String, required: true },
 		otherInfo: { type: String },
+		attendees: { type: [String], default: [] },
 	},
 	{ timestamps: true }
 );
