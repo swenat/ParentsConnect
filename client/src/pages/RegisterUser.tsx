@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RegisterUser: React.FC = () => {
 	const [formData, setFormData] = useState({
@@ -27,6 +28,8 @@ const RegisterUser: React.FC = () => {
 		email: false,
 		password: false,
 	});
+
+	const navigate = useNavigate();
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -55,9 +58,13 @@ const RegisterUser: React.FC = () => {
 			);
 			console.log("User registered:", response.data);
 
-			setSnackbarMessage("Registreringen lyckades!");
+			setSnackbarMessage("Registreringen lyckades! Vad god logga in");
 			setSnackbarSeverity("success");
 			setOpenSnackbar(true);
+
+			setTimeout(() => {
+				navigate("/");
+			}, 2000);
 		} catch (error: any) {
 			console.error("Registration error:", error);
 
