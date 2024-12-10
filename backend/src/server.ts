@@ -1,3 +1,4 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
@@ -12,6 +13,14 @@ const port = 5000;
 
 // Middleware och andra inställningar
 app.use(express.json());
+
+app.use(
+	cors({
+		origin: "http://localhost:5173", //Tillåter frontenden
+		methods: ["GET", "POST", "PUT", "DELETE"], // Tillåtna metoderna
+		credentials: true, // Om cookies eller autentisering används
+	})
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/activities", activityRoutes);

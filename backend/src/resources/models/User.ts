@@ -7,9 +7,14 @@ interface IUser extends Document {
 }
 
 const UserSchema = new Schema<IUser>({
-	name: { type: String, required: true },
-	email: { type: String, required: true, unique: true },
-	password: { type: String, required: true },
+	name: { type: String, required: [true, "Name is required"] },
+	email: {
+		type: String,
+		required: [true, "Email is required"],
+		unique: true,
+		match: [/\S+@\S+\.\S+/, "Please enter a valid email address"],
+	},
+	password: { type: String, required: [true, "Password is required"] },
 });
 
 const User = mongoose.model<IUser>("User", UserSchema);

@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.use(cors({ origin: "http://localhost:5173" }));
 
+// Skapar en aktivitet
 router.post("/", async (req, res) => {
 	try {
 		const { activityname, imageUrl, location, date, time, otherInfo } =
@@ -29,6 +30,7 @@ router.post("/", async (req, res) => {
 	}
 });
 
+// Hämtar alla aktiviteter
 router.get("/", async (req, res) => {
 	try {
 		const activities = await Activity.find();
@@ -40,6 +42,7 @@ router.get("/", async (req, res) => {
 	}
 });
 
+// Filtrerar aktiviteter baserat på datum
 router.get("/filter", async (req, res) => {
 	try {
 		const { date } = req.query;
@@ -49,6 +52,37 @@ router.get("/filter", async (req, res) => {
 		const errorMessage =
 			error instanceof Error ? error.message : "An unknown error occurred";
 		res.status(500).json({ error: errorMessage });
+	}
+});
+
+// Lägger till en användare till en aktivitets deltagarlista
+router.post("/attend/:id", async (req, res) => {
+	try {
+		const activityId = req.params.id;
+		const userId = req.body.userId; // Skicka användarens ID via request body
+
+		const activity = await Activity.findById(activityId);
+		if (!activity) {
+			return res.status(404).json({ error: "Activity not found" });
+		}
+
+		// Lägg till användarens ID i listan av anmälda (om de inte redan är anmälda)
+		if (!activity.attendees.includes(userId)) {
+			activity.attendees.push(userId);
+			await activity.save();
+		}
+
+		res.status(200).json({
+			message: "User registered for activity",
+			attendees: activity.attendees.length,
+		});
+	} catch (error) {
+		// Typkontroll för att hantera 'error' säkert
+		if (error instanceof Error) {
+			res.status(500).json({ error: error.message });
+		} else {
+			res.status(500).json({ error: "An unknown error occurred" });
+		}
 	}
 });
 
