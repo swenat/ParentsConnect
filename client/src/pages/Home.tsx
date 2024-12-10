@@ -3,6 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
 import PhotoCardsHome from "../components/PhotoCardsHome";
+import RegisterInfo from "../components/RegisterInfo";
 
 const Home: React.FC = () => {
 	return (
@@ -73,6 +74,38 @@ const Home: React.FC = () => {
 						borderRadius: "8px",
 					}}
 				/>
+			</Box>
+			<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Typography variant="body1">Anslutning</Typography>
+				<Typography
+					variant="h2"
+					sx={{
+						fontWeight: "bold",
+						fontSize: {
+							xs: "1.75rem",
+							sm: "2.25rem",
+							md: "2.375rem",
+						},
+						textAlign: { xs: "center", lg: "left" },
+						paddingBottom: "5px",
+					}}
+				>
+					Så här använder du vår applikation
+				</Typography>
+				<Typography sx={{ paddingBottom: "50px" }}>
+					Vår sida är fylld av roliga aktiviteter att gå med i men först behöver
+					du följa stegen nedan
+				</Typography>
+
+				<Box
+					sx={{
+						display: "flex",
+						alignItems: { xs: "center", md: "left" },
+						flexDirection: { xs: "column", md: "row" },
+					}}
+				>
+					<RegisterInfo />
+				</Box>
 			</Box>
 			<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 				<Typography
