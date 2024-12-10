@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavbarActivities: React.FC = () => {
 	return (
@@ -23,9 +24,12 @@ const NavbarActivities: React.FC = () => {
 		>
 			<Toolbar>
 				<Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-					<Typography variant="h6" component="div">
-						ParentsConnect
-					</Typography>
+					{/* Använd Link-komponenten för navigering */}
+					<Link to="/" style={{ textDecoration: "none" }}>
+						<Typography variant="h6" component="div">
+							ParentsConnect
+						</Typography>
+					</Link>
 				</Box>
 				{/* Länkar */}
 				<Box sx={{ display: "flex", gap: 3 }}>
