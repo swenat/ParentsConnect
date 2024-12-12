@@ -92,7 +92,11 @@ const CreateActivityForm: React.FC = () => {
 
 	return (
 		<Box sx={{ maxWidth: 600, margin: "0", padding: 0 }}>
-			<Typography variant="h4" gutterBottom>
+			<Typography
+				variant="h4"
+				gutterBottom
+				aria-labelledby="create-activity-title"
+			>
 				Skapa en aktivitet
 			</Typography>
 			<Typography variant="body1" sx={{ marginBottom: 2 }}>
