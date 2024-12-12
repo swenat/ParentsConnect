@@ -23,8 +23,11 @@ const CreateActivityForm: React.FC = () => {
 		"success"
 	);
 
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
+		setIsSubmitted(true);
 
 		if (!activityname || !imageUrl || !location || !date || !time) {
 			setSnackbarMessage("Alla obligatoriska fält måste fyllas i!");
@@ -49,7 +52,11 @@ const CreateActivityForm: React.FC = () => {
 			});
 
 			if (!response.ok) {
-				throw new Error("Failed to create activity");
+				const errorData = await response.json();
+				const errorMessage = Array.isArray(errorData.error)
+					? errorData.error.join("\n")
+					: errorData.error || "Failed to create activity";
+				throw new Error(errorMessage);
 			}
 
 			const result = await response.json();
@@ -66,10 +73,18 @@ const CreateActivityForm: React.FC = () => {
 			setDate("");
 			setTime("");
 			setOtherInfo("");
-		} catch (error) {
+			setIsSubmitted(false);
+		} catch (error: any) {
 			console.error("Error creating activity:", error);
+			setSnackbarMessage(
+				error.message || "Något gick fel vid skapandet av aktiviteten."
+			);
+			setSnackbarSeverity("error");
+			setSnackbarOpen(true);
 		}
 	};
+
+	const getFieldError = (value: string) => isSubmitted && !value;
 
 	const handleCloseSnackbar = () => {
 		setSnackbarOpen(false);
@@ -97,8 +112,8 @@ const CreateActivityForm: React.FC = () => {
 							value={activityname}
 							onChange={(e) => setActivityName(e.target.value)}
 							required
-							error={!activityname}
-							aria-invalid={!activityname}
+							error={getFieldError(activityname)}
+							aria-invalid={getFieldError(activityname)}
 							aria-describedby="activityname-error"
 						/>
 					</Box>
@@ -112,7 +127,7 @@ const CreateActivityForm: React.FC = () => {
 							value={imageUrl}
 							onChange={(e) => setImageUrl(e.target.value)}
 							required
-							error={!imageUrl}
+							error={getFieldError(imageUrl)}
 							aria-describedby="imageurl-error"
 						/>
 					</Box>
@@ -126,7 +141,7 @@ const CreateActivityForm: React.FC = () => {
 							value={location}
 							onChange={(e) => setLocation(e.target.value)}
 							required
-							error={!location}
+							error={getFieldError(location)}
 							aria-describedby="location-error"
 						/>
 					</Box>
@@ -142,7 +157,7 @@ const CreateActivityForm: React.FC = () => {
 								shrink: true,
 							}}
 							required
-							error={!date}
+							error={getFieldError(date)}
 							aria-describedby="date-error"
 						/>
 					</Box>
@@ -159,7 +174,7 @@ const CreateActivityForm: React.FC = () => {
 								shrink: true,
 							}}
 							required
-							error={!time}
+							error={getFieldError(time)}
 							aria-describedby="time-error"
 						/>
 					</Box>
