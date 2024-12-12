@@ -30,13 +30,13 @@ const NavbarHome: React.FC = () => {
 				<Button
 					aria-label="Logga in"
 					sx={{
-						backgroundColor: "#3126FD",
+						backgroundColor: "#275D4A",
 						color: "white",
 						marginRight: "10px",
 						textTransform: "none",
 						borderRadius: "8px",
 						"&:hover": {
-							backgroundColor: "#09028D",
+							backgroundColor: "#172C24",
 						},
 					}}
 				>
@@ -46,12 +46,12 @@ const NavbarHome: React.FC = () => {
 					aria-label="Registrera dig"
 					onClick={() => navigate("/register")}
 					sx={{
-						backgroundColor: "#18C1E7",
+						backgroundColor: "#0A5D70",
 						color: "white",
 						textTransform: "none",
 						borderRadius: "8px",
 						"&:hover": {
-							backgroundColor: "#2BA5C1",
+							backgroundColor: "#052A33",
 						},
 					}}
 				>

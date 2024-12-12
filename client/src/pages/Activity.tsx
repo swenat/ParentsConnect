@@ -7,6 +7,7 @@ import CalenderActivities from "../components/CalendarActivities";
 import CreateActivityForm from "../components/CreateActivityForm";
 import Footer from "../components/Footer";
 import NavbarActivities from "../components/NavbarActivities";
+import PhotoCardsActivity from "../components/PhotoCardsActivity";
 
 const Activity: React.FC = () => {
 	const [selectedDate, setSelectedDate] = useState("");
@@ -27,7 +28,7 @@ const Activity: React.FC = () => {
 						display: "flex",
 						flexDirection: { xs: "column", md: "row" },
 						gap: 5,
-						marginBottom: 3,
+						marginTop: "15px",
 					}}
 				>
 					{/* Kalendersektionen */}
@@ -42,6 +43,7 @@ const Activity: React.FC = () => {
 							bgcolor: "#ffffff",
 							borderRadius: 2,
 							textAlign: "left",
+							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 						aria-labelledby="calendar-title"
 					>
@@ -91,24 +93,40 @@ const Activity: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "flex-start",
+						paddingLeft: { xs: "5px", lg: "32px" },
 					}}
-					aria-labelledby="create-activity-title"
 				>
-					<Typography
-						id="create-activity-title"
-						variant="h5"
-						sx={{ fontSize: "32px", marginBottom: 2 }}
-					>
-						Skapa en ny aktivitet
-					</Typography>
-					<Typography
-						variant="body1"
-						sx={{ fontSize: "18px", marginBottom: 3 }}
-					>
-						Fyll i formuläret nedan för att skapa en ny aktivitet.
-					</Typography>
 					<Divider sx={{ marginBottom: 3 }} />
+				</Box>
+				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 					<CreateActivityForm />
+				</Box>
+				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+					<Typography
+						variant="h2"
+						sx={{
+							fontWeight: "bold",
+							fontSize: {
+								xs: "1.75rem",
+								sm: "2.25rem",
+								md: "2.375rem",
+							},
+							textAlign: { xs: "center", lg: "left" },
+							paddingBottom: "5px",
+							marginTop: "55px",
+						}}
+					>
+						Gemenskap 2024
+					</Typography>
+					<Box
+						sx={{
+							display: "flex",
+							alignItems: { xs: "center", md: "left" },
+							flexDirection: { xs: "column", md: "row" },
+						}}
+					>
+						<PhotoCardsActivity />
+					</Box>
 				</Box>
 				<Footer />
 			</Box>

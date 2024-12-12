@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
-const PhotoCardsHome: React.FC = () => {
+const PhotoCardsActivity: React.FC = () => {
 	return (
 		<Box
 			sx={{
@@ -75,4 +75,4 @@ const PhotoCardsHome: React.FC = () => {
 	);
 };
 
-export default PhotoCardsHome;
+export default PhotoCardsActivity;
