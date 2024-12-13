@@ -6,6 +6,7 @@ import ActivitiesFiltered from "../components/ActivitiesFiltered";
 import CalenderActivities from "../components/CalendarActivities";
 import CreateActivityForm from "../components/CreateActivityForm";
 import Footer from "../components/Footer";
+import GalleryComponent from "../components/GalleryComponent";
 import NavbarActivities from "../components/NavbarActivities";
 import PhotoCardsActivity from "../components/PhotoCardsActivity";
 
@@ -80,27 +81,51 @@ const Activity: React.FC = () => {
 						<ActivitiesFiltered date={selectedDate} />
 					</Box>
 				</Box>
-				{/* Formulärsektion */}
+				{/* Formulär och Galleri sektion */}
 				<Box
-					component="section"
 					sx={{
 						marginTop: 6,
+						display: "flex",
+						flexDirection: { xs: "column", md: "row" },
+						gap: 3,
 						padding: 2,
 						bgcolor: "#ffffff",
 						borderRadius: 2,
-						maxWidth: "800px",
-						flex: 1,
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "flex-start",
-						paddingLeft: { xs: "5px", lg: "32px" },
 					}}
 				>
-					<Divider sx={{ marginBottom: 3 }} />
+					{/* Formulärsektionen */}
+					<Box
+						sx={{
+							flex: 1,
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							paddingLeft: { xs: "5px", lg: "32px" },
+						}}
+					>
+						<CreateActivityForm />
+					</Box>
+					{/* Galleri-sektionen */}
+					<Box
+						sx={{
+							flex: 1,
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							paddingLeft: { xs: "5px", lg: "32px" },
+						}}
+					>
+						<Typography
+							variant="h5"
+							gutterBottom
+							aria-labelledby="gallery-activity-title"
+						>
+							Tips på aktiviteter att skapa
+						</Typography>
+						<GalleryComponent />
+					</Box>
 				</Box>
-				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
-					<CreateActivityForm />
-				</Box>
+
 				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 					<Typography
 						variant="h2"
