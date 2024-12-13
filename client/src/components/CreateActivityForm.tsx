@@ -197,7 +197,12 @@ const CreateActivityForm: React.FC = () => {
 					</Box>
 					{/* Skicka-knapp */}
 					<Box>
-						<Button type="submit" variant="contained" color="primary" fullWidth>
+						<Button
+							type="submit"
+							variant="contained"
+							fullWidth
+							sx={{ backgroundColor: "#0A5D70" }}
+						>
 							Skapa aktivitet
 						</Button>
 					</Box>

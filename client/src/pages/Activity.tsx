@@ -57,7 +57,7 @@ const Activity: React.FC = () => {
 							Klicka dig in på kalendern för att se vilka aktiviteter som finns
 							närmaste tiden
 						</Typography>
-						<Divider sx={{ marginBottom: 3 }} />
+						<Divider sx={{ marginBottom: 3, backgroundColor: "#54B694" }} />
 						<CalenderActivities onDateChange={setSelectedDate} />
 					</Box>
 					{/* Aktiviteter */}
@@ -79,7 +79,9 @@ const Activity: React.FC = () => {
 						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
 							Filtrerade aktiviteter
 						</Typography>
-						<Divider sx={{ marginBottom: 3, width: "80%" }} />
+						<Divider
+							sx={{ marginBottom: 3, width: "80%", backgroundColor: "#54B694" }}
+						/>
 						<ActivitiesFiltered date={selectedDate} />
 					</Box>
 				</Box>
