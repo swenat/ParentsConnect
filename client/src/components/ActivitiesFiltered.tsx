@@ -80,7 +80,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							display: "flex",
 							flexDirection: "column",
 							gap: 2,
-							width: "350px",
+							width: { xs: "200px", md: "350px" },
 							padding: "5px",
 						}}
 					>
@@ -118,6 +118,8 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 									display: "flex",
 									justifyContent: "center",
 									marginTop: 5,
+									flexDirection: { xs: "column", md: "row" },
+									textAlign: { xs: "center" },
 								}}
 							>
 								<IconButton
@@ -136,7 +138,11 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 									aria-label="Dela aktiviteten"
 									onClick={() => console.log("Dela aktiviteten")}
 								>
-									<ShareIcon />
+									<ShareIcon
+										sx={{
+											fontSize: { xs: "1.5rem", md: "2rem" },
+										}}
+									/>
 								</IconButton>
 								<Typography variant="body2" sx={{ marginTop: 1 }}>
 									Dela aktivitet
@@ -145,8 +151,15 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 									color="secondary"
 									aria-label="Spara denna aktivitet"
 									onClick={() => console.log("Spara denna aktivitet")}
+									sx={{
+										fontSize: { xs: "1.2rem", md: "1.5rem" },
+									}}
 								>
-									<BookmarkIcon />
+									<BookmarkIcon
+										sx={{
+											fontSize: { xs: "1.5rem", md: "2rem" },
+										}}
+									/>
 								</IconButton>
 								<Typography variant="body2" sx={{ marginTop: 1 }}>
 									Spara aktivitet

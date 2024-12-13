@@ -30,6 +30,7 @@ const Activity: React.FC = () => {
 						flexDirection: { xs: "column", md: "row" },
 						gap: 5,
 						marginTop: "15px",
+						padding: { xs: 2, sm: 3 },
 					}}
 				>
 					{/* Kalendersektionen */}
@@ -45,6 +46,7 @@ const Activity: React.FC = () => {
 							borderRadius: 2,
 							textAlign: "left",
 							paddingLeft: { xs: "5px", lg: "32px" },
+							width: "100%",
 						}}
 						aria-labelledby="calendar-title"
 					>
@@ -69,10 +71,10 @@ const Activity: React.FC = () => {
 							padding: 2,
 							bgcolor: "#ffffff",
 							borderRadius: 2,
+							width: "100%",
 						}}
 						aria-labelledby="filtered-activities-title"
 					>
-						{" "}
 						{/* Rubrik och avdelare */}
 						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
 							Filtrerade aktiviteter
