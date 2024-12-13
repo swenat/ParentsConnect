@@ -80,13 +80,13 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							display: "flex",
 							flexDirection: "column",
 							gap: 2,
-							width: 350,
+							width: "350px",
+							padding: "5px",
 						}}
 					>
 						{/* Bild för aktiviteten */}
 						<CardMedia
 							component="img"
-							height="140"
 							image={activity.imageUrl}
 							alt={`Bild av ${activity.activityname}`}
 						/>

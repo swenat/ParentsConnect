@@ -51,7 +51,7 @@ const GalleryComponent: React.FC = () => {
 				<Card key={index} sx={{ height: "100%" }}>
 					<CardMedia
 						component="img"
-						width="300px"
+						width="300"
 						height="200"
 						image={image.src}
 						alt={image.title}
