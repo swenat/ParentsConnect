@@ -67,7 +67,7 @@ const Activity: React.FC = () => {
 							flex: 1,
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "flex-start",
+							alignItems: { xs: "center", md: "flex-start" },
 							padding: 2,
 							bgcolor: "#ffffff",
 							borderRadius: 2,
@@ -103,7 +103,7 @@ const Activity: React.FC = () => {
 							flex: 1,
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "flex-start",
+							alignItems: { xs: "center", md: "flex-start" },
 							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>

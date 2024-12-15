@@ -67,7 +67,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	};
 
 	return (
-		<Box>
+		<Box sx={{ justifyContent: { xs: "center" } }}>
 			<Typography variant="h6">Valt datum: {date || "valt datum"}</Typography>
 			{activities.length === 0 ? (
 				<Typography>Inga aktiviteter för detta datum.</Typography>
