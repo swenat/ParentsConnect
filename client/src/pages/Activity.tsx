@@ -119,14 +119,10 @@ const Activity: React.FC = () => {
 							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>
-						<Typography
-							variant="h5"
-							gutterBottom
-							aria-labelledby="gallery-activity-title"
-						>
+						<Typography variant="h5" gutterBottom id="activity-examples">
 							Tips på aktiviteter att skapa
 						</Typography>
-						<GalleryComponent />
+						<GalleryComponent aria-labbeledby="activity-examples" />
 					</Box>
 				</Box>
 
