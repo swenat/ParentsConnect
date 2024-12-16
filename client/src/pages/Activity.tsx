@@ -55,7 +55,7 @@ const Activity: React.FC = () => {
 						</Typography>
 						<Typography variant="body1" sx={{ fontSize: "18px", marginTop: 3 }}>
 							Klicka dig in på kalendern för att se vilka aktiviteter som finns
-							närmaste tiden
+							den närmaste tiden
 						</Typography>
 						<Divider sx={{ marginBottom: 3, backgroundColor: "#54B694" }} />
 						<CalenderActivities onDateChange={setSelectedDate} />
