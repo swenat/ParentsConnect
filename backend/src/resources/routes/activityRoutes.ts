@@ -11,6 +11,15 @@ router.post("/", async (req, res) => {
 	try {
 		const { activityname, imageUrl, location, date, time, otherInfo } =
 			req.body;
+
+		const selectedDate = new Date(date);
+		const currentDate = new Date();
+		currentDate.setHours(0, 0, 0, 0); // Jämför endast datum (inte tid)
+
+		if (selectedDate < currentDate) {
+			return res.status(400).json({ error: "Datumet måste vara i framtiden." });
+		}
+
 		const newActivity = new Activity({
 			activityname,
 			imageUrl,
