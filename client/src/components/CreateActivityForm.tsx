@@ -8,6 +8,14 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
+const isFutureDate = (date: string) => {
+	const selectedDate = new Date(date);
+	const currentDate = new Date();
+	// Sätter tiden till midnatt för att endast jämföra datum
+	currentDate.setHours(0, 0, 0, 0);
+	return selectedDate >= currentDate;
+};
+
 const CreateActivityForm: React.FC = () => {
 	// State för att hantera formulärvärden
 	const [activityname, setActivityName] = useState("");
@@ -31,6 +39,13 @@ const CreateActivityForm: React.FC = () => {
 
 		if (!activityname || !imageUrl || !location || !date || !time) {
 			setSnackbarMessage("Alla obligatoriska fält måste fyllas i!");
+			setSnackbarSeverity("error");
+			setSnackbarOpen(true);
+			return;
+		}
+
+		if (!isFutureDate(date)) {
+			setSnackbarMessage("Datumet måste vara i framtiden.");
 			setSnackbarSeverity("error");
 			setSnackbarOpen(true);
 			return;
@@ -154,7 +169,7 @@ const CreateActivityForm: React.FC = () => {
 							aria-labelledby="activity-place-label"
 						/>
 					</Box>
-					<Box>
+					<Box sx={{ position: "relative" }}>
 						<Typography id="activity-date-label">Datum</Typography>
 						<TextField
 							label="Ange aktivitetens datum"
@@ -163,12 +178,12 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={date}
 							onChange={(e) => setDate(e.target.value)}
-							InputLabelProps={{
-								shrink: true,
-							}}
 							required
 							error={getFieldError(date)}
 							aria-labelledby="activity-date-label"
+							InputLabelProps={{
+								shrink: true,
+							}}
 						/>
 					</Box>
 					{/* Klockslag */}
@@ -181,12 +196,12 @@ const CreateActivityForm: React.FC = () => {
 							fullWidth
 							value={time}
 							onChange={(e) => setTime(e.target.value)}
-							InputLabelProps={{
-								shrink: true,
-							}}
 							required
 							error={getFieldError(time)}
 							aria-labelledby="activity-time-label"
+							InputLabelProps={{
+								shrink: true,
+							}}
 						/>
 					</Box>
 					{/* Övrig information */}
