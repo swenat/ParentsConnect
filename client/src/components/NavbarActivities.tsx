@@ -1,17 +1,27 @@
 // src/components/NavbarHome.tsx
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavbarActivities: React.FC = () => {
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const open = Boolean(anchorEl);
+
+	const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleMenuClose = () => {
+		setAnchorEl(null);
+	};
+
 	return (
 		<AppBar
 			position="static"
@@ -22,56 +32,82 @@ const NavbarActivities: React.FC = () => {
 				borderBottom: "1px solid #e0e0e0",
 			}}
 		>
-			<Toolbar>
+			<Toolbar
+				sx={{
+					display: "flex",
+					flexDirection: { xs: "column", md: "row" },
+					alignItems: "center",
+					justifyContent: "space-between",
+					padding: { xs: 1, sm: 2 },
+				}}
+			>
 				<Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-					{/* Använd Link-komponenten för navigering */}
 					<Link to="/" style={{ textDecoration: "none" }}>
-						<Typography variant="h6" component="div">
+						<Typography
+							variant="h6"
+							component="div"
+							sx={{ fontSize: { xs: "1rem", md: "1.5rem" }, color: "#0A5D70" }}
+						>
 							ParentsConnect
 						</Typography>
 					</Link>
 				</Box>
 				{/* Länkar */}
-				<Box sx={{ display: "flex", gap: 3 }}>
-					<Button sx={{ textTransform: "none" }}>Aktiviteter Hemma</Button>
-					<Button sx={{ textTransform: "none" }}>Föräldraforum</Button>
-					<Button sx={{ textTransform: "none" }}>Produkter & Rabatter</Button>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: { xs: "column", md: "row" },
+						alignItems: { xs: "flex-start", md: "center" },
+						gap: { xs: 1, md: 3 },
+						mt: { xs: 2, md: 0 },
+					}}
+				>
+					<Button
+						sx={{ textTransform: "none", color: "#0A5D70" }}
+						aria-label="Visa aktiviteter hemma"
+					>
+						Aktiviteter Hemma
+					</Button>
+					<Button
+						sx={{ textTransform: "none", color: "#0A5D70" }}
+						aria-label="Visa Föräldraforum"
+					>
+						Föräldraforum
+					</Button>
+					<Button
+						sx={{ textTransform: "none", color: "#0A5D70" }}
+						aria-label="Visa Produkter och Rabatter"
+					>
+						Produkter & Rabatter
+					</Button>
 
 					{/* Mer information med Accordion */}
-					<Accordion
-						sx={{
-							display: "inline-block",
-							boxShadow: "none",
-							width: "auto",
-							margin: 0,
-							backgroundColor: "transparent",
+					<Button
+						sx={{ textTransform: "none", color: "#0A5D70" }}
+						aria-controls={open ? "more-info-menu" : undefined}
+						aria-haspopup="true"
+						aria-expanded={open ? "true" : undefined}
+						onClick={handleMenuOpen}
+						endIcon={<ExpandMoreIcon />}
+					>
+						Mer information
+					</Button>
+					<Menu
+						id="more-info-menu"
+						anchorEl={anchorEl}
+						open={open}
+						onClose={handleMenuClose}
+						MenuListProps={{
+							"aria-labelledby": "more-info-button",
 						}}
 					>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon />}
-							aria-controls="panel1a-content"
-							id="panel1a-header"
-							sx={{ padding: 0 }}
-						>
-							<Button sx={{ textTransform: "none" }}>Mer information</Button>
-						</AccordionSummary>
-						<AccordionDetails sx={{ padding: "8px 16px" }}>
-							<Box>
-								<Button
-									sx={{
-										textTransform: "none",
-										display: "block",
-										marginBottom: 1,
-									}}
-								>
-									Kontakta oss
-								</Button>
-								<Button sx={{ textTransform: "none", display: "block" }}>
-									Användartips
-								</Button>
-							</Box>
-						</AccordionDetails>
-					</Accordion>
+						<MenuItem onClick={handleMenuClose} sx={{ color: "#0A5D70" }}>
+							Kontakta oss
+						</MenuItem>
+						<MenuItem onClick={handleMenuClose} sx={{ color: "#0A5D70" }}>
+							Användartips
+						</MenuItem>
+					</Menu>
 				</Box>
 			</Toolbar>
 		</AppBar>

@@ -30,6 +30,7 @@ const Activity: React.FC = () => {
 						flexDirection: { xs: "column", md: "row" },
 						gap: 5,
 						marginTop: "15px",
+						padding: { xs: 2, sm: 3 },
 					}}
 				>
 					{/* Kalendersektionen */}
@@ -39,12 +40,13 @@ const Activity: React.FC = () => {
 							flex: 1,
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "flex-start",
+							alignItems: { xs: "center", md: "flex-start" },
 							padding: 2,
 							bgcolor: "#ffffff",
 							borderRadius: 2,
 							textAlign: "left",
 							paddingLeft: { xs: "5px", lg: "32px" },
+							width: "100%",
 						}}
 						aria-labelledby="calendar-title"
 					>
@@ -53,9 +55,9 @@ const Activity: React.FC = () => {
 						</Typography>
 						<Typography variant="body1" sx={{ fontSize: "18px", marginTop: 3 }}>
 							Klicka dig in på kalendern för att se vilka aktiviteter som finns
-							närmaste tiden
+							den närmaste tiden
 						</Typography>
-						<Divider sx={{ marginBottom: 3 }} />
+						<Divider sx={{ marginBottom: 3, backgroundColor: "#54B694" }} />
 						<CalenderActivities onDateChange={setSelectedDate} />
 					</Box>
 					{/* Aktiviteter */}
@@ -65,19 +67,21 @@ const Activity: React.FC = () => {
 							flex: 1,
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "flex-start",
+							alignItems: { xs: "center", md: "flex-start" },
 							padding: 2,
 							bgcolor: "#ffffff",
 							borderRadius: 2,
+							width: "100%",
 						}}
 						aria-labelledby="filtered-activities-title"
 					>
-						{" "}
 						{/* Rubrik och avdelare */}
 						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
 							Filtrerade aktiviteter
 						</Typography>
-						<Divider sx={{ marginBottom: 3, width: "80%" }} />
+						<Divider
+							sx={{ marginBottom: 3, width: "80%", backgroundColor: "#54B694" }}
+						/>
 						<ActivitiesFiltered date={selectedDate} />
 					</Box>
 				</Box>
@@ -99,7 +103,7 @@ const Activity: React.FC = () => {
 							flex: 1,
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "flex-start",
+							alignItems: { xs: "center", md: "flex-start" },
 							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>
@@ -115,14 +119,10 @@ const Activity: React.FC = () => {
 							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>
-						<Typography
-							variant="h5"
-							gutterBottom
-							aria-labelledby="gallery-activity-title"
-						>
+						<Typography variant="h5" gutterBottom id="activity-examples">
 							Tips på aktiviteter att skapa
 						</Typography>
-						<GalleryComponent />
+						<GalleryComponent aria-labbeledby="activity-examples" />
 					</Box>
 				</Box>
 

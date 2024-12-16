@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 				padding: "20px 0",
 				display: "flex",
 				flexDirection: "column",
-				marginTop: "auto",
+				marginTop: "20px",
 				borderTop: "1px solid #ddd",
 				overflowX: "hidden",
 			}}

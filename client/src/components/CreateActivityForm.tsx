@@ -92,11 +92,7 @@ const CreateActivityForm: React.FC = () => {
 
 	return (
 		<Box sx={{ maxWidth: 600, margin: "0", padding: 0 }}>
-			<Typography
-				variant="h5"
-				gutterBottom
-				aria-labelledby="create-activity-title"
-			>
+			<Typography variant="h5" gutterBottom aria-label="create-activity">
 				Skapa en aktivitet
 			</Typography>
 			<Typography variant="body1" sx={{ marginBottom: 2 }}>
@@ -108,8 +104,10 @@ const CreateActivityForm: React.FC = () => {
 				<Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
 					{/* Aktivitetsnamn */}
 					<Box>
+						<Typography id="activity-name-label">Aktivitetsnamn</Typography>
 						<TextField
-							label="Aktivitetsnamn"
+							aria-labelledby="activity-name-label"
+							label="Ange namn på aktiviteten"
 							placeholder="Döp din aktivitet, t.ex. 'barnvagnspromenad'"
 							variant="outlined"
 							fullWidth
@@ -118,27 +116,34 @@ const CreateActivityForm: React.FC = () => {
 							required
 							error={getFieldError(activityname)}
 							aria-invalid={getFieldError(activityname)}
-							aria-describedby="activityname-error"
 						/>
 					</Box>
 					{/* Plats för bild */}
 					<Box>
 						<TextField
-							label="Bild-URL"
-							placeholder="Kopiera in din bildlänk"
+							label="Klistra in en passande bildlänk"
+							placeholder="Tex: https://www.example.com/image.jpg"
 							variant="outlined"
 							fullWidth
 							value={imageUrl}
 							onChange={(e) => setImageUrl(e.target.value)}
 							required
 							error={getFieldError(imageUrl)}
-							aria-describedby="imageurl-error"
+							aria-describedby="image-url-helper"
 						/>
+						<Typography
+							id="image-url-helper"
+							variant="body2"
+							color="textSecondary"
+						>
+							Länken ska vara en giltig URL till en bild.
+						</Typography>
 					</Box>
 					{/* Plats för eventet */}
 					<Box>
+						<Typography id="activity-place-label">Plats</Typography>
 						<TextField
-							label="Ange plats för eventet"
+							label="Ange plats och stad för aktiviteten"
 							placeholder="T.ex. entrén vid trädgårdsföreningen, Göteborg"
 							variant="outlined"
 							fullWidth
@@ -146,12 +151,13 @@ const CreateActivityForm: React.FC = () => {
 							onChange={(e) => setLocation(e.target.value)}
 							required
 							error={getFieldError(location)}
-							aria-describedby="location-error"
+							aria-labelledby="activity-place-label"
 						/>
 					</Box>
 					<Box>
+						<Typography id="activity-date-label">Datum</Typography>
 						<TextField
-							label="Datum"
+							label="Ange aktivitetens datum"
 							type="date"
 							variant="outlined"
 							fullWidth
@@ -162,13 +168,14 @@ const CreateActivityForm: React.FC = () => {
 							}}
 							required
 							error={getFieldError(date)}
-							aria-describedby="date-error"
+							aria-labelledby="activity-date-label"
 						/>
 					</Box>
 					{/* Klockslag */}
 					<Box>
+						<Typography id="activity-time-label">Tid</Typography>
 						<TextField
-							label="Klockslag"
+							label="Ange tid då aktiviteten är menad att börja"
 							type="time"
 							variant="outlined"
 							fullWidth
@@ -179,13 +186,16 @@ const CreateActivityForm: React.FC = () => {
 							}}
 							required
 							error={getFieldError(time)}
-							aria-describedby="time-error"
+							aria-labelledby="activity-time-label"
 						/>
 					</Box>
 					{/* Övrig information */}
 					<Box>
+						<Typography id="activity-otherinfo-label">
+							Övrig information
+						</Typography>
 						<TextField
-							label="Övrig information"
+							label="Här anger du annan information av värde"
 							placeholder="Om särskilda kläder krävs, fika behöver medtagas, etc."
 							variant="outlined"
 							fullWidth
@@ -193,11 +203,18 @@ const CreateActivityForm: React.FC = () => {
 							rows={4}
 							value={otherInfo}
 							onChange={(e) => setOtherInfo(e.target.value)}
+							aria-labelledby="activity-otherinfo-label"
 						/>
 					</Box>
 					{/* Skicka-knapp */}
 					<Box>
-						<Button type="submit" variant="contained" color="primary" fullWidth>
+						<Button
+							type="submit"
+							variant="contained"
+							fullWidth
+							sx={{ backgroundColor: "#0A5D70" }}
+							aria-label="Skicka formuläret för att skapa en ny aktivitet"
+						>
 							Skapa aktivitet
 						</Button>
 					</Box>
@@ -211,13 +228,14 @@ const CreateActivityForm: React.FC = () => {
 				onClose={handleCloseSnackbar}
 				anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
 				aria-live="assertive"
+				aria-describedby="snackbar-message"
 			>
 				<Alert
 					onClose={handleCloseSnackbar}
 					severity={snackbarSeverity}
 					sx={{ width: "100%" }}
 				>
-					{snackbarMessage}
+					<span id="snackbar-message">{snackbarMessage}</span>
 				</Alert>
 			</Snackbar>
 		</Box>

@@ -67,7 +67,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	};
 
 	return (
-		<Box>
+		<Box sx={{ justifyContent: { xs: "center" } }}>
 			<Typography variant="h6">Valt datum: {date || "valt datum"}</Typography>
 			{activities.length === 0 ? (
 				<Typography>Inga aktiviteter för detta datum.</Typography>
@@ -80,15 +80,24 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 							display: "flex",
 							flexDirection: "column",
 							gap: 2,
-							width: 350,
+							width: { xs: "200px", md: "350px" },
+							padding: "5px",
+							border: "1px solid #ddd",
 						}}
 					>
 						{/* Bild för aktiviteten */}
 						<CardMedia
 							component="img"
-							height="140"
-							image={activity.imageUrl}
-							alt={`Bild av ${activity.activityname}`}
+							image={activity.imageUrl || "/default-image.jpg"}
+							alt={
+								activity.imageUrl
+									? `Bild av ${activity.activityname}`
+									: "Standardbild"
+							}
+							style={{
+								objectFit: "cover",
+								maxHeight: "200px",
+							}}
 						/>
 						<CardContent>
 							{/* Aktivitetsnamn */}
@@ -118,11 +127,13 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 									display: "flex",
 									justifyContent: "center",
 									marginTop: 5,
+									flexDirection: { xs: "column", md: "row" },
+									textAlign: { xs: "center" },
 								}}
 							>
 								<IconButton
 									color="primary"
-									aria-label="Anmäl dig till aktivitet"
+									aria-label={`Anmäl dig till ${activity.activityname}`}
 									onClick={() => handleThumbsUp(activity._id)}
 								>
 									<ThumbUpIcon />
@@ -133,20 +144,31 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								</Typography>
 								<IconButton
 									color="primary"
-									aria-label="Dela aktiviteten"
+									aria-label={`Dela aktiviteten: ${activity.activityname}`}
 									onClick={() => console.log("Dela aktiviteten")}
 								>
-									<ShareIcon />
+									<ShareIcon
+										sx={{
+											fontSize: { xs: "1.5rem", md: "2rem" },
+										}}
+									/>
 								</IconButton>
 								<Typography variant="body2" sx={{ marginTop: 1 }}>
 									Dela aktivitet
 								</Typography>
 								<IconButton
 									color="secondary"
-									aria-label="Spara denna aktivitet"
+									aria-label={`Spara denna aktivitet: ${activity.activityname}`}
 									onClick={() => console.log("Spara denna aktivitet")}
+									sx={{
+										fontSize: { xs: "1.2rem", md: "1.5rem" },
+									}}
 								>
-									<BookmarkIcon />
+									<BookmarkIcon
+										sx={{
+											fontSize: { xs: "1.5rem", md: "2rem" },
+										}}
+									/>
 								</IconButton>
 								<Typography variant="body2" sx={{ marginTop: 1 }}>
 									Spara aktivitet

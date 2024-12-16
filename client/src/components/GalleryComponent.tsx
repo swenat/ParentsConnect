@@ -42,7 +42,11 @@ const GalleryComponent: React.FC = () => {
 		<Box
 			sx={{
 				display: "grid",
-				gridTemplateColumns: "repeat(3, 1fr)", // 3 kolumner
+				gridTemplateColumns: {
+					xs: "repeat(1, 1fr)", // En kolumn för små skärmar
+					sm: "repeat(2, 1fr)", // Två kolumner för medelstora skärmar
+					md: "repeat(3, 1fr)", // Tre kolumner för större skärmar
+				},
 				gap: 2,
 				padding: 1,
 			}}
@@ -51,7 +55,7 @@ const GalleryComponent: React.FC = () => {
 				<Card key={index} sx={{ height: "100%" }}>
 					<CardMedia
 						component="img"
-						width="300px"
+						width="300"
 						height="200"
 						image={image.src}
 						alt={image.title}
