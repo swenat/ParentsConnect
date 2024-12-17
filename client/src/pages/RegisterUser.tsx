@@ -178,10 +178,11 @@ const RegisterUser: React.FC = () => {
 					id="email"
 					aria-labelledby="email-label"
 					inputMode="email"
-					error={!formData.email.includes("@")} // Kontroll för fel
+					error={errors.email}
 					helperText={
-						!formData.email.includes("@") &&
-						"E-postadressen måste innehålla @ och en domän, t.ex. example@mail.com."
+						errors.email
+							? "E-postadressen måste innehålla @ och en domän, t.ex. example@mail.com."
+							: " "
 					}
 				/>
 				<TextField
