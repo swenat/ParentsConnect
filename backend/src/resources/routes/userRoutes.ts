@@ -53,6 +53,34 @@ router.get("/", async (req, res) => {
 	}
 });
 
+// Logga in en användare
+router.post("/login", async (req: Request, res: Response) => {
+	try {
+		const { email, password } = req.body;
+
+		//Hitta användaren baserat på e-post
+		const user = await User.findOne({ email });
+		if (!user) {
+			return res
+				.status(400)
+				.json({ message: "Felaktig e-post eller lösenord." });
+		}
+
+		//Verifiera lösenord
+		const validPassword = await argon2.verify(user.password, password);
+		if (!validPassword) {
+			return res
+				.status(400)
+				.json({ message: "Felaktig e-post eller lösenord." });
+		}
+
+		res.status(200).json({ message: "Inloggning lyckades!", user });
+	} catch (error) {
+		console.error("Login error:", error);
+		res.status(500).json({ message: "Något gick fel vid inloggningen." });
+	}
+});
+
 // Ta bort en användare
 router.delete("/:id", async (req, res) => {
 	try {
