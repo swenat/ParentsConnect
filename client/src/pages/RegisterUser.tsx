@@ -158,9 +158,10 @@ const RegisterUser: React.FC = () => {
 					variant="outlined"
 					fullWidth
 					required
+					autoFocus
 					value={formData.name}
 					onChange={handleChange}
-					id="name"
+					id="name-label"
 					aria-labelledby="name-label"
 					error={errors.name}
 					helperText={errors.name ? "Namn är obligatoriskt." : " "}
@@ -179,7 +180,8 @@ const RegisterUser: React.FC = () => {
 					inputMode="email"
 					error={!formData.email.includes("@")} // Kontroll för fel
 					helperText={
-						!formData.email.includes("@") && "Ange en giltig e-postadress."
+						!formData.email.includes("@") &&
+						"E-postadressen måste innehålla @ och en domän, t.ex. example@mail.com."
 					}
 				/>
 				<TextField
@@ -197,7 +199,7 @@ const RegisterUser: React.FC = () => {
 					error={errors.password}
 					helperText={
 						errors.password
-							? "Lösenord är obligatoriskt och måste vara minst 6 tecken långt."
+							? "Lösenordet måste vara minst 6 tecken och inkludera en siffra samt ett specialtecken."
 							: " "
 					}
 				/>
@@ -214,6 +216,7 @@ const RegisterUser: React.FC = () => {
 				open={openSnackbar}
 				autoHideDuration={6000}
 				onClose={handleCloseSnackbar}
+				aria-live="assertive"
 			>
 				<Alert
 					onClose={handleCloseSnackbar}

@@ -12,9 +12,9 @@ router.post("/", async (req: Request, res: Response) => {
 
 		const userExists = await User.findOne({ email });
 		if (userExists) {
-			return res
-				.status(400)
-				.json({ error: "Användaren finns redan med den e-postadressen." });
+			return res.status(400).json({
+				errors: { email: "E-postadressen är redan registrerad." },
+			});
 		}
 
 		const hashedPassword = await argon2.hash(password);
