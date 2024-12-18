@@ -29,6 +29,7 @@ const NavbarHome: React.FC = () => {
 
 				<Button
 					aria-label="Logga in"
+					onClick={() => navigate("/login")}
 					sx={{
 						backgroundColor: "#275D4A",
 						color: "white",
