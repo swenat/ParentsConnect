@@ -53,7 +53,7 @@ router.get("/", async (req, res) => {
 	}
 });
 
-// Logga in en användare
+// Loggar in en användare
 router.post("/login", async (req: Request, res: Response) => {
 	try {
 		const { email, password } = req.body;
