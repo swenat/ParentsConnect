@@ -38,13 +38,14 @@ const NavbarHome: React.FC = () => {
 						aria-label="Logga in"
 						onClick={() => navigate("/login")}
 						sx={{
-							backgroundColor: "#275D4A",
+							backgroundColor: "#0B6058",
 							color: "white",
-							marginRight: "10px",
-							textTransform: "none",
-							borderRadius: "8px",
+							padding: "10px 20px",
+							borderRadius: "15px",
+							marginRight: "5px",
 							"&:hover": {
-								backgroundColor: "#172C24",
+								backgroundColor: "#8A4133",
+								transform: "scale(1.05)",
 							},
 						}}
 					>
@@ -54,12 +55,14 @@ const NavbarHome: React.FC = () => {
 						aria-label="Registrera dig"
 						onClick={() => navigate("/register")}
 						sx={{
-							backgroundColor: "#0A5D70",
+							backgroundColor: "#0B6058",
 							color: "white",
-							textTransform: "none",
-							borderRadius: "8px",
+							padding: "10px 20px",
+							borderRadius: "15px",
+							marginLeft: "5px",
 							"&:hover": {
-								backgroundColor: "#052A33",
+								backgroundColor: "#8A4133",
+								transform: "scale(1.05)",
 							},
 						}}
 					>
