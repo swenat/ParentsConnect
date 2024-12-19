@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
 					paddingLeft: { xs: "5px", lg: "32px" },
-					gap: "32px",
+					gap: "10px",
 					boxSizing: "border-box",
 					backgroundColor: "white",
 					alignItems: "flex-start",
@@ -51,14 +51,17 @@ const Home: React.FC = () => {
 						}}
 						tabIndex={0}
 					>
-						Välkommen till ParentsConnect!
+						Välkommen!
 					</Typography>
 					<Typography variant="body1" sx={{ color: "black" }}>
-						Appen som hjälper föräldrar att skapa kontakter, få råd, kommunicera
-						och hålla sig aktiverade. Genom att skapa aktiviteter och dela
-						information kan du vara säker på att du alltid har koll på vad som
-						händer.
+						Vi hjälper föräldrar att skapa kontakter med andra föräldrar, få
+						råd, kommunicera och hålla sig aktiverade. Genom att skapa
+						aktiviteter och dela information kan du vara säker på att du alltid
+						är ett steg bort ifrån en eller flera givande träffar.
 					</Typography>
+					<Box>
+						<Button>Klicka här för mer info</Button>
+					</Box>
 				</Box>
 
 				{/* Sektion för bild */}
@@ -69,7 +72,7 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mByk2aCCkcwy8lOTDbZ6dI_6hsUij9ehcsqrCKrXrtuF6N-KbjIqMaYTk3iDC3xVc7xTbniFiJhTITPkRijF-v5ONqojwp7lD6oGvyznBDUbenNAW6udhALP1RjHOn18nluhaEqYNAbWibFphqVCkO61Mgg4HhNx-3iBAPsBA0X8XTJxOZS_lDExUXCviZYSVPqrsw8i0TaimvOz5xew3cXUx29G17uO0YoFmY74N3GI?encodeFailures=1&width=694&height=464')",
+							"url('https://am3pap004files.storage.live.com/y4mlMGZWRLcWoPF1ZYBwnYZj0j5wLezAtstrV3g6SGmKQ0WJlvZgQ5N_dg9EH-b0dMn4GHEcEO09cD9bwNdf3ZkEoDQoWP4YR4n-7Gu2hBZcqSaLifyJuzihb_OcQxb9MS04-p2o3fcbO6yzUbvvmSyP_XsjDMUg9pg0v_ZSWYPwg1auPwaRF3q-Akk4I6JeHAsEbaeAwUeid_edYpL9jDTL1qI311uh2auWz4r_Is5R8o?encodeFailures=1&width=1366&height=1366')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
@@ -80,7 +83,7 @@ const Home: React.FC = () => {
 				sx={{
 					paddingLeft: { xs: "5px", lg: "32px" },
 					borderTop: "1px solid #e0e0e0",
-					paddingTop: "16px",
+					paddingTop: "14px",
 				}}
 			>
 				<Typography variant="body1">Anslutning</Typography>
