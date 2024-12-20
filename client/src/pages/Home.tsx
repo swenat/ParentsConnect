@@ -15,6 +15,32 @@ const Home: React.FC = () => {
 			}}
 		>
 			<NavbarHome />
+			{/* Video Banner */}
+			<Box
+				sx={{
+					width: "100%",
+					height: { xs: "200px", sm: "350px", md: "500px" },
+					overflow: "hidden",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundColor: "#000",
+				}}
+			>
+				<video
+					width="100%"
+					height="100%"
+					autoPlay
+					muted
+					loop
+					style={{
+						objectFit: "cover",
+					}}
+				>
+					<source src="src/assets/parentsvideo.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</Box>
 			{/* Sektion för text och bild */}
 			<Box
 				sx={{
