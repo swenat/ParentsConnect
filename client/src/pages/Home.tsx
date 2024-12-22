@@ -1,10 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
 import RegisterInfo from "../components/RegisterInfo";
+import ReusableVideo from "../components/ReusableVideo";
 
 const Home: React.FC = () => {
+	const handleVideoEnd = () => {
+		console.log("Videon är klar!");
+	};
 	return (
 		<Box
 			sx={{
@@ -15,6 +19,29 @@ const Home: React.FC = () => {
 			}}
 		>
 			<NavbarHome />
+			{/* Video Banner */}
+			<Box
+				sx={{
+					width: "100%",
+					height: { xs: "200px", sm: "350px", md: "500px" },
+					overflow: "hidden",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					backgroundColor: "#000",
+				}}
+			>
+				<ReusableVideo
+					src="src\assets\parentsvideo.mp4"
+					autoPlay
+					loop
+					onEnded={handleVideoEnd}
+					style={{
+						borderRadius: "8px",
+						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+					}}
+				/>
+			</Box>
 			{/* Sektion för text och bild */}
 			<Box
 				sx={{
@@ -23,10 +50,12 @@ const Home: React.FC = () => {
 					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
 					paddingLeft: { xs: "5px", lg: "32px" },
-					gap: "32px",
+					gap: "5px",
 					boxSizing: "border-box",
 					backgroundColor: "white",
 					alignItems: "flex-start",
+					borderTop: "1px solid #e0e0e0",
+					borderBottom: "1px solid #e0e0e0",
 				}}
 			>
 				{/* Sektion för rubrik och text */}
@@ -43,7 +72,8 @@ const Home: React.FC = () => {
 							outline: "none",
 							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
 							fontWeight: "bold",
-							marginBottom: "16px",
+							marginBottom: "10px",
+							marginTop: "20px",
 							color: "black",
 							"&:focus": {
 								outline: "2px solid #493FFD",
@@ -51,14 +81,17 @@ const Home: React.FC = () => {
 						}}
 						tabIndex={0}
 					>
-						Välkommen till ParentsConnect!
+						Välkommen!
 					</Typography>
 					<Typography variant="body1" sx={{ color: "black" }}>
-						Appen som hjälper föräldrar att skapa kontakter, få råd, kommunicera
-						och hålla sig aktiverade. Genom att skapa aktiviteter och dela
-						information kan du vara säker på att du alltid har koll på vad som
-						händer.
+						Vi hjälper föräldrar att skapa kontakter med andra föräldrar, få
+						råd, kommunicera och hålla sig aktiverade. Genom att skapa
+						aktiviteter och dela information kan du vara säker på att du alltid
+						är ett steg bort ifrån en eller flera givande träffar.
 					</Typography>
+					<Box>
+						<Button>Klicka här för mer info</Button>
+					</Box>
 				</Box>
 
 				{/* Sektion för bild */}
@@ -69,18 +102,17 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mByk2aCCkcwy8lOTDbZ6dI_6hsUij9ehcsqrCKrXrtuF6N-KbjIqMaYTk3iDC3xVc7xTbniFiJhTITPkRijF-v5ONqojwp7lD6oGvyznBDUbenNAW6udhALP1RjHOn18nluhaEqYNAbWibFphqVCkO61Mgg4HhNx-3iBAPsBA0X8XTJxOZS_lDExUXCviZYSVPqrsw8i0TaimvOz5xew3cXUx29G17uO0YoFmY74N3GI?encodeFailures=1&width=694&height=464')",
+							"url('https://am3pap004files.storage.live.com/y4mA-jwu0DpMnqtnVSAcugyJK-Rd4Mq0_FnBe74yR4SmXD40zwQucpfWehsIlJ8cN96uuh331KUhp1jTSzMbXCspHVN9QYj2xe9JCSTxKzr3X7MClB6ziS7CKu_isBom253gjbs9dvyCtZ5_AMSonB6n9tBuvTx4Wo_ZvJdnqqywdMGTt-CW3d7SVSMIRYhvv36aee1MH0XpMkXQ7og3PUl48gi96IufqeY11Zu7w84A24?encodeFailures=1&width=1958&height=1366')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
+						paddingRight: "5px",
 					}}
 				/>
 			</Box>
 			<Box
 				sx={{
 					paddingLeft: { xs: "5px", lg: "32px" },
-					borderTop: "1px solid #e0e0e0",
-					paddingTop: "16px",
 				}}
 			>
 				<Typography variant="body1">Anslutning</Typography>

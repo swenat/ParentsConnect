@@ -12,53 +12,64 @@ const NavbarHome: React.FC = () => {
 
 	return (
 		<AppBar
-			position="static"
+			position="sticky"
 			sx={{
 				backgroundColor: "white",
 				color: "black",
-				boxShadow: "none",
+				boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 				borderBottom: "1px solid #e0e0e0",
+				width: "100%",
 			}}
 		>
-			<Toolbar>
-				<Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-					<Typography variant="h6" component="div">
-						ParentsConnect
-					</Typography>
-				</Box>
+			<Box
+				sx={{
+					margin: "0",
+					width: "100%",
+				}}
+			>
+				<Toolbar>
+					<Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+						<Typography variant="h6" component="div">
+							ParentsConnect
+						</Typography>
+					</Box>
 
-				<Button
-					aria-label="Logga in"
-					onClick={() => navigate("/login")}
-					sx={{
-						backgroundColor: "#275D4A",
-						color: "white",
-						marginRight: "10px",
-						textTransform: "none",
-						borderRadius: "8px",
-						"&:hover": {
-							backgroundColor: "#172C24",
-						},
-					}}
-				>
-					Logga in
-				</Button>
-				<Button
-					aria-label="Registrera dig"
-					onClick={() => navigate("/register")}
-					sx={{
-						backgroundColor: "#0A5D70",
-						color: "white",
-						textTransform: "none",
-						borderRadius: "8px",
-						"&:hover": {
-							backgroundColor: "#052A33",
-						},
-					}}
-				>
-					Registrera dig
-				</Button>
-			</Toolbar>
+					<Button
+						aria-label="Logga in"
+						onClick={() => navigate("/login")}
+						sx={{
+							backgroundColor: "#0B6058",
+							color: "white",
+							padding: "10px 20px",
+							borderRadius: "15px",
+							marginRight: "5px",
+							"&:hover": {
+								backgroundColor: "#8A4133",
+								transform: "scale(1.05)",
+							},
+						}}
+					>
+						Logga in
+					</Button>
+					<Button
+						aria-label="Registrera dig"
+						onClick={() => navigate("/register")}
+						sx={{
+							backgroundColor: "#0B6058",
+							color: "white",
+							padding: "10px 20px",
+							borderRadius: "15px",
+							marginLeft: "5px",
+							"&:hover": {
+								backgroundColor: "#8A4133",
+								transform: "scale(1.05)",
+							},
+						}}
+					>
+						Registrera dig
+					</Button>
+				</Toolbar>
+			</Box>
 		</AppBar>
 	);
 };
