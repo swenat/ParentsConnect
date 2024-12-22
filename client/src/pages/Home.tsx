@@ -3,8 +3,12 @@ import React from "react";
 import Footer from "../components/Footer";
 import NavbarHome from "../components/NavbarHome";
 import RegisterInfo from "../components/RegisterInfo";
+import ReusableVideo from "../components/ReusableVideo";
 
 const Home: React.FC = () => {
+	const handleVideoEnd = () => {
+		console.log("Videon är klar!");
+	};
 	return (
 		<Box
 			sx={{
@@ -27,19 +31,16 @@ const Home: React.FC = () => {
 					backgroundColor: "#000",
 				}}
 			>
-				<video
-					width="100%"
-					height="100%"
+				<ReusableVideo
+					src="src\assets\parentsvideo.mp4"
 					autoPlay
-					muted
 					loop
+					onEnded={handleVideoEnd}
 					style={{
-						objectFit: "cover",
+						borderRadius: "8px",
+						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
 					}}
-				>
-					<source src="src/assets/parentsvideo.mp4" type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
+				/>
 			</Box>
 			{/* Sektion för text och bild */}
 			<Box
@@ -49,10 +50,12 @@ const Home: React.FC = () => {
 					flexDirection: { xs: "column", md: "row" },
 					justifyContent: "space-between",
 					paddingLeft: { xs: "5px", lg: "32px" },
-					gap: "10px",
+					gap: "5px",
 					boxSizing: "border-box",
 					backgroundColor: "white",
 					alignItems: "flex-start",
+					borderTop: "1px solid #e0e0e0",
+					borderBottom: "1px solid #e0e0e0",
 				}}
 			>
 				{/* Sektion för rubrik och text */}
@@ -69,7 +72,8 @@ const Home: React.FC = () => {
 							outline: "none",
 							fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "3.5rem" },
 							fontWeight: "bold",
-							marginBottom: "16px",
+							marginBottom: "10px",
+							marginTop: "20px",
 							color: "black",
 							"&:focus": {
 								outline: "2px solid #493FFD",
@@ -98,18 +102,17 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mlMGZWRLcWoPF1ZYBwnYZj0j5wLezAtstrV3g6SGmKQ0WJlvZgQ5N_dg9EH-b0dMn4GHEcEO09cD9bwNdf3ZkEoDQoWP4YR4n-7Gu2hBZcqSaLifyJuzihb_OcQxb9MS04-p2o3fcbO6yzUbvvmSyP_XsjDMUg9pg0v_ZSWYPwg1auPwaRF3q-Akk4I6JeHAsEbaeAwUeid_edYpL9jDTL1qI311uh2auWz4r_Is5R8o?encodeFailures=1&width=1366&height=1366')",
+							"url('https://am3pap004files.storage.live.com/y4mA-jwu0DpMnqtnVSAcugyJK-Rd4Mq0_FnBe74yR4SmXD40zwQucpfWehsIlJ8cN96uuh331KUhp1jTSzMbXCspHVN9QYj2xe9JCSTxKzr3X7MClB6ziS7CKu_isBom253gjbs9dvyCtZ5_AMSonB6n9tBuvTx4Wo_ZvJdnqqywdMGTt-CW3d7SVSMIRYhvv36aee1MH0XpMkXQ7og3PUl48gi96IufqeY11Zu7w84A24?encodeFailures=1&width=1958&height=1366')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
+						paddingRight: "5px",
 					}}
 				/>
 			</Box>
 			<Box
 				sx={{
 					paddingLeft: { xs: "5px", lg: "32px" },
-					borderTop: "1px solid #e0e0e0",
-					paddingTop: "14px",
 				}}
 			>
 				<Typography variant="body1">Anslutning</Typography>
