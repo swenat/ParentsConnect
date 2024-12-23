@@ -61,7 +61,7 @@ const NavbarHome: React.FC = () => {
 							borderRadius: "15px",
 							marginLeft: "5px",
 							"&:hover": {
-								backgroundColor: "#8A4133",
+								backgroundColor: "#9F2B14",
 								transform: "scale(1.05)",
 							},
 						}}

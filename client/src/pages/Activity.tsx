@@ -78,13 +78,17 @@ const Activity: React.FC = () => {
 						}}
 						aria-labelledby="calendar-title"
 					>
-						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 1 }}>
+						<Typography
+							variant="h5"
+							sx={{ fontSize: "32px", marginBottom: 1 }}
+							id="calendar-title"
+						>
 							Välkommen!
 						</Typography>
 						<Typography variant="body1" sx={{ fontSize: "18px", marginTop: 3 }}>
-							Klicka dig in på kalendern för att se vilka aktiviteter som finns
-							den närmaste tiden. Längre ner på denna sida kan du skapa egna
-							aktiviteter.
+							Klicka dig fram på kalendern för att se vad som finns den närmaste
+							tiden. Vill du skapa egna aktiviteter, scrolla lite längre ner
+							till aktivitetsformuläret.
 						</Typography>
 						<Divider sx={{ marginBottom: 3, backgroundColor: "#54B694" }} />
 						<CalenderActivities onDateChange={setSelectedDate} />
@@ -105,7 +109,11 @@ const Activity: React.FC = () => {
 						aria-labelledby="filtered-activities-title"
 					>
 						{/* Rubrik och avdelare */}
-						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
+						<Typography
+							id="filtered-activities-title"
+							variant="h5"
+							sx={{ fontSize: "32px", marginBottom: 2 }}
+						>
 							Filtrerade aktiviteter
 						</Typography>
 						<Divider
@@ -118,11 +126,11 @@ const Activity: React.FC = () => {
 				<Box
 					sx={{
 						width: "100%",
-						height: "1px", // Tjockleken på linjen
-						backgroundColor: "#d3d3d3", // Grå färg
-						marginBottom: "16px", // Mellanrum under linjen
+						height: "1px",
+						backgroundColor: "#d3d3d3",
+						marginBottom: "16px",
 					}}
-				></Box>
+				/>
 				{/* Formulär och Galleri sektion */}
 				<Box
 					sx={{
@@ -163,20 +171,22 @@ const Activity: React.FC = () => {
 						<GalleryComponent aria-labbeledby="activity-examples" />
 					</Box>
 				</Box>
-
+				<Box
+					sx={{
+						width: "100%",
+						height: "1px",
+						backgroundColor: "#d3d3d3",
+						marginTop: "16px",
+					}}
+				/>
 				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 					<Typography
-						variant="h2"
+						variant="h5"
 						sx={{
-							fontWeight: "bold",
-							fontSize: {
-								xs: "1.75rem",
-								sm: "2.25rem",
-								md: "2.375rem",
-							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
 							marginTop: "55px",
+							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>
 						Gemenskap 2024
@@ -186,6 +196,7 @@ const Activity: React.FC = () => {
 							display: "flex",
 							alignItems: { xs: "center", md: "left" },
 							flexDirection: { xs: "column", md: "row" },
+							paddingLeft: { xs: "5px", lg: "32px" },
 						}}
 					>
 						<PhotoCardsActivity />

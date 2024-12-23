@@ -14,8 +14,7 @@ const PhotoCardsActivity: React.FC = () => {
 				gap: 15,
 				justifyContent: "left",
 				flexDirection: { xs: "column", md: "row" },
-				// paddingBottom: 2,
-				// paddingX: 2,
+				marginBottom: "30px",
 			}}
 		>
 			{/* Första kortet */}

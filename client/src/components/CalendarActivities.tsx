@@ -46,6 +46,11 @@ const CalendarActivities: React.FC<{
 				color={isMarked ? "primary" : "default"}
 				variant={isMarked ? "dot" : "standard"}
 				overlap="circular"
+				sx={{
+					"& .MuiBadge-dot": {
+						backgroundColor: isMarked ? "#8D4334" : "transparent", // Anpassad färg för markeringar
+					},
+				}}
 			>
 				<PickersDay {...props} />
 			</Badge>

@@ -48,8 +48,7 @@ const NavbarActivities: React.FC = () => {
 							variant="h6"
 							component="div"
 							sx={{
-								fontSize: { xs: "1rem", md: "1.5rem" },
-								color: "#0A5D70",
+								color: "#9F2B14",
 								paddingLeft: { xs: "0px", md: "25px" },
 							}}
 						>
@@ -68,19 +67,19 @@ const NavbarActivities: React.FC = () => {
 					}}
 				>
 					<Button
-						sx={{ textTransform: "none", color: "#0A5D70" }}
+						sx={{ textTransform: "none", color: "#9F2B14" }}
 						aria-label="Visa aktiviteter hemma"
 					>
 						Aktiviteter Hemma
 					</Button>
 					<Button
-						sx={{ textTransform: "none", color: "#0A5D70" }}
+						sx={{ textTransform: "none", color: "#9F2B14" }}
 						aria-label="Visa Föräldraforum"
 					>
 						Föräldraforum
 					</Button>
 					<Button
-						sx={{ textTransform: "none", color: "#0A5D70" }}
+						sx={{ textTransform: "none", color: "#9F2B14" }}
 						aria-label="Visa Produkter och Rabatter"
 					>
 						Produkter & Rabatter
@@ -88,7 +87,7 @@ const NavbarActivities: React.FC = () => {
 
 					{/* Mer information med Accordion */}
 					<Button
-						sx={{ textTransform: "none", color: "#0A5D70" }}
+						sx={{ textTransform: "none", color: "#9F2B14" }}
 						aria-controls={open ? "more-info-menu" : undefined}
 						aria-haspopup="true"
 						aria-expanded={open ? "true" : undefined}
@@ -106,10 +105,10 @@ const NavbarActivities: React.FC = () => {
 							"aria-labelledby": "more-info-button",
 						}}
 					>
-						<MenuItem onClick={handleMenuClose} sx={{ color: "#0A5D70" }}>
+						<MenuItem onClick={handleMenuClose} sx={{ color: "#9F2B14" }}>
 							Kontakta oss
 						</MenuItem>
-						<MenuItem onClick={handleMenuClose} sx={{ color: "#0A5D70" }}>
+						<MenuItem onClick={handleMenuClose} sx={{ color: "#9F2B14" }}>
 							Användartips
 						</MenuItem>
 					</Menu>
