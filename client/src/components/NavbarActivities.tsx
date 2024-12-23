@@ -24,12 +24,13 @@ const NavbarActivities: React.FC = () => {
 
 	return (
 		<AppBar
-			position="static"
+			position="sticky"
 			sx={{
 				backgroundColor: "white",
 				color: "black",
-				boxShadow: "none",
-				borderBottom: "1px solid #e0e0e0",
+				boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+				borderBottom: "2px solid #e0e0e0",
+				width: "100%",
 			}}
 		>
 			<Toolbar
@@ -46,7 +47,11 @@ const NavbarActivities: React.FC = () => {
 						<Typography
 							variant="h6"
 							component="div"
-							sx={{ fontSize: { xs: "1rem", md: "1.5rem" }, color: "#0A5D70" }}
+							sx={{
+								fontSize: { xs: "1rem", md: "1.5rem" },
+								color: "#0A5D70",
+								paddingLeft: { xs: "0px", md: "25px" },
+							}}
 						>
 							ParentsConnect
 						</Typography>
@@ -57,7 +62,7 @@ const NavbarActivities: React.FC = () => {
 					sx={{
 						display: "flex",
 						flexDirection: { xs: "column", md: "row" },
-						alignItems: { xs: "flex-start", md: "center" },
+						alignItems: "center",
 						gap: { xs: 1, md: 3 },
 						mt: { xs: 2, md: 0 },
 					}}
