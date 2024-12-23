@@ -9,9 +9,14 @@ import Footer from "../components/Footer";
 import GalleryComponent from "../components/GalleryComponent";
 import NavbarActivities from "../components/NavbarActivities";
 import PhotoCardsActivity from "../components/PhotoCardsActivity";
+import ReusableVideo from "../components/ReusableVideo";
 
 const Activity: React.FC = () => {
 	const [selectedDate, setSelectedDate] = useState("");
+
+	const handleVideoEnd = () => {
+		console.log("Videon är klar!");
+	};
 
 	return (
 		<LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -23,17 +28,29 @@ const Activity: React.FC = () => {
 				}}
 			>
 				<NavbarActivities />
+				{/* Video Banner */}
 				<Box
 					sx={{
 						width: "100%",
-						height: "300px",
-						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mJXgWaucrC_Wa95f_zZlnXGQo69A28tON7Glgdv_METYHrRJtj0WymNF2dHObIFPZTEX-HTiTUJCdd6a7bHNDWoICKLKmTd0mZGcLM8bl0jU5u6E5sJhTeiZENs3SBUMvplRBhyQz7esTpJ5ibbDxDOnPOwBXtibHeZKmOvRhJJuYg0RBlKI5I0pk3-45JRap_mxkWAAQ0gc7CxqDLNlHXAUmt_UTqR8fPkWVsw4lRIg?encodeFailures=1&width=1280&height=637')",
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-						backgroundRepeat: "no-repeat",
+						height: { xs: "200px", sm: "350px", md: "500px" },
+						overflow: "hidden",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						backgroundColor: "#000",
 					}}
-				></Box>
+				>
+					<ReusableVideo
+						src="src\assets\dadsvideo.mp4"
+						autoPlay
+						loop
+						onEnded={handleVideoEnd}
+						style={{
+							borderRadius: "8px",
+							boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+						}}
+					/>
+				</Box>
 				{/* Sektion: Kalender och Aktiviteter */}
 				<Box
 					sx={{
@@ -61,8 +78,8 @@ const Activity: React.FC = () => {
 						}}
 						aria-labelledby="calendar-title"
 					>
-						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
-							Välkommen
+						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 1 }}>
+							Välkommen!
 						</Typography>
 						<Typography variant="body1" sx={{ fontSize: "18px", marginTop: 3 }}>
 							Klicka dig in på kalendern för att se vilka aktiviteter som finns
