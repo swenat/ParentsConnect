@@ -9,7 +9,7 @@ import userRoutes from "./resources/routes/userRoutes";
 dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware och andra inställningar
 app.use(express.json());
@@ -40,6 +40,9 @@ app.get("/", (req, res) => {
 	res.send("Hello, World!");
 });
 
+app.get("/health", (req, res) => {
+	res.status(200).send("OK");
+});
 // Starta servern
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);
