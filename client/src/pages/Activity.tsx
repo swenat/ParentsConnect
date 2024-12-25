@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Divider, Typography } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import React, { useState } from "react";
@@ -23,6 +23,30 @@ const Activity: React.FC = () => {
 				}}
 			>
 				<NavbarActivities />
+
+				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+					<Typography
+						variant="h5"
+						sx={{
+							textAlign: { xs: "center", lg: "left" },
+							paddingBottom: "5px",
+							marginTop: "55px",
+							paddingLeft: { xs: "5px", lg: "32px" },
+						}}
+					>
+						Välkommen till vår Gemenskap
+					</Typography>
+					<Box
+						sx={{
+							display: "flex",
+							alignItems: { xs: "center", md: "left" },
+							flexDirection: { xs: "column", md: "row" },
+							paddingLeft: { xs: "5px", lg: "32px" },
+						}}
+					>
+						<PhotoCardsActivity />
+					</Box>
+				</Box>
 				{/* Sektion: Kalender och Aktiviteter */}
 				<Box
 					sx={{
@@ -50,12 +74,17 @@ const Activity: React.FC = () => {
 						}}
 						aria-labelledby="calendar-title"
 					>
-						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
-							Välkommen
+						<Typography
+							variant="h5"
+							sx={{ fontSize: "32px", marginBottom: 1 }}
+							id="calendar-title"
+						>
+							Sök aktiviteter
 						</Typography>
 						<Typography variant="body1" sx={{ fontSize: "18px", marginTop: 3 }}>
-							Klicka dig in på kalendern för att se vilka aktiviteter som finns
-							den närmaste tiden
+							Klicka dig fram på kalendern för att se vad som finns den närmaste
+							tiden. Vill du skapa egna aktiviteter, scrolla lite längre ner
+							till aktivitetsformuläret.
 						</Typography>
 						<Divider sx={{ marginBottom: 3, backgroundColor: "#54B694" }} />
 						<CalenderActivities onDateChange={setSelectedDate} />
@@ -76,7 +105,11 @@ const Activity: React.FC = () => {
 						aria-labelledby="filtered-activities-title"
 					>
 						{/* Rubrik och avdelare */}
-						<Typography variant="h5" sx={{ fontSize: "32px", marginBottom: 2 }}>
+						<Typography
+							id="filtered-activities-title"
+							variant="h5"
+							sx={{ fontSize: "32px", marginBottom: 2 }}
+						>
 							Filtrerade aktiviteter
 						</Typography>
 						<Divider
@@ -85,6 +118,15 @@ const Activity: React.FC = () => {
 						<ActivitiesFiltered date={selectedDate} />
 					</Box>
 				</Box>
+
+				<Box
+					sx={{
+						width: "100%",
+						height: "1px",
+						backgroundColor: "#d3d3d3",
+						marginBottom: "16px",
+					}}
+				/>
 				{/* Formulär och Galleri sektion */}
 				<Box
 					sx={{
@@ -125,8 +167,22 @@ const Activity: React.FC = () => {
 						<GalleryComponent aria-labbeledby="activity-examples" />
 					</Box>
 				</Box>
+				<Box
+					sx={{
+						width: "auto",
+						height: "1px",
+						backgroundColor: "#d3d3d3",
+						marginTop: "16px",
+					}}
+				/>
 
-				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Box
+					sx={{
+						paddingLeft: { xs: "5px", lg: "32px" },
+						marginTop: "20px",
+					}}
+				>
+					<Typography variant="body1">Artikel</Typography>
 					<Typography
 						variant="h2"
 						sx={{
@@ -138,21 +194,34 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
-							marginTop: "55px",
 						}}
 					>
-						Gemenskap 2024
+						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Box
-						sx={{
-							display: "flex",
-							alignItems: { xs: "center", md: "left" },
-							flexDirection: { xs: "column", md: "row" },
-						}}
-					>
-						<PhotoCardsActivity />
+					<Typography sx={{ paddingBottom: "50px" }}>
+						Mer än var tionde nybliven mamma och något under var tionde nybliven
+						pappa visar tecken på depression under de första månaderna efter
+						förlossning. Därför är det så viktigt att socialisera sig, be om
+						hjälp och stöd under denna period. Det här är anledningen till
+						varför vi finns. Läs 1177:s information om just detta.
+					</Typography>{" "}
+					<Box>
+						<Card>
+							<CardMedia
+								sx={{ height: 300, width: 500, marginBottom: "80px" }}
+								image="https://am3pap004files.storage.live.com/y4mci6JVhIOnvtjcGYyoDKxsaZTBfvaEtlXO5l_kHkh9WgOhS62IL6kvmAmuQ4hWuINObNMfUTP5vmFzzrk7ZAW4RS9RRz--fV_H9YaIJGI3uBKwe2Thr0yYO8JTN4_d7bpDb2vr7khLVugBqJlA4k9IiA9GVfZfS2rNssCBvO_h7Y7G9Nv3uAkynryjV-QrpRfns9Ba582VLb2uXZnnbLZXujb6QRSDMGsSv5jcTceIw0?encodeFailures=1&width=1280&height=853"
+								title="användare registrerar sig på sidan"
+								aria-label="En användare med en laptop registrerar sig på sidan"
+							/>
+						</Card>
 					</Box>
 				</Box>
+			</Box>
+			<Box
+				sx={{
+					paddingLeft: { xs: "5px", lg: "32px" },
+				}}
+			>
 				<Footer />
 			</Box>
 		</LocalizationProvider>

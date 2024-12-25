@@ -106,7 +106,13 @@ const CreateActivityForm: React.FC = () => {
 	};
 
 	return (
-		<Box sx={{ maxWidth: 600, margin: "0", padding: 0 }}>
+		<Box
+			sx={{
+				maxWidth: 600,
+				margin: "0",
+				padding: 2,
+			}}
+		>
 			<Typography variant="h5" gutterBottom aria-label="create-activity">
 				Skapa en aktivitet
 			</Typography>
@@ -116,7 +122,19 @@ const CreateActivityForm: React.FC = () => {
 				Lycka till!
 			</Typography>
 			<form onSubmit={handleSubmit}>
-				<Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						gap: 2,
+						maxWidth: 600,
+						margin: "0",
+						padding: 2,
+						border: "2px",
+						borderRadius: "10px",
+						boxShadow: "0px 6px 8px rgba(0, 0, 0, 0.1)",
+					}}
+				>
 					{/* Aktivitetsnamn */}
 					<Box>
 						<Typography id="activity-name-label">Aktivitetsnamn</Typography>
@@ -222,12 +240,29 @@ const CreateActivityForm: React.FC = () => {
 						/>
 					</Box>
 					{/* Skicka-knapp */}
-					<Box>
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
 						<Button
 							type="submit"
 							variant="contained"
 							fullWidth
-							sx={{ backgroundColor: "#0A5D70" }}
+							sx={{
+								backgroundColor: "#0B6058",
+								color: "white",
+								padding: "4px 30px",
+								borderRadius: "8px",
+
+								width: "50%",
+								"&:hover": {
+									backgroundColor: "#8A4133",
+									transform: "scale(1.05)",
+								},
+							}}
 							aria-label="Skicka formuläret för att skapa en ny aktivitet"
 						>
 							Skapa aktivitet
