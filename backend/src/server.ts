@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
 	cors({
-		origin: "https://parentsconnect-frontend.onrender.com", //Tillåter frontenden
+		origin: "https://parentsconnect-website.onrender.com", //Tillåter frontenden
 		methods: ["GET", "POST", "PUT", "DELETE"], // Tillåtna metoderna
 		credentials: true, // Om cookies eller autentisering används
 	})
