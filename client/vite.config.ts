@@ -5,10 +5,14 @@ import { defineConfig } from "vite";
 export default defineConfig({
 	plugins: [react()],
 	define: {
-		"process.env": process.env,
+		"process.env": process.env || {},
 	},
 	build: {
 		target: "esnext",
 		outDir: "dist",
+	},
+	server: {
+		host: "0.0.0.0",
+		port: Number(process.env.PORT) || 5173,
 	},
 });
