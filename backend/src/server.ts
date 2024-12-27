@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
 	cors({
-		origin: "http://localhost:5173", //Tillåter frontenden
+		origin: "https://parentsconnect-frontend.onrender.com", //Tillåter frontenden
 		methods: ["GET", "POST", "PUT", "DELETE"], // Tillåtna metoderna
 		credentials: true, // Om cookies eller autentisering används
 	})

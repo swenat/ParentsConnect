@@ -60,11 +60,14 @@ const CreateActivityForm: React.FC = () => {
 			otherInfo,
 		};
 		try {
-			const response = await fetch("http://localhost:5000/api/activities", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(activityData),
-			});
+			const response = await fetch(
+				"https://parentsconnect.onrender.com/api/activities",
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(activityData),
+				}
+			);
 
 			if (!response.ok) {
 				const errorData = await response.json();
