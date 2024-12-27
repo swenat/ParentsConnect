@@ -10,13 +10,13 @@ const GalleryComponent: React.FC = () => {
 		},
 		{
 			title: "Lekparkshäng",
-			src: "https://am3pap004files.storage.live.com/y4mdnsfbQRlMQRGFVZ7gvd-EcR35Lp3iUZ9hob02KjTCfD5bIjHc0_3zKCA9C_NNWEghyjvgjcKc2Q0Aci6NXyNpVbUvr_BVsuj5aE0IMUeh5kt4D1yQ1v3Cg0GknSbGSM9SZqouBxOgfNrL0_5RMNH8mb3WI9Un-jWgNXuKeKffmF087UdLRev7EB0BZfz6GT4ywAjlpJXNss19mDOO9P88JtcHN7RLXwMEbyVTzRgsio?encodeFailures=1&width=1170&height=780",
+			src: "https://cdn.pixabay.com/photo/2016/02/09/02/07/swing-1188132_1280.jpg",
 			description:
 				"Bjud in föräldrar och barn till en parkdag med ett tema, t.ex. skattjakt",
 		},
 		{
 			title: "Familjepicknick",
-			src: "https://am3pap004files.storage.live.com/y4mxjpl9-70uPE34iGhFTGuueyy9xLkYPC0b5Jc2coGUvnIFMvEoxeieAMsh8Y8-dIq7yioFBsDUt31HGDz0bxtZQEDUQPDbgqp0dIZywz2e1U4LIKwBfF1D2PFBWDwguSjJY3Vg-cnxuQfsNws5b66juS7hIIZhc0a5a0Ek5Sqv7mdcYfRIdvYOy2QGs3OIDWhkpIKsXUyxo1WG4fCwSo9EolcWTb3YsHTC0LOtZufp54?encodeFailures=1&width=850&height=638",
+			src: "https://cdn.pixabay.com/photo/2015/05/20/14/25/twins-775506_1280.jpg",
 			description:
 				"Arrangera en gemensam picknick där varje familj tar med en maträtt att dela",
 		},
