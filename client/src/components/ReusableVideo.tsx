@@ -16,7 +16,7 @@ const ReusableVideo: React.FC<ReusableVideoProps> = ({
 	src,
 	controls = true,
 	autoPlay = true,
-	loop = false,
+	loop = true,
 	onEnded,
 	className,
 	style,
