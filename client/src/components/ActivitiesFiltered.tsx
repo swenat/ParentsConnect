@@ -50,7 +50,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	const handleThumbsUp = async (activityId: string) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:5000/api/activities/attend/${activityId}`,
+				`${import.meta.env.VITE_API_URL}/api/activities/attend/${activityId}`,
 				{ userId }
 			);
 			setSnackbarMessage(
