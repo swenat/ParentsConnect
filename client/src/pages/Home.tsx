@@ -102,7 +102,7 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mA-jwu0DpMnqtnVSAcugyJK-Rd4Mq0_FnBe74yR4SmXD40zwQucpfWehsIlJ8cN96uuh331KUhp1jTSzMbXCspHVN9QYj2xe9JCSTxKzr3X7MClB6ziS7CKu_isBom253gjbs9dvyCtZ5_AMSonB6n9tBuvTx4Wo_ZvJdnqqywdMGTt-CW3d7SVSMIRYhvv36aee1MH0XpMkXQ7og3PUl48gi96IufqeY11Zu7w84A24?encodeFailures=1&width=1958&height=1366')",
+							"url('https://1drv.ms/i/s!AjksRY2CXiF6srAhogGz_YoHsjW3gw')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
