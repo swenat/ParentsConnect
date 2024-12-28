@@ -30,6 +30,7 @@ const Home: React.FC = () => {
 			>
 				<ReusableVideo
 					src="/parentsvideo.mp4"
+					loop={true}
 					style={{
 						borderRadius: "8px",
 						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
