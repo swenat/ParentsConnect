@@ -22,7 +22,7 @@ const GalleryComponent: React.FC = () => {
 		},
 		{
 			title: "Workshop",
-			src: "https://am3pap004files.storage.live.com/y4m8JT69C182U4FQlu7P5pShJkkUvv402ni9LpEkXhDDPND5pA4-k5_RlmyL2UJOKYyJsPL4EdO5odArihmu7KXq2QqiZioKYRG3vh_IYsn-30N9F703oREF0LTVZNT-7WPm4PHIez548uHeftHHP1PXhmkQQG9KVyg_mESmmXb_rmyp0gsTdRrAG_xhR8sbtZ4Q-8pY2k10yidmAPxGcXUWz2yJy-dEfGVMIfvls2A65Q?encodeFailures=1&width=1280&height=853",
+			src: "https://cdn.pixabay.com/photo/2018/03/03/06/26/child-3194978_1280.jpg",
 			description:
 				"Pysselträff där barnen kan skapa något kul. Föräldrar kan mingla medan de hjälper till eller deltar",
 		},
