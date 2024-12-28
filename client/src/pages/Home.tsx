@@ -6,9 +6,6 @@ import RegisterInfo from "../components/RegisterInfo";
 import ReusableVideo from "../components/ReusableVideo";
 
 const Home: React.FC = () => {
-	const handleVideoEnd = () => {
-		console.log("Videon är klar!");
-	};
 	return (
 		<Box
 			sx={{
@@ -33,9 +30,6 @@ const Home: React.FC = () => {
 			>
 				<ReusableVideo
 					src="https://1drv.ms/v/s!AjksRY2CXiF6srIjBBBlaj7pfll90w?embed=1"
-					autoPlay={true}
-					loop={true}
-					onEnded={handleVideoEnd}
 					style={{
 						borderRadius: "8px",
 						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
