@@ -29,7 +29,7 @@ const Home: React.FC = () => {
 				}}
 			>
 				<ReusableVideo
-					src="client\src\assets\parentsvideo.mp4"
+					src="/parentsvideo.mp4"
 					style={{
 						borderRadius: "8px",
 						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
