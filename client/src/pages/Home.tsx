@@ -33,8 +33,8 @@ const Home: React.FC = () => {
 			>
 				<ReusableVideo
 					src="https://1drv.ms/v/s!AjksRY2CXiF6srIjBBBlaj7pfll90w?embed=1"
-					autoPlay
-					loop
+					autoPlay={true}
+					loop={true}
 					onEnded={handleVideoEnd}
 					style={{
 						borderRadius: "8px",

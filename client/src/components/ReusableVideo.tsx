@@ -26,6 +26,7 @@ const ReusableVideo: React.FC<ReusableVideoProps> = ({
 			autoPlay={autoPlay}
 			loop={loop}
 			onEnded={onEnded}
+			muted={autoPlay}
 			className={className}
 			style={style}
 			width="100%" // Standardbredd (kan ändras via props)
