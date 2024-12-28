@@ -32,7 +32,7 @@ const Home: React.FC = () => {
 				}}
 			>
 				<ReusableVideo
-					src="https://www.canva.com/design/DAGZwp3aY2k/_RSci10xxI_683JlL3Dj7g/watch"
+					src="https://1drv.ms/v/s!AjksRY2CXiF6srIjBBBlaj7pfll90w?embed=1"
 					autoPlay
 					loop
 					onEnded={handleVideoEnd}
