@@ -7,12 +7,20 @@ interface ReusableVideoProps {
 	height?: string;
 }
 
-const ReusableVideo: React.FC<ReusableVideoProps> = ({ src, style }) => {
+const ReusableVideo: React.FC<ReusableVideoProps> = ({
+	src,
+	style,
+	width = 640,
+	height = 360,
+}) => {
 	return (
 		<iframe
 			src={src}
 			style={style}
-			width="100%" // Standardbredd (kan ändras via props)
+			width={width}
+			height={height}
+			allow="autoplay; encrypted-media"
+			allowFullScreen // Standardbredd (kan ändras via props)
 		>
 			Your browser does not support the video tag.
 		</iframe>
