@@ -15,7 +15,7 @@ interface ReusableVideoProps {
 const ReusableVideo: React.FC<ReusableVideoProps> = ({
 	src,
 	controls = true,
-	autoPlay = false,
+	autoPlay = true,
 	loop = false,
 	onEnded,
 	className,
@@ -28,7 +28,7 @@ const ReusableVideo: React.FC<ReusableVideoProps> = ({
 			autoPlay={autoPlay}
 			loop={loop}
 			onEnded={onEnded}
-			muted={autoPlay}
+			muted={true}
 			className={className}
 			style={style}
 			width="100%" // Standardbredd (kan ändras via props)
