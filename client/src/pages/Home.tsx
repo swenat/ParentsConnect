@@ -29,7 +29,7 @@ const Home: React.FC = () => {
 				}}
 			>
 				<ReusableVideo
-					src="https://1drv.ms/v/s!AjksRY2CXiF6srIjBBBlaj7pfll90w?embed=1"
+					src="client\src\assets\parentsvideo.mp4"
 					style={{
 						borderRadius: "8px",
 						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
