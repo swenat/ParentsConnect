@@ -34,7 +34,8 @@ const GalleryComponent: React.FC = () => {
 		{
 			title: "Skogstur",
 			src: "https://cdn.pixabay.com/photo/2022/12/02/16/52/the-path-7631282_1280.jpg",
-			description: "Upptäck skogen med barnen och njut av en liten picknick",
+			description:
+				"Upptäck skogen med barnen och njut av en liten picknick ihop",
 		},
 	];
 
