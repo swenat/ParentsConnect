@@ -28,12 +28,12 @@ const GalleryComponent: React.FC = () => {
 		},
 		{
 			title: "Föräldrafika",
-			src: "https://am3pap004files.storage.live.com/y4mkl0NSlgy6-Qe4XhLmBvFqA6g_f1OzHCeN8T6zafYuzbWXUBwDYkNlEDnEA2lVNrAgbRTIHL6DvVpSBR7grh17VU_Y6BbDQzvsyLMkSRfgsFlKqLW4x_P4EU2iAq_6QHRLn-Hkmvy7eT_bajCmoJjmrkr_33xJp-Olc5pAlhvAF4UJMBIou1frFpvQfh9trJJwrkFVlhq7UcYuYxfoan7PlWaHkeOBs_P2lr7BMhgRc4?encodeFailures=1&width=1280&height=854",
+			src: "https://cdn.pixabay.com/photo/2023/07/11/00/01/coffee-8119278_1280.jpg",
 			description: "En enkel fika föräldrar emellan för stöttning och samtal",
 		},
 		{
 			title: "Skogstur",
-			src: "https://am3pap004files.storage.live.com/y4mD6cfv9mlDy2skJGiGoJgQcTykIAcMjqu6mXLk2TvUUcVz6XNYVbnXKLKHo9kwjSstDBhiEivEFMZQoz_xr5HJ__gm7bGQvbBr8ggv_ilEuawnhIOyhrQQyvYliPGNnQ0jFYj6Lqe38_6HZo5yVn7NBkt04d5ss1YlqQ-hI-9ZIRYgQXsPmqMxiNpe5u7vozZqLW1Za2Nm8--WjToW00RwSFOaJdoOFdHjm7j7XhHwTg?encodeFailures=1&width=1280&height=854",
+			src: "https://cdn.pixabay.com/photo/2022/12/02/16/52/the-path-7631282_1280.jpg",
 			description: "Upptäck skogen med barnen och njut av en liten picknick",
 		},
 	];
