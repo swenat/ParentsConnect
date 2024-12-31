@@ -214,7 +214,7 @@ const Activity: React.FC = () => {
 							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
-							sx={{ paddingBottom: "5px" }}
+							sx={{ marginBottom: "5px" }}
 						>
 							Läs artikel
 						</Button>
