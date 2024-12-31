@@ -115,7 +115,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								{activity.time}
 							</Typography>
 							{/* Övrig information */}
-							<Typography variant="body2">{activity.otherInfo}</Typography>
+							<Typography variant="body2">Info:{activity.otherInfo}</Typography>
 							{/* Antal anmälda */}
 							<Typography variant="body2" color="text.secondary">
 								<b>Antal anmälda: </b>
