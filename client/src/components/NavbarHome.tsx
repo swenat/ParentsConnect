@@ -2,13 +2,30 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NavbarHome: React.FC = () => {
+	const [drawerOpen, setDrawerOpen] = useState(false);
 	const navigate = useNavigate();
+
+	const toggleDrawer = (open: boolean) => {
+		setDrawerOpen(open);
+	};
+
+	// Länka till login och register
+	const handleLoginClick = () => {
+		navigate("/login");
+		toggleDrawer(false); // Stäng menyn efter navigering
+	};
+
+	const handleRegisterClick = () => {
+		navigate("/register");
+		toggleDrawer(false); // Stäng menyn efter navigering
+	};
 
 	return (
 		<AppBar
@@ -92,6 +109,52 @@ const NavbarHome: React.FC = () => {
 					</Box>
 				</Toolbar>
 			</Box>
+			{/* Drawer (Hamburger meny) */}
+			<Drawer
+				anchor="right"
+				open={drawerOpen}
+				onClose={() => toggleDrawer(false)}
+			>
+				<Box
+					sx={{
+						width: 250,
+						padding: 2,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "flex-start",
+					}}
+				>
+					<Button
+						onClick={handleLoginClick}
+						sx={{
+							backgroundColor: "#0B6058",
+							color: "white",
+							marginBottom: 2,
+							width: "100%",
+							borderRadius: "15px",
+							"&:hover": {
+								backgroundColor: "#8A4133",
+							},
+						}}
+					>
+						Logga in
+					</Button>
+					<Button
+						onClick={handleRegisterClick}
+						sx={{
+							backgroundColor: "#0B6058",
+							color: "white",
+							width: "100%",
+							borderRadius: "15px",
+							"&:hover": {
+								backgroundColor: "#9F2B14",
+							},
+						}}
+					>
+						Registrera dig
+					</Button>
+				</Box>
+			</Drawer>
 		</AppBar>
 	);
 };
