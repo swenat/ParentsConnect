@@ -53,7 +53,7 @@ const RegisterUser: React.FC = () => {
 		}
 		try {
 			const response = await axios.post(
-				"http://localhost:5000/api/users",
+				process.env.VITE_API_URL + "/api/users",
 				formData
 			);
 			console.log("User registered:", response.data);
