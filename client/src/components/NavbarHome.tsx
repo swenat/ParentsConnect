@@ -33,41 +33,63 @@ const NavbarHome: React.FC = () => {
 							ParentsConnect
 						</Typography>
 					</Box>
-
-					<Button
-						aria-label="Logga in"
-						onClick={() => navigate("/login")}
-						sx={{
-							backgroundColor: "#0B6058",
-							color: "white",
-							padding: "10px 20px",
-							borderRadius: "15px",
-							marginRight: "5px",
-							"&:hover": {
-								backgroundColor: "#8A4133",
-								transform: "scale(1.05)",
-							},
-						}}
+					{/* Knapparna */}
+					<Box
+						sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}
 					>
-						Logga in
-					</Button>
-					<Button
-						aria-label="Registrera dig"
-						onClick={() => navigate("/register")}
-						sx={{
-							backgroundColor: "#0B6058",
-							color: "white",
-							padding: "10px 20px",
-							borderRadius: "15px",
-							marginLeft: "5px",
-							"&:hover": {
-								backgroundColor: "#9F2B14",
-								transform: "scale(1.05)",
-							},
-						}}
-					>
-						Registrera dig
-					</Button>
+						<Button
+							aria-label="Logga in"
+							onClick={() => navigate("/login")}
+							sx={{
+								backgroundColor: "#0B6058",
+								color: "white",
+								padding: "10px 20px",
+								borderRadius: "15px",
+								marginRight: "5px",
+								"&:hover": {
+									backgroundColor: "#8A4133",
+									transform: "scale(1.05)",
+								},
+							}}
+						>
+							Logga in
+						</Button>
+						<Button
+							aria-label="Registrera dig"
+							onClick={() => navigate("/register")}
+							sx={{
+								backgroundColor: "#0B6058",
+								color: "white",
+								padding: "10px 20px",
+								borderRadius: "15px",
+								marginLeft: "5px",
+								"&:hover": {
+									backgroundColor: "#9F2B14",
+									transform: "scale(1.05)",
+								},
+							}}
+						>
+							Registrera dig
+						</Button>
+					</Box>
+					{/* Hamburger-menu för mobila enheter */}
+					<Box sx={{ display: { xs: "block", sm: "none" } }}>
+						<Button
+							aria-label="Meny"
+							sx={{
+								backgroundColor: "#0B6058",
+								color: "white",
+								padding: "10px 20px",
+								borderRadius: "15px",
+								"&:hover": {
+									backgroundColor: "#8A4133",
+									transform: "scale(1.05)",
+								},
+							}}
+						>
+							☰
+						</Button>
+					</Box>
 				</Toolbar>
 			</Box>
 		</AppBar>
