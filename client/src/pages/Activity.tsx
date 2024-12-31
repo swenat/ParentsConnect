@@ -1,4 +1,11 @@
-import { Box, Card, CardMedia, Divider, Typography } from "@mui/material";
+import {
+	Box,
+	Button,
+	Card,
+	CardMedia,
+	Divider,
+	Typography,
+} from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import React, { useState } from "react";
@@ -203,14 +210,26 @@ const Activity: React.FC = () => {
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
 						hjälp och stöd under denna period. Det här är anledningen till
-						varför vi finns. Läs 1177:s information om just detta.
+						varför vi finns. Läs mer om detta på Kronobergs 1177:s information
+						om just detta.
 					</Typography>{" "}
+					{/* Knappen "Läs artikel" */}
+					<Box>
+						<Button
+							variant="contained"
+							color="primary"
+							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Läs artikel
+						</Button>
+					</Box>
 					<Box>
 						<Card>
 							<CardMedia
 								sx={{ height: 300, width: 500, marginBottom: "80px" }}
-								image="https://am3pap004files.storage.live.com/y4mci6JVhIOnvtjcGYyoDKxsaZTBfvaEtlXO5l_kHkh9WgOhS62IL6kvmAmuQ4hWuINObNMfUTP5vmFzzrk7ZAW4RS9RRz--fV_H9YaIJGI3uBKwe2Thr0yYO8JTN4_d7bpDb2vr7khLVugBqJlA4k9IiA9GVfZfS2rNssCBvO_h7Y7G9Nv3uAkynryjV-QrpRfns9Ba582VLb2uXZnnbLZXujb6QRSDMGsSv5jcTceIw0?encodeFailures=1&width=1280&height=853"
-								title="användare registrerar sig på sidan"
+								image="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
 								aria-label="En användare med en laptop registrerar sig på sidan"
 							/>
 						</Card>
