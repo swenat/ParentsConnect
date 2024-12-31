@@ -1,11 +1,4 @@
-import {
-	Box,
-	Button,
-	Card,
-	CardMedia,
-	Divider,
-	Typography,
-} from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import React, { useState } from "react";
@@ -226,14 +219,12 @@ const Activity: React.FC = () => {
 							Läs artikel
 						</Button>
 					</Box>
-					<Box>
-						<Card>
-							<CardMedia
-								sx={{ height: 300, width: 500, marginBottom: "80px" }}
-								image="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
-								aria-label="En pappa med sitt spädbarn liggandes på bröstet"
-							/>
-						</Card>
+					<Box sx={{ marginBottom: "80px" }}>
+						<img
+							src="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
+							alt="En pappa med sitt spädbarn liggandes på bröstet"
+							style={{ width: "100%", maxWidth: "500px", height: "auto" }}
+						/>
 					</Box>
 				</Box>
 			</Box>
