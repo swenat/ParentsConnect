@@ -93,6 +93,7 @@ const NavbarHome: React.FC = () => {
 					<Box sx={{ display: { xs: "block", sm: "none" } }}>
 						<Button
 							aria-label="Meny"
+							onClick={() => toggleDrawer(true)}
 							sx={{
 								backgroundColor: "#0B6058",
 								color: "white",
