@@ -231,7 +231,7 @@ const Activity: React.FC = () => {
 							<CardMedia
 								sx={{ height: 300, width: 500, marginBottom: "80px" }}
 								image="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
-								aria-label="En användare med en laptop registrerar sig på sidan"
+								aria-label="En pappa med sitt spädbarn liggandes på bröstet"
 							/>
 						</Card>
 					</Box>
