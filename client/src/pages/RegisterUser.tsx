@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterUser: React.FC = () => {
 	const [formData, setFormData] = useState({
@@ -63,7 +63,7 @@ const RegisterUser: React.FC = () => {
 			setOpenSnackbar(true);
 
 			setTimeout(() => {
-				navigate("/");
+				navigate("/login");
 			}, 2000);
 		} catch (error: any) {
 			console.error("Registration error:", error);
@@ -117,7 +117,9 @@ const RegisterUser: React.FC = () => {
 				Redan medlem?
 			</Typography>
 			<Typography variant="body2" sx={{ marginBottom: 1, textAlign: "center" }}>
-				Logga in
+				<Link to="/login" style={{ textDecoration: "none", color: "blue" }}>
+					Logga in
+				</Link>
 			</Typography>
 			<Box
 				sx={{
