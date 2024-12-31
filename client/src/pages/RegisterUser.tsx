@@ -56,7 +56,7 @@ const RegisterUser: React.FC = () => {
 				process.env.VITE_API_URL + "/api/users",
 				formData
 			);
-			console.log("User registered:", response.data);
+			console.log("User registered:");
 
 			setSnackbarMessage("Registreringen lyckades! Vad god logga in");
 			setSnackbarSeverity("success");
