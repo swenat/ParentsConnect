@@ -205,11 +205,15 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
+							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Typography variant="body1" sx={{ marginBottom: 3 }}>
+					<Typography
+						variant="body1"
+						sx={{ marginBottom: 3, paddingLeft: { xs: "9px", lg: "32px" } }}
+					>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
@@ -240,6 +244,7 @@ const Activity: React.FC = () => {
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
+							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						<img
