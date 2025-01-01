@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterUser: React.FC = () => {
 	const [formData, setFormData] = useState({
@@ -53,17 +53,17 @@ const RegisterUser: React.FC = () => {
 		}
 		try {
 			const response = await axios.post(
-				"http://localhost:5000/api/users",
+				process.env.VITE_API_URL + "/api/users",
 				formData
 			);
-			console.log("User registered:", response.data);
+			console.log("User registered:", { ...response.data, password: "*****" });
 
 			setSnackbarMessage("Registreringen lyckades! Vad god logga in");
 			setSnackbarSeverity("success");
 			setOpenSnackbar(true);
 
 			setTimeout(() => {
-				navigate("/");
+				navigate("/login");
 			}, 2000);
 		} catch (error: any) {
 			console.error("Registration error:", error);
@@ -117,7 +117,9 @@ const RegisterUser: React.FC = () => {
 				Redan medlem?
 			</Typography>
 			<Typography variant="body2" sx={{ marginBottom: 1, textAlign: "center" }}>
-				Logga in
+				<Link to="/login" style={{ textDecoration: "none", color: "blue" }}>
+					Logga in
+				</Link>
 			</Typography>
 			<Box
 				sx={{

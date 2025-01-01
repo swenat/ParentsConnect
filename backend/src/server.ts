@@ -9,14 +9,14 @@ import userRoutes from "./resources/routes/userRoutes";
 dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 3000;
 
 // Middleware och andra inställningar
 app.use(express.json());
 
 app.use(
 	cors({
-		origin: "http://localhost:5173", //Tillåter frontenden
+		origin: "https://parentsconnect-website.onrender.com", //Tillåter frontenden
 		methods: ["GET", "POST", "PUT", "DELETE"], // Tillåtna metoderna
 		credentials: true, // Om cookies eller autentisering används
 	})
@@ -40,6 +40,9 @@ app.get("/", (req, res) => {
 	res.send("Hello, World!");
 });
 
+app.get("/health", (req, res) => {
+	res.status(200).send("OK");
+});
 // Starta servern
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);

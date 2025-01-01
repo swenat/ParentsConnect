@@ -12,7 +12,8 @@ const CalendarActivities: React.FC<{
 
 	const fetchDatesWithActivities = async () => {
 		try {
-			const response = await axios.get("http://localhost:5000/api/activities");
+			const apiUrl = import.meta.env.VITE_API_URL;
+			const response = await axios.get(`${apiUrl}/api/activities`);
 			const dates = response.data.map((activity: any) => activity.date);
 			const dateMarkers: Record<string, boolean> = {};
 			dates.forEach((date: string) => {

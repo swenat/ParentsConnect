@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import React, { useState } from "react";
@@ -24,14 +24,18 @@ const Activity: React.FC = () => {
 			>
 				<NavbarActivities />
 
-				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "15px" }}>
 					<Typography
-						variant="h5"
+						variant="h2"
 						sx={{
-							textAlign: { xs: "center", lg: "left" },
+							fontWeight: "bold",
+							fontSize: {
+								xs: "1.75rem",
+								sm: "2.25rem",
+								md: "2.375rem",
+							},
 							paddingBottom: "5px",
-							marginTop: "55px",
-							paddingLeft: { xs: "5px", lg: "32px" },
+							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Välkommen till vår Gemenskap
@@ -41,7 +45,7 @@ const Activity: React.FC = () => {
 							display: "flex",
 							alignItems: { xs: "center", md: "left" },
 							flexDirection: { xs: "column", md: "row" },
-							paddingLeft: { xs: "5px", lg: "32px" },
+							paddingLeft: { xs: "0px", lg: "32px" },
 						}}
 					>
 						<PhotoCardsActivity />
@@ -169,17 +173,24 @@ const Activity: React.FC = () => {
 				</Box>
 				<Box
 					sx={{
-						width: "auto",
-						height: "1px",
-						backgroundColor: "#d3d3d3",
-						marginTop: "16px",
+						display: "flex",
+						flexDirection: { xs: "column", md: "row" },
+						gap: 3,
+						borderRadius: 2,
+						maxWidth: "1200px",
+						margin: "0 auto",
 					}}
 				/>
 
 				<Box
 					sx={{
-						paddingLeft: { xs: "5px", lg: "32px" },
+						flex: 1,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: { xs: "center", md: "flex-start" },
+						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
+						paddingLeft: { xs: "5px", lg: "32px" },
 					}}
 				>
 					<Typography variant="body1">Artikel</Typography>
@@ -194,26 +205,53 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
+							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Typography sx={{ paddingBottom: "50px" }}>
+					<Typography
+						variant="body1"
+						sx={{ marginBottom: 3, paddingLeft: { xs: "9px", lg: "32px" } }}
+					>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
 						hjälp och stöd under denna period. Det här är anledningen till
-						varför vi finns. Läs 1177:s information om just detta.
+						varför vi finns. Läs mer om detta på Kronobergs 1177:s information
+						om just detta.
 					</Typography>{" "}
+					{/* Knappen "Läs artikel" */}
 					<Box>
-						<Card>
-							<CardMedia
-								sx={{ height: 300, width: 500, marginBottom: "80px" }}
-								image="https://am3pap004files.storage.live.com/y4mci6JVhIOnvtjcGYyoDKxsaZTBfvaEtlXO5l_kHkh9WgOhS62IL6kvmAmuQ4hWuINObNMfUTP5vmFzzrk7ZAW4RS9RRz--fV_H9YaIJGI3uBKwe2Thr0yYO8JTN4_d7bpDb2vr7khLVugBqJlA4k9IiA9GVfZfS2rNssCBvO_h7Y7G9Nv3uAkynryjV-QrpRfns9Ba582VLb2uXZnnbLZXujb6QRSDMGsSv5jcTceIw0?encodeFailures=1&width=1280&height=853"
-								title="användare registrerar sig på sidan"
-								aria-label="En användare med en laptop registrerar sig på sidan"
-							/>
-						</Card>
+						<Button
+							variant="contained"
+							color="primary"
+							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								marginBottom: "5px",
+								padding: { xs: "8px 16px", sm: "10px 20px" },
+								fontSize: { xs: "0.875rem", sm: "1rem" },
+							}}
+						>
+							Läs artikel
+						</Button>
+					</Box>
+					<Box
+						sx={{
+							flex: 1,
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							paddingLeft: { xs: "9px", lg: "32px" },
+						}}
+					>
+						<img
+							src="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
+							alt="En pappa med sitt spädbarn liggandes på bröstet"
+							style={{ width: "100%", maxWidth: "500px", height: "auto" }}
+						/>
 					</Box>
 				</Box>
 			</Box>

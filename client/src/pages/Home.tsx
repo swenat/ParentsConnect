@@ -6,9 +6,6 @@ import RegisterInfo from "../components/RegisterInfo";
 import ReusableVideo from "../components/ReusableVideo";
 
 const Home: React.FC = () => {
-	const handleVideoEnd = () => {
-		console.log("Videon är klar!");
-	};
 	return (
 		<Box
 			sx={{
@@ -32,10 +29,8 @@ const Home: React.FC = () => {
 				}}
 			>
 				<ReusableVideo
-					src="src\assets\parentsvideo.mp4"
-					autoPlay
-					loop
-					onEnded={handleVideoEnd}
+					src="/parentsvideo.mp4"
+					loop={true}
 					style={{
 						borderRadius: "8px",
 						boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
@@ -102,7 +97,7 @@ const Home: React.FC = () => {
 						width: { xs: "100%", md: "616px" },
 						height: "500px",
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mA-jwu0DpMnqtnVSAcugyJK-Rd4Mq0_FnBe74yR4SmXD40zwQucpfWehsIlJ8cN96uuh331KUhp1jTSzMbXCspHVN9QYj2xe9JCSTxKzr3X7MClB6ziS7CKu_isBom253gjbs9dvyCtZ5_AMSonB6n9tBuvTx4Wo_ZvJdnqqywdMGTt-CW3d7SVSMIRYhvv36aee1MH0XpMkXQ7og3PUl48gi96IufqeY11Zu7w84A24?encodeFailures=1&width=1958&height=1366')",
+							"url('https://am3pap004files.storage.live.com/y4mmzc2sD9sPu7nLZNnHpaBS1vIdtduSLonpBAgzKl9Gz79WcfFKc_UvcnWgOyECkSTFCPqt1rJCqKYeX5n8dD708KwJc3-V3D7MerwSp3o04D8onRzkR7UnIRVtU5qMN7hJZ32ZhbPFtZcMqxHJnJusGU3G9QHXTqBwfiNb0siQTL0teLzBD-4eoR5SAuKOg9EC2_49ykaIXaialJME3lXLI5p426t2OUnh8S6APDJp9c?encodeFailures=1&width=1958&height=1366')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",

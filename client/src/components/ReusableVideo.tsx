@@ -8,13 +8,15 @@ interface ReusableVideoProps {
 	onEnded?: () => void; // Valfritt: funktion att köra när videon är klar
 	className?: string; // För styling
 	style?: React.CSSProperties; // Inline-styling
+	width?: string;
+	height?: string;
 }
 
 const ReusableVideo: React.FC<ReusableVideoProps> = ({
 	src,
 	controls = true,
-	autoPlay = false,
-	loop = false,
+	autoPlay = true,
+	loop = true,
 	onEnded,
 	className,
 	style,
@@ -26,6 +28,7 @@ const ReusableVideo: React.FC<ReusableVideoProps> = ({
 			autoPlay={autoPlay}
 			loop={loop}
 			onEnded={onEnded}
+			muted={true}
 			className={className}
 			style={style}
 			width="100%" // Standardbredd (kan ändras via props)

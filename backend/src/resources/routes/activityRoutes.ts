@@ -4,7 +4,7 @@ import Activity from "../models/Activity";
 
 const router = express.Router();
 
-router.use(cors({ origin: "http://localhost:5173" }));
+router.use(cors({ origin: "https://parentsconnect-website.onrender.com" }));
 
 // Skapar en aktivitet
 router.post("/", async (req, res) => {

@@ -26,7 +26,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 		const fetchActivities = async () => {
 			try {
 				const response = await axios.get(
-					"http://localhost:5000/api/activities/filter",
+					`${import.meta.env.VITE_API_URL}/api/activities/filter`,
 					{
 						params: { date },
 					}
@@ -50,7 +50,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	const handleThumbsUp = async (activityId: string) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:5000/api/activities/attend/${activityId}`,
+				`${import.meta.env.VITE_API_URL}/api/activities/attend/${activityId}`,
 				{ userId }
 			);
 			setSnackbarMessage(
@@ -115,7 +115,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								{activity.time}
 							</Typography>
 							{/* Övrig information */}
-							<Typography variant="body2">{activity.otherInfo}</Typography>
+							<Typography variant="body2">Info:{activity.otherInfo}</Typography>
 							{/* Antal anmälda */}
 							<Typography variant="body2" color="text.secondary">
 								<b>Antal anmälda: </b>
