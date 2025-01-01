@@ -28,10 +28,14 @@ const Activity: React.FC = () => {
 					<Typography
 						variant="h2"
 						sx={{
+							fontWeight: "bold",
+							fontSize: {
+								xs: "1.75rem",
+								sm: "2.25rem",
+								md: "2.375rem",
+							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
-							marginTop: "55px",
-							paddingLeft: { xs: "0px", lg: "32px" },
 						}}
 					>
 						Välkommen till vår Gemenskap
