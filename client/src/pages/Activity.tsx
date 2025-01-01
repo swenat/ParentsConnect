@@ -173,16 +173,24 @@ const Activity: React.FC = () => {
 				</Box>
 				<Box
 					sx={{
-						width: "auto",
-						height: "1px",
-						backgroundColor: "#d3d3d3",
-						marginTop: "16px",
+						display: "flex",
+						flexDirection: { xs: "column", md: "row" },
+						gap: 3,
+						padding: 2,
+						borderRadius: 2,
+						maxWidth: "1200px",
+						margin: "0 auto",
 					}}
 				/>
 
 				<Box
 					sx={{
-						paddingLeft: { xs: "5px", lg: "32px" },
+						flex: 1,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: { xs: "center", md: "flex-start" },
+						padding: { xs: 2, md: 3 },
+						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
 					}}
 				>
@@ -202,7 +210,7 @@ const Activity: React.FC = () => {
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Typography sx={{ paddingBottom: "50px" }}>
+					<Typography variant="body1" sx={{ marginBottom: 3 }}>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
@@ -218,12 +226,23 @@ const Activity: React.FC = () => {
 							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
-							sx={{ marginBottom: "5px" }}
+							sx={{
+								marginBottom: "5px",
+								padding: { xs: "8px 16px", sm: "10px 20px" },
+								fontSize: { xs: "0.875rem", sm: "1rem" },
+							}}
 						>
 							Läs artikel
 						</Button>
 					</Box>
-					<Box sx={{ marginBottom: "80px" }}>
+					<Box
+						sx={{
+							flex: 1,
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
 						<img
 							src="https://cdn.pixabay.com/photo/2012/03/04/01/01/father-22194_1280.jpg"
 							alt="En pappa med sitt spädbarn liggandes på bröstet"
