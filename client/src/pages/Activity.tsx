@@ -24,14 +24,14 @@ const Activity: React.FC = () => {
 			>
 				<NavbarActivities />
 
-				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
+				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}>
 					<Typography
 						variant="h2"
 						sx={{
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
 							marginTop: "55px",
-							paddingLeft: { xs: "5px", lg: "32px" },
+							paddingLeft: { xs: "0px", lg: "32px" },
 						}}
 					>
 						Välkommen till vår Gemenskap
@@ -41,7 +41,7 @@ const Activity: React.FC = () => {
 							display: "flex",
 							alignItems: { xs: "center", md: "left" },
 							flexDirection: { xs: "column", md: "row" },
-							paddingLeft: { xs: "5px", lg: "32px" },
+							paddingLeft: { xs: "0px", lg: "32px" },
 						}}
 					>
 						<PhotoCardsActivity />
