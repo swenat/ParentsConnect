@@ -18,13 +18,13 @@ const Activity: React.FC = () => {
 			<Box
 				component="main"
 				sx={{
-					paddingLeft: { xs: "9px", lg: "32px" },
+					padding: 0,
 					margin: 0,
 				}}
 			>
 				<NavbarActivities />
 
-				<Box sx={{ marginTop: "15px" }}>
+				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "15px" }}>
 					<Typography
 						variant="h2"
 						sx={{
@@ -175,7 +175,6 @@ const Activity: React.FC = () => {
 						display: "flex",
 						flexDirection: { xs: "column", md: "row" },
 						gap: 3,
-						paddingLeft: { xs: "5px", lg: "32px" },
 						borderRadius: 2,
 						maxWidth: "1200px",
 						margin: "0 auto",
@@ -190,6 +189,7 @@ const Activity: React.FC = () => {
 						alignItems: { xs: "center", md: "flex-start" },
 						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
+						paddingLeft: { xs: "5px", lg: "32px" },
 					}}
 				>
 					<Typography variant="body1">Artikel</Typography>
