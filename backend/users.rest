@@ -1,0 +1,16 @@
+### Skapa en användare
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "name": "Markusa",
+  "email": "markus@gmail.com",
+  "password": "securepassword"
+}
+
+### Hämta alla användare
+GET http://localhost:5000/api/users
+
+### Ta bort en användare
+DELETE http://localhost:5000/api/users/674728bd1cc774ee03623f3a
+//ändra id:et till det av en användare vid test
