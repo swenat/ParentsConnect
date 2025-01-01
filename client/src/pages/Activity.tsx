@@ -35,6 +35,7 @@ const Activity: React.FC = () => {
 								md: "2.375rem",
 							},
 							paddingBottom: "5px",
+							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Välkommen till vår Gemenskap
