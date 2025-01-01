@@ -26,7 +26,7 @@ const Activity: React.FC = () => {
 
 				<Box sx={{ paddingLeft: { xs: "5px", lg: "32px" } }}>
 					<Typography
-						variant="h5"
+						variant="h2"
 						sx={{
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
