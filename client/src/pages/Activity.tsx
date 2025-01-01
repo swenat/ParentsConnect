@@ -175,7 +175,7 @@ const Activity: React.FC = () => {
 						display: "flex",
 						flexDirection: { xs: "column", md: "row" },
 						gap: 3,
-						padding: 2,
+						paddingLeft: { xs: "5px", lg: "32px" },
 						borderRadius: 2,
 						maxWidth: "1200px",
 						margin: "0 auto",
@@ -188,7 +188,6 @@ const Activity: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: { xs: "center", md: "flex-start" },
-						paddingLeft: { xs: "5px", lg: "32px" },
 						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
 					}}
