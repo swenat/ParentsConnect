@@ -34,7 +34,6 @@ const Activity: React.FC = () => {
 								sm: "2.25rem",
 								md: "2.375rem",
 							},
-							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
 						}}
 					>
