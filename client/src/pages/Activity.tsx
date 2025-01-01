@@ -184,7 +184,6 @@ const Activity: React.FC = () => {
 
 				<Box
 					sx={{
-						flex: 1,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: { xs: "center", md: "flex-start" },
