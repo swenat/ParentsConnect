@@ -18,13 +18,13 @@ const Activity: React.FC = () => {
 			<Box
 				component="main"
 				sx={{
-					padding: 0,
+					paddingLeft: { xs: "9px", lg: "32px" },
 					margin: 0,
 				}}
 			>
 				<NavbarActivities />
 
-				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "15px" }}>
+				<Box sx={{ marginTop: "15px" }}>
 					<Typography
 						variant="h2"
 						sx={{
