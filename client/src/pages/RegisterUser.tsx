@@ -111,7 +111,7 @@ const RegisterUser: React.FC = () => {
 				ParentsConnect
 			</Typography>
 			<Typography variant="h4" sx={{ marginBottom: 2, textAlign: "center" }}>
-				Registrera dig
+				REGISTRERA DIG
 			</Typography>
 			<Typography variant="h6" sx={{ marginBottom: 1, textAlign: "center" }}>
 				Redan medlem?
@@ -212,7 +212,7 @@ const RegisterUser: React.FC = () => {
 					color="primary"
 					sx={{ textTransform: "none" }}
 				>
-					Registrera dig
+					REGISTRERA DIG
 				</Button>
 			</Box>
 			<Snackbar
