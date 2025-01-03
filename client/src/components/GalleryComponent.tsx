@@ -15,7 +15,7 @@ const GalleryComponent: React.FC = () => {
 				"Bjud in föräldrar och barn till en parkdag med ett tema, t.ex. skattjakt",
 		},
 		{
-			title: "Familjepicknick",
+			title: "Picknick",
 			src: "https://cdn.pixabay.com/photo/2015/05/20/14/25/twins-775506_1280.jpg",
 			description:
 				"Arrangera en gemensam picknick där varje familj tar med en maträtt att dela",
@@ -53,10 +53,7 @@ const GalleryComponent: React.FC = () => {
 			}}
 		>
 			{images.map((image, index) => (
-				<Card
-					key={index}
-					sx={{ height: "100%", marginRight: "2px", paddingRight: "2px" }}
-				>
+				<Card key={index} sx={{ height: "100%" }}>
 					<CardMedia
 						component="img"
 						width="300"
