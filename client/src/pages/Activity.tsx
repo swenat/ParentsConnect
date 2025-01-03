@@ -190,7 +190,7 @@ const Activity: React.FC = () => {
 						alignItems: { xs: "center", md: "flex-start" },
 						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
-						//paddingLeft: { xs: "9px", lg: "32px" },
+						paddingLeft: { xs: "9px", lg: "32px" },
 					}}
 				>
 					<Typography
