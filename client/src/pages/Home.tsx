@@ -94,10 +94,11 @@ const Home: React.FC = () => {
 					role="img"
 					aria-label="Bild-URL"
 					sx={{
-						width: { xs: "100%", md: "616px" },
-						height: "500px",
+						width: "100%",
+						maxWidth: { xs: "100%", sm: "616px" },
+						height: { xs: "300px", sm: "500px" },
 						backgroundImage:
-							"url('https://am3pap004files.storage.live.com/y4mmzc2sD9sPu7nLZNnHpaBS1vIdtduSLonpBAgzKl9Gz79WcfFKc_UvcnWgOyECkSTFCPqt1rJCqKYeX5n8dD708KwJc3-V3D7MerwSp3o04D8onRzkR7UnIRVtU5qMN7hJZ32ZhbPFtZcMqxHJnJusGU3G9QHXTqBwfiNb0siQTL0teLzBD-4eoR5SAuKOg9EC2_49ykaIXaialJME3lXLI5p426t2OUnh8S6APDJp9c?encodeFailures=1&width=1958&height=1366')",
+							"url('https://am3pap004files.storage.live.com/y4mbMr7UMXuQobw2v8GW7HXtXaDmVB30m__wN7NfMUh1hg5Fcy1g94lWwjmIMoQy02pgFWvjwZYqhmHlb_h5vP6qeHgoc588jF2zxXwIzJttbgqMHQfF79XubVc7dPSoYFhEuGewMbGHAbWaDEeQVosHLTYmgD-vzeshOVuFQwpLlF8l0R3jo24wjlmoKXYFXLU1uhuYOgR-Rp4tC34uaquwA?encodeFailures=1&width=1958&height=1366')",
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
