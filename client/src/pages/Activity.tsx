@@ -192,7 +192,12 @@ const Activity: React.FC = () => {
 						paddingLeft: { xs: "9px", lg: "32px" },
 					}}
 				>
-					<Typography variant="body1">Artikel</Typography>
+					<Typography
+						sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}
+						variant="body1"
+					>
+						Artikel
+					</Typography>
 					<Typography
 						variant="h2"
 						sx={{
@@ -233,6 +238,7 @@ const Activity: React.FC = () => {
 								marginBottom: "5px",
 								padding: { xs: "8px 16px", sm: "10px 20px" },
 								fontSize: { xs: "0.875rem", sm: "1rem" },
+								marginLeft: { sm: "9px" },
 							}}
 						>
 							Läs artikel
