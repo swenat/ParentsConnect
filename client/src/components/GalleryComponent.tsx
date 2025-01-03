@@ -49,11 +49,11 @@ const GalleryComponent: React.FC = () => {
 					md: "repeat(3, 1fr)", // Tre kolumner för större skärmar
 				},
 				gap: 2,
-				padding: 2,
+				padding: 1,
 			}}
 		>
 			{images.map((image, index) => (
-				<Card key={index} sx={{ height: "100%" }}>
+				<Card key={index} sx={{ height: "100%", marginRight: "2px" }}>
 					<CardMedia
 						component="img"
 						width="300"
