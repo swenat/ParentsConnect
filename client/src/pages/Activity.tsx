@@ -226,7 +226,7 @@ const Activity: React.FC = () => {
 						om just detta.
 					</Typography>{" "}
 					{/* Knappen "Läs artikel" */}
-					<Box>
+					<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}>
 						<Button
 							variant="contained"
 							color="primary"
