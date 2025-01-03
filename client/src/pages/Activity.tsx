@@ -24,7 +24,7 @@ const Activity: React.FC = () => {
 			>
 				<NavbarActivities />
 
-				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "15px" }}>
+				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "20px" }}>
 					<Typography
 						variant="h2"
 						sx={{
