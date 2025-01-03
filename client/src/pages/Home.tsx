@@ -102,7 +102,8 @@ const Home: React.FC = () => {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						borderRadius: "none",
-						paddingRight: "5px",
+						paddingRight: { xs: "0", sm: "5px" },
+						padding: { xs: "10px" },
 					}}
 				/>
 			</Box>
