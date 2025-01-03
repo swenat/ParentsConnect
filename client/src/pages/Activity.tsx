@@ -238,7 +238,6 @@ const Activity: React.FC = () => {
 								marginBottom: "5px",
 								padding: { xs: "8px 16px", sm: "10px 20px" },
 								fontSize: { xs: "0.875rem", sm: "1rem" },
-								marginLeft: { sm: "9px" },
 							}}
 						>
 							Läs artikel
