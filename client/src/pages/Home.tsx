@@ -95,8 +95,8 @@ const Home: React.FC = () => {
 					aria-label="Bild-URL"
 					sx={{
 						width: "100%",
-						maxWidth: { xs: "100%", sm: "616px" },
-						height: { xs: "300px", sm: "500px" },
+						maxWidth: { xs: "80%", sm: "616px" },
+						height: { xs: "auto", sm: "500px" },
 						backgroundImage:
 							"url('https://am3pap004files.storage.live.com/y4mbMr7UMXuQobw2v8GW7HXtXaDmVB30m__wN7NfMUh1hg5Fcy1g94lWwjmIMoQy02pgFWvjwZYqhmHlb_h5vP6qeHgoc588jF2zxXwIzJttbgqMHQfF79XubVc7dPSoYFhEuGewMbGHAbWaDEeQVosHLTYmgD-vzeshOVuFQwpLlF8l0R3jo24wjlmoKXYFXLU1uhuYOgR-Rp4tC34uaquwA?encodeFailures=1&width=1958&height=1366')",
 						backgroundSize: "cover",
