@@ -49,7 +49,7 @@ const GalleryComponent: React.FC = () => {
 					md: "repeat(3, 1fr)", // Tre kolumner för större skärmar
 				},
 				gap: 2,
-				padding: 1,
+				padding: 2,
 			}}
 		>
 			{images.map((image, index) => (

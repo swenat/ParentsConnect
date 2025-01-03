@@ -233,7 +233,7 @@ const Activity: React.FC = () => {
 							rel="noopener noreferrer"
 							aria-label="Läs artikel, öppnar en PDF-fil"
 							sx={{
-								marginBottom: "5px",
+								marginBottom: "10px",
 								padding: { xs: "8px 16px", sm: "10px 20px" },
 								fontSize: { xs: "0.875rem", sm: "1rem" },
 							}}
