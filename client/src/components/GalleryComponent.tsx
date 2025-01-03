@@ -53,7 +53,10 @@ const GalleryComponent: React.FC = () => {
 			}}
 		>
 			{images.map((image, index) => (
-				<Card key={index} sx={{ height: "100%", marginRight: "2px" }}>
+				<Card
+					key={index}
+					sx={{ height: "100%", marginRight: "2px", paddingRight: "2px" }}
+				>
 					<CardMedia
 						component="img"
 						width="300"
