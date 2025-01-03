@@ -179,6 +179,7 @@ const Activity: React.FC = () => {
 						borderRadius: 2,
 						maxWidth: "1200px",
 						margin: "0 auto",
+						paddingLeft: { xs: "9px", lg: "32px" },
 					}}
 				/>
 
@@ -189,11 +190,11 @@ const Activity: React.FC = () => {
 						alignItems: { xs: "center", md: "flex-start" },
 						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
-						paddingLeft: { xs: "9px", lg: "32px" },
+						//paddingLeft: { xs: "9px", lg: "32px" },
 					}}
 				>
 					<Typography
-						sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}
+						//sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}
 						variant="body1"
 					>
 						Artikel
@@ -209,15 +210,12 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
-							paddingLeft: { xs: "9px", lg: "32px" },
+							//paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Typography
-						variant="body1"
-						sx={{ marginBottom: 3, paddingLeft: { xs: "9px", lg: "32px" } }}
-					>
+					<Typography variant="body1" sx={{ marginBottom: 3 }}>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
@@ -226,7 +224,7 @@ const Activity: React.FC = () => {
 						om just detta.
 					</Typography>{" "}
 					{/* Knappen "Läs artikel" */}
-					<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}>
+					<Box>
 						<Button
 							variant="contained"
 							color="primary"
@@ -249,7 +247,6 @@ const Activity: React.FC = () => {
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
-							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						<img
