@@ -79,7 +79,7 @@ const Activity: React.FC = () => {
 						aria-labelledby="calendar-title"
 					>
 						<Typography
-							variant="h5"
+							variant="h4"
 							sx={{ fontSize: "32px", marginBottom: 1 }}
 							id="calendar-title"
 						>
