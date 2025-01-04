@@ -121,7 +121,7 @@ const Home: React.FC = () => {
 							sm: "2.25rem",
 							md: "2.375rem",
 						},
-						textAlign: { xs: "center", lg: "left" },
+						textAlign: "left",
 						paddingBottom: "5px",
 					}}
 				>
