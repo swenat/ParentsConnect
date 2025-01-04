@@ -211,7 +211,7 @@ const Activity: React.FC = () => {
 					</Typography>
 					<Typography
 						variant="body1"
-						sx={{ marginBottom: 3, padding: { xs: "2px" } }}
+						sx={{ marginBottom: 3, padding: { xs: "2px" }, textAlign: "left" }}
 					>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
