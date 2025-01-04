@@ -17,7 +17,6 @@ import React, { useEffect, useState } from "react";
 const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 	const [activities, setActivities] = useState<any[]>([]);
 	const [openSnackbar, setOpenSnackbar] = useState(false);
-	const [userAttendance, setUserAttendance] = useState<string[]>([]);
 	const [snackbarMessage, setSnackbarMessage] = useState("");
 	const userId = "someUserId";
 
@@ -33,11 +32,6 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 					}
 				);
 				setActivities(response.data);
-
-				const userActivities = response.data
-					.filter((activity: any) => activity.attendees.includes(userId))
-					.map((activity: any) => activity._id);
-				setUserAttendance(userActivities);
 			} catch (error) {
 				console.error("Failed to fetch activities", error);
 			}
@@ -63,8 +57,6 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 				`Du har anmält dig! Antal anmälda: ${response.data.attendees}`
 			);
 			setOpenSnackbar(true);
-
-			setUserAttendance((prev) => [...prev, activityId]);
 		} catch (error) {
 			console.error("Failed to register user for activity", error);
 		}
@@ -146,16 +138,13 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 									color="primary"
 									aria-label={`Anmäl dig till ${activity.activityname}`}
 									onClick={() => handleThumbsUp(activity._id)}
-									disabled={userAttendance.includes(activity._id)}
 								>
 									<ThumbUpIcon />
 								</IconButton>
-								{/* Texten "Anmäl dig" under ikonen */}{" "}
-								{userAttendance.includes(activity._id) && (
-									<Typography variant="body2" color="text.secondary">
-										Du är redan anmäld
-									</Typography>
-								)}
+								{/* Texten "Anmäl dig" under ikonen */}
+								<Typography variant="body2" sx={{ marginTop: 1 }}>
+									Anmäl dig
+								</Typography>
 								<IconButton
 									color="primary"
 									aria-label={`Dela aktiviteten: ${activity.activityname}`}
