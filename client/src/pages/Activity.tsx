@@ -179,7 +179,7 @@ const Activity: React.FC = () => {
 						borderRadius: 2,
 						maxWidth: "1200px",
 						margin: "0 auto",
-						paddingLeft: { xs: "9px", lg: "48px" },
+						paddingLeft: { xs: "0px", lg: "48px" },
 					}}
 				/>
 
