@@ -209,7 +209,10 @@ const Activity: React.FC = () => {
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
-					<Typography variant="body1" sx={{ marginBottom: 3 }}>
+					<Typography
+						variant="body1"
+						sx={{ marginBottom: 3, padding: { xs: "2px" } }}
+					>
 						Mer än var tionde nybliven mamma och något under var tionde nybliven
 						pappa visar tecken på depression under de första månaderna efter
 						förlossning. Därför är det så viktigt att socialisera sig, be om
