@@ -111,7 +111,7 @@ const RegisterUser: React.FC = () => {
 				ParentsConnect
 			</Typography>
 			<Typography variant="h4" sx={{ marginBottom: 2, textAlign: "center" }}>
-				REGISTRERA DIG
+				Registrera dig
 			</Typography>
 			<Typography variant="h6" sx={{ marginBottom: 1, textAlign: "center" }}>
 				Redan medlem?
