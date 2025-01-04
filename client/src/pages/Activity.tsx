@@ -193,12 +193,7 @@ const Activity: React.FC = () => {
 						paddingLeft: { xs: "9px", lg: "48px" },
 					}}
 				>
-					<Typography
-						//sx={{ paddingLeft: { xs: "9px", lg: "32px" } }}
-						variant="body1"
-					>
-						Artikel
-					</Typography>
+					<Typography variant="body1">Artikel</Typography>
 					<Typography
 						variant="h2"
 						sx={{
@@ -210,7 +205,6 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
-							//paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet

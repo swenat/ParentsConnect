@@ -39,7 +39,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 
 		if (date) {
 			fetchActivities(); // Initial fetch
-			intervalId = setInterval(fetchActivities, 5000); // Every 5 seconds check for new activities
+			intervalId = setInterval(fetchActivities, 5000); // Kontrollera var 5:e sekund efter nya aktiviteter
 		}
 
 		return () => {
@@ -181,7 +181,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 					</Card>
 				))
 			)}
-			{/* Snackbar for notification */}
+			{/* Snackbar för notifikationer */}
 			<Snackbar
 				open={openSnackbar}
 				autoHideDuration={6000}
