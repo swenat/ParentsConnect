@@ -213,16 +213,19 @@ const Activity: React.FC = () => {
 						variant="body1"
 						sx={{ marginBottom: 3, padding: { xs: "2px" }, textAlign: "left" }}
 					>
-						"I ny forskning på Linnéuniversitetet har det undersökts hur
-						föräldrar mår drygt 2,5 år efter att ett barn fötts. Resultatet
-						förvånar forskare" Läs mer om det i Svt:s artikel:
+						Alltfler visar sig uppleva depression som förälder i småbarnsåldern
+						och det är viktigt att hitta de tecken och söka hjälp där det går.
+						Därför har vi skapat denna sida för att förhindra känslan av
+						ensamhet och på så sätt få dig eller andra att känna sig mindre
+						ensamma i sitt föräldraskap. Vill man veta mer om tecken att
+						uppmärksamma så finns ett exempel på Region Kalmars hemsida nedan.
 					</Typography>{" "}
 					{/* Knappen "Läs artikel" */}
 					<Box>
 						<Button
 							variant="contained"
 							color="primary"
-							href="https://www.svt.se/nyheter/lokalt/smaland/ny-forskning-fran-linneuniversitetet-om-stress-hos-nyblivna-foraldrar"
+							href="https://vardgivare.regionkalmar.se/vard--behandling/psykisk-halsa/nya-foraldrar-med-depression---vardprogram/#"
 							target="_blank"
 							rel="noopener noreferrer"
 							sx={{
