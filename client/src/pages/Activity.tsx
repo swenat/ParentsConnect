@@ -24,7 +24,7 @@ const Activity: React.FC = () => {
 			>
 				<NavbarActivities />
 
-				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "15px" }}>
+				<Box sx={{ paddingLeft: { xs: "9px", lg: "32px" }, marginTop: "20px" }}>
 					<Typography
 						variant="h2"
 						sx={{
@@ -79,7 +79,7 @@ const Activity: React.FC = () => {
 						aria-labelledby="calendar-title"
 					>
 						<Typography
-							variant="h5"
+							variant="h4"
 							sx={{ fontSize: "32px", marginBottom: 1 }}
 							id="calendar-title"
 						>
@@ -179,18 +179,18 @@ const Activity: React.FC = () => {
 						borderRadius: 2,
 						maxWidth: "1200px",
 						margin: "0 auto",
+						paddingLeft: { xs: "0px", lg: "48px" },
 					}}
 				/>
 
 				<Box
 					sx={{
-						flex: 1,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: { xs: "center", md: "flex-start" },
 						textAlign: { xs: "center", md: "left" },
 						marginTop: "20px",
-						paddingLeft: { xs: "5px", lg: "32px" },
+						paddingLeft: { xs: "0px", lg: "48px" },
 					}}
 				>
 					<Typography variant="body1">Artikel</Typography>
@@ -205,32 +205,31 @@ const Activity: React.FC = () => {
 							},
 							textAlign: { xs: "center", lg: "left" },
 							paddingBottom: "5px",
-							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						Alltfler nyblivna föräldrar söker hjälp mot nedstämdhet
 					</Typography>
 					<Typography
 						variant="body1"
-						sx={{ marginBottom: 3, paddingLeft: { xs: "9px", lg: "32px" } }}
+						sx={{ marginBottom: 3, padding: { xs: "2px" }, textAlign: "left" }}
 					>
-						Mer än var tionde nybliven mamma och något under var tionde nybliven
-						pappa visar tecken på depression under de första månaderna efter
-						förlossning. Därför är det så viktigt att socialisera sig, be om
-						hjälp och stöd under denna period. Det här är anledningen till
-						varför vi finns. Läs mer om detta på Kronobergs 1177:s information
-						om just detta.
+						Alltfler visar sig uppleva depression som förälder i småbarnsåldern
+						och det är viktigt att hitta de tecken och söka hjälp där det går.
+						Därför har vi skapat denna sida för att förhindra känslan av
+						ensamhet och på så sätt få dig eller andra att känna sig mindre
+						ensamma i sitt föräldraskap. Vill man veta mer om tecken att
+						uppmärksamma så finns ett exempel på Region Kalmars hemsida nedan.
 					</Typography>{" "}
 					{/* Knappen "Läs artikel" */}
 					<Box>
 						<Button
 							variant="contained"
 							color="primary"
-							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
+							href="https://vardgivare.regionkalmar.se/vard--behandling/psykisk-halsa/nya-foraldrar-med-depression---vardprogram/#"
 							target="_blank"
 							rel="noopener noreferrer"
 							sx={{
-								marginBottom: "5px",
+								marginBottom: "10px",
 								padding: { xs: "8px 16px", sm: "10px 20px" },
 								fontSize: { xs: "0.875rem", sm: "1rem" },
 							}}
@@ -244,7 +243,6 @@ const Activity: React.FC = () => {
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
-							paddingLeft: { xs: "9px", lg: "32px" },
 						}}
 					>
 						<img

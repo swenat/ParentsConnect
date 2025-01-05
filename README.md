@@ -1,6 +1,7 @@
 # ParentsConnect
 
 ParentsConnect är en plattform där användare kan registrera sig, logga in och för att skapa, visa och anmäla sig till aktiviteter baserat på datum. Man interagerar med aktiviteter via en kalender där man kan välja datum och se aktiviteter som är kopplade till det.
+Det finns en hel del länkar på sidan som inte är aktiva ännu, notera att det bara är ovan som är fullt fungerande för tillfället.
 
 Appen riktar in sig på föräldrar till småbarn mellan 0-4 år primärt.
 

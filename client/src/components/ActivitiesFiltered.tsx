@@ -39,7 +39,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 
 		if (date) {
 			fetchActivities(); // Initial fetch
-			intervalId = setInterval(fetchActivities, 5000); // Every 5 seconds check for new activities
+			intervalId = setInterval(fetchActivities, 5000); // Kontrollera var 5:e sekund efter nya aktiviteter
 		}
 
 		return () => {
@@ -115,7 +115,10 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								{activity.time}
 							</Typography>
 							{/* Övrig information */}
-							<Typography variant="body2">Info:{activity.otherInfo}</Typography>
+							<Typography variant="body2">
+								<b>Info: </b>
+								{activity.otherInfo}
+							</Typography>
 							{/* Antal anmälda */}
 							<Typography variant="body2" color="text.secondary">
 								<b>Antal anmälda: </b>
@@ -178,7 +181,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 					</Card>
 				))
 			)}
-			{/* Snackbar for notification */}
+			{/* Snackbar för notifikationer */}
 			<Snackbar
 				open={openSnackbar}
 				autoHideDuration={6000}

@@ -22,7 +22,7 @@ const PhotoCardsActivity: React.FC = () => {
 				<CardMedia
 					sx={{ height: 220 }}
 					image="https://cdn.pixabay.com/photo/2023/03/12/13/27/mountains-7846880_1280.jpg"
-					title="människor hajkande ett isberg"
+					role="presentation"
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
@@ -40,7 +40,7 @@ const PhotoCardsActivity: React.FC = () => {
 				<CardMedia
 					sx={{ height: 220 }}
 					image="https://cdn.pixabay.com/photo/2016/01/06/21/37/dad-1125002_1280.jpg"
-					title="pappa-barnpromenad"
+					role="presentation"
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
@@ -58,7 +58,7 @@ const PhotoCardsActivity: React.FC = () => {
 				<CardMedia
 					sx={{ height: 220 }}
 					image="https://cdn.pixabay.com/photo/2017/06/27/21/13/team-spirit-2448837_1280.jpg"
-					title="händer korsade med varandra"
+					role="presentation"
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">

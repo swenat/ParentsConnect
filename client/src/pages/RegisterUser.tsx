@@ -212,7 +212,7 @@ const RegisterUser: React.FC = () => {
 					color="primary"
 					sx={{ textTransform: "none" }}
 				>
-					Registrera dig
+					REGISTRERA DIG
 				</Button>
 			</Box>
 			<Snackbar
@@ -220,6 +220,7 @@ const RegisterUser: React.FC = () => {
 				autoHideDuration={6000}
 				onClose={handleCloseSnackbar}
 				aria-live="assertive"
+				sx={{ zIndex: 2000 }}
 			>
 				<Alert
 					onClose={handleCloseSnackbar}

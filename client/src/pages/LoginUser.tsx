@@ -142,7 +142,7 @@ const LoginUser: React.FC = () => {
 					color="primary"
 					sx={{ textTransform: "none" }}
 				>
-					Logga in
+					LOGGA IN
 				</Button>
 			</Box>
 
