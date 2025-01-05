@@ -28,7 +28,7 @@ För produktion:
 npm run build
 npm start
 
-## Krav som mötts
+## Krav som mötts för Godkänt
 
 - [x] **JavaScript** - Projektet ska utvecklas med ett modernt JavaScript-ramverk. Till exempel React eller Vue.
 - [x] **Databas** - Ni ska använda en databas för att lagra och hämta värden.
