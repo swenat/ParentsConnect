@@ -197,8 +197,7 @@ const RegisterUser: React.FC = () => {
 					value={formData.password}
 					onChange={handleChange}
 					id="password"
-					aria-labelledby="password-label"
-					aria-describedby="password-helper"
+					aria-describedby="password-helper-text"
 					error={errors.password}
 					helperText={
 						errors.password
