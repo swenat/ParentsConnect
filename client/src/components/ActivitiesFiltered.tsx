@@ -12,6 +12,7 @@ import {
 	Typography,
 } from "@mui/material";
 import axios from "axios";
+import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 
 const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
@@ -47,7 +48,16 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 		};
 	}, [date]);
 
-	const handleThumbsUp = async (activityId: string) => {
+	const handleThumbsUp = async (activityId: string, activityDate: string) => {
+		const today = dayjs().format("YYYY-MM-DD");
+
+		if (dayjs(activityDate).isBefore(today)) {
+			setSnackbarMessage(
+				"Du kan inte anmäla dig till en aktivitet som redan har varit."
+			);
+			setOpenSnackbar(true);
+			return;
+		}
 		try {
 			const response = await axios.post(
 				`${import.meta.env.VITE_API_URL}/api/activities/attend/${activityId}`,
@@ -137,7 +147,7 @@ const ActivitiesFiltered: React.FC<{ date: string }> = ({ date }) => {
 								<IconButton
 									color="primary"
 									aria-label={`Anmäl dig till ${activity.activityname}`}
-									onClick={() => handleThumbsUp(activity._id)}
+									onClick={() => handleThumbsUp(activity._id, activity.date)}
 								>
 									<ThumbUpIcon />
 								</IconButton>
