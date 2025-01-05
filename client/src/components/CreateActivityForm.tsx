@@ -239,7 +239,6 @@ const CreateActivityForm: React.FC = () => {
 							rows={4}
 							value={otherInfo}
 							onChange={(e) => setOtherInfo(e.target.value)}
-							aria-labelledby="activity-otherinfo-label"
 						/>
 					</Box>
 					{/* Skicka-knapp */}
