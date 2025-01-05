@@ -213,22 +213,18 @@ const Activity: React.FC = () => {
 						variant="body1"
 						sx={{ marginBottom: 3, padding: { xs: "2px" }, textAlign: "left" }}
 					>
-						Mer än var tionde nybliven mamma och något under var tionde nybliven
-						pappa visar tecken på depression under de första månaderna efter
-						förlossning. Därför är det så viktigt att socialisera sig, be om
-						hjälp och stöd under denna period. Det här är anledningen till
-						varför vi finns. Läs mer om detta på Kronobergs 1177:s information
-						om just detta.
+						"I ny forskning på Linnéuniversitetet har det undersökts hur
+						föräldrar mår drygt 2,5 år efter att ett barn fötts. Resultatet
+						förvånar forskare" Läs mer om det i Svt:s artikel:
 					</Typography>{" "}
 					{/* Knappen "Läs artikel" */}
 					<Box>
 						<Button
 							variant="contained"
 							color="primary"
-							href="https://www.1177.se/api/hjv/unit/SE2321000065-7330028005859/generaloffer/files/2/Folder_BVC_Nedst%C3%A4mdhet%20hos%20nyblivna%20f%C3%B6r%C3%A4ldrar%202023.docx.pdf"
+							href="https://www.svt.se/nyheter/lokalt/smaland/ny-forskning-fran-linneuniversitetet-om-stress-hos-nyblivna-foraldrar"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="Läs artikel, öppnar en PDF-fil"
 							sx={{
 								marginBottom: "10px",
 								padding: { xs: "8px 16px", sm: "10px 20px" },
